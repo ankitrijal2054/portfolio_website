@@ -1,0 +1,9 @@
+/* src/styles/NavBar.css */
+
+.navbar-light .nav-link {
+  color: #333 !important;
+}
+
+.navbar-dark .nav-link {
+  color: #fff !important;
+}

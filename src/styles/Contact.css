@@ -1,0 +1,9 @@
+/* src/styles/Home.css */
+
+.home-container {
+  padding-top: 2rem;
+}
+
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
