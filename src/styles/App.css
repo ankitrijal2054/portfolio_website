@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+.App-header {
+  margin-top: 50px;
+}
+
+h1 {
+  color: #343a40;
+}
+
+p {
+  color: #6c757d;
+}
