@@ -10,6 +10,7 @@ import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import Contact from "./components/Contact";
 import "./styles/App.css";
+import "./styles/Background.scss";
 
 export const ThemeContext = createContext();
 
@@ -30,9 +31,21 @@ function App() {
     localStorage.setItem("theme", theme);
   }, [theme]);
 
+  // Determine which background class to apply
+  const backgroundClass =
+    theme === "dark" ||
+    (theme === "system" &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ? "dark-theme"
+      : "light-theme";
+
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
-      <div className="app-container">
+      <div className={`app-container ${backgroundClass}`}>
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+
         <Router>
           <NavBar />
           <div className="content">
