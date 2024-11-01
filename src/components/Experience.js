@@ -1,19 +1,19 @@
-// src/components/Contact.js
+// src/components/Experience.js
 import React from "react";
 import { Container, Card } from "react-bootstrap";
 import "../styles/Home.css";
 
-function Contact() {
+function Experience() {
   return (
     <Container className="home-container">
       <Card className="text-center">
         <Card.Body>
-          <Card.Title>Contact</Card.Title>
-          <Card.Text>This page will have my contact info</Card.Text>
+          <Card.Title>Experience</Card.Title>
+          <Card.Text>This page will have my Experience info</Card.Text>
         </Card.Body>
       </Card>
     </Container>
   );
 }
 
-export default Contact;
+export default Experience;

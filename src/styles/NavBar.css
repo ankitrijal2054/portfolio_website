@@ -1,4 +1,5 @@
 /* src/styles/NavBar.css */
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&display=swap");
 
 .navbar-light .nav-link {
   color: #333 !important;
@@ -20,4 +21,43 @@
 .navbar-brand,
 .navbar-nav .nav-link {
   color: inherit;
+}
+
+/* Dropdown Toggle */
+.dropdown-toggle-light {
+  background-color: #f8f9fa !important;
+  color: #333 !important;
+  border: none;
+}
+
+.dropdown-toggle-dark {
+  background-color: #090a0f !important;
+  color: #f8f9fa !important;
+  border: none;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  font-family: "Exo 2", sans-serif;
+}
+
+.dropdown-menu-light {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+.dropdown-menu-dark {
+  background-color: #090a0f;
+  color: #f8f9fa;
+  border: 1px solid #555;
+}
+
+/* Dropdown Item Hover */
+.dropdown-menu-light .dropdown-item:hover {
+  background-color: #e9ecef;
+}
+
+.dropdown-menu-dark .dropdown-item:hover {
+  background-color: #495057;
 }

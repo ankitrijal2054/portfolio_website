@@ -1,19 +1,19 @@
-// src/components/Home.js
+// src/components/Skill.js
 import React from "react";
 import { Container, Card } from "react-bootstrap";
 import "../styles/Home.css";
 
-function Home() {
+function Skill() {
   return (
-    <Container fluid className="home-container">
+    <Container className="home-container">
       <Card className="text-center">
         <Card.Body>
-          <Card.Title>Hello, I'm Ankit.</Card.Title>
-          <Card.Text>A Passionate Software Developer.</Card.Text>
+          <Card.Title>Skill</Card.Title>
+          <Card.Text>This page will have my Skill info</Card.Text>
         </Card.Body>
       </Card>
     </Container>
   );
 }
 
-export default Home;
+export default Skill;

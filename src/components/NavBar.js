@@ -1,9 +1,10 @@
 // src/components/NavBar.js
 import React, { useContext, useEffect, useState } from "react";
-import { Navbar, Nav, Container, Row, Col, Form } from "react-bootstrap";
+import { Navbar, Container, Row, Col, Form, Dropdown } from "react-bootstrap";
 import { ThemeContext } from "../App";
-import { FaSun, FaMoon } from "react-icons/fa";
-import logo from "../assets/logo.png"; // Import the icon
+import { FaSun, FaMoon } from "react-icons/fa"; // Sun and Moon icons for theme toggle
+import { HiMenu } from "react-icons/hi";
+import logo from "../assets/logo.png";
 import "../styles/NavBar.css";
 
 function NavBar() {
@@ -44,7 +45,7 @@ function NavBar() {
         <Row className="w-100 align-items-center">
           <Col xs="auto">
             <Navbar.Brand
-              onClick={() => scrollToSection("home")}
+              onClick={() => scrollToSection("aboutme")}
               style={{ cursor: "pointer" }}
             >
               <img
@@ -57,20 +58,39 @@ function NavBar() {
             </Navbar.Brand>
           </Col>
           <Col className="d-flex justify-content-center">
-            <Nav>
-              <Nav.Link
-                onClick={() => scrollToSection("home")}
-                style={{ cursor: "pointer" }}
+            <Dropdown>
+              <Dropdown.Toggle
+                variant="secondary"
+                id="dropdown-basic"
+                className={`d-flex align-items-center dropdown-toggle-${
+                  isDarkMode ? "dark" : "light"
+                }`}
               >
-                Home
-              </Nav.Link>
-              <Nav.Link
-                onClick={() => scrollToSection("contact")}
-                style={{ cursor: "pointer" }}
+                <HiMenu className="me-2" size={24} />
+              </Dropdown.Toggle>
+              <Dropdown.Menu
+                className={`dropdown-menu-${isDarkMode ? "dark" : "light"}`}
               >
-                Contact
-              </Nav.Link>
-            </Nav>
+                <Dropdown.Item onClick={() => scrollToSection("aboutme")}>
+                  About Me
+                </Dropdown.Item>
+                <Dropdown.Item onClick={() => scrollToSection("experience")}>
+                  Experience
+                </Dropdown.Item>
+                <Dropdown.Item onClick={() => scrollToSection("skill")}>
+                  Skill
+                </Dropdown.Item>
+                <Dropdown.Item onClick={() => scrollToSection("project")}>
+                  Project
+                </Dropdown.Item>
+                <Dropdown.Item onClick={() => scrollToSection("social")}>
+                  Social
+                </Dropdown.Item>
+                <Dropdown.Item onClick={() => scrollToSection("contact")}>
+                  Contact
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </Col>
           <Col xs="auto" className="d-flex align-items-center">
             <FaSun className="me-2" />

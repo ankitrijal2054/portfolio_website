@@ -1,7 +1,11 @@
 // src/App.js
 import React, { useState, useEffect, createContext } from "react";
 import NavBar from "./components/NavBar";
-import Home from "./components/Home";
+import AboutMe from "./components/AboutMe";
+import Experience from "./components/Experience";
+import Skill from "./components/Skill";
+import Project from "./components/Project";
+import Social from "./components/Social";
 import Contact from "./components/Contact";
 import "./styles/App.css";
 import "./styles/Background.scss";
@@ -42,8 +46,32 @@ function App() {
         <NavBar />
         <div className="content">
           {/* Add padding and height for scrollable sections */}
-          <section id="home" style={{ padding: "50px 0", minHeight: "100vh" }}>
-            <Home />
+          <section
+            id="aboutme"
+            style={{ padding: "50px 0", minHeight: "100vh" }}
+          >
+            <AboutMe />
+          </section>
+          <section
+            id="experience"
+            style={{ padding: "50px 0", minHeight: "100vh" }}
+          >
+            <Experience />
+          </section>
+          <section id="skill" style={{ padding: "50px 0", minHeight: "100vh" }}>
+            <Skill />
+          </section>
+          <section
+            id="project"
+            style={{ padding: "50px 0", minHeight: "100vh" }}
+          >
+            <Project />
+          </section>
+          <section
+            id="social"
+            style={{ padding: "50px 0", minHeight: "100vh" }}
+          >
+            <Social />
           </section>
           <section
             id="contact"

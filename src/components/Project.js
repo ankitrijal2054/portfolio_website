@@ -1,19 +1,19 @@
-// src/components/Contact.js
+// src/components/Project.js
 import React from "react";
 import { Container, Card } from "react-bootstrap";
 import "../styles/Home.css";
 
-function Contact() {
+function Project() {
   return (
     <Container className="home-container">
       <Card className="text-center">
         <Card.Body>
-          <Card.Title>Contact</Card.Title>
-          <Card.Text>This page will have my contact info</Card.Text>
+          <Card.Title>Project</Card.Title>
+          <Card.Text>This page will have my Project info</Card.Text>
         </Card.Body>
       </Card>
     </Container>
   );
 }
 
-export default Contact;
+export default Project;
