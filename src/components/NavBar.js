@@ -1,6 +1,5 @@
 // src/components/NavBar.js
 import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { Navbar, Nav, Container, Row, Col, Form } from "react-bootstrap";
 import { ThemeContext } from "../App";
 import { FaSun, FaMoon } from "react-icons/fa";
@@ -16,7 +15,6 @@ function NavBar() {
   );
 
   useEffect(() => {
-    // Apply system theme by default on load
     if (theme === "system") {
       const systemPrefersDark = window.matchMedia(
         "(prefers-color-scheme: dark)"
@@ -26,14 +24,16 @@ function NavBar() {
     }
   }, [theme, setTheme]);
 
-  // Toggle between light and dark themes
   const toggleTheme = () => {
     const newTheme = isDarkMode ? "light" : "dark";
     setTheme(newTheme);
     setIsDarkMode(!isDarkMode);
   };
 
-  // Set navbar background and variant based on theme
+  const scrollToSection = (sectionId) => {
+    document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
+  };
+
   const navbarTheme = isDarkMode
     ? { bg: "dark", variant: "dark" }
     : { bg: "light", variant: "light" };
@@ -43,7 +43,10 @@ function NavBar() {
       <Container>
         <Row className="w-100 align-items-center">
           <Col xs="auto">
-            <Navbar.Brand as={Link} to="/">
+            <Navbar.Brand
+              onClick={() => scrollToSection("home")}
+              style={{ cursor: "pointer" }}
+            >
               <img
                 src={logo}
                 alt="Portfolio Logo"
@@ -55,10 +58,16 @@ function NavBar() {
           </Col>
           <Col className="d-flex justify-content-center">
             <Nav>
-              <Nav.Link as={Link} to="/">
+              <Nav.Link
+                onClick={() => scrollToSection("home")}
+                style={{ cursor: "pointer" }}
+              >
                 Home
               </Nav.Link>
-              <Nav.Link as={Link} to="/contact">
+              <Nav.Link
+                onClick={() => scrollToSection("contact")}
+                style={{ cursor: "pointer" }}
+              >
                 Contact
               </Nav.Link>
             </Nav>

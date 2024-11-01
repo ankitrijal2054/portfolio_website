@@ -13,7 +13,7 @@
 
 html {
   height: 100%;
-  overflow: hidden;
+  //overflow: hidden;
 }
 
 // Dark theme background
@@ -31,7 +31,7 @@ $shadows-medium-light: multiple-box-shadow(200, #090a0f);
 $shadows-big-light: multiple-box-shadow(100, #090a0f);
 
 .light-theme {
-  background: linear-gradient(to bottom, #f0f4f8, #d9e2ec);
+  background: radial-gradient(ellipse at bottom, #f0f4f8, #d9e2ec);
 }
 
 #stars,
@@ -42,7 +42,7 @@ $shadows-big-light: multiple-box-shadow(100, #090a0f);
   left: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  //overflow: hidden;
 }
 
 .dark-theme #stars {
@@ -54,7 +54,7 @@ $shadows-big-light: multiple-box-shadow(100, #090a0f);
 
   &:after {
     content: " ";
-    position: absolute;
+    //position: absolute;
     top: 2000px;
     width: 1px;
     height: 1px;
@@ -98,7 +98,6 @@ $shadows-big-light: multiple-box-shadow(100, #090a0f);
     box-shadow: $shadows-big-dark;
   }
 }
-/////
 
 .light-theme #stars {
   width: 1px;

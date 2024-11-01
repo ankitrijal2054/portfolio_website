@@ -1,11 +1,5 @@
 // src/App.js
 import React, { useState, useEffect, createContext } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import Contact from "./components/Contact";
@@ -31,7 +25,6 @@ function App() {
     localStorage.setItem("theme", theme);
   }, [theme]);
 
-  // Determine which background class to apply
   const backgroundClass =
     theme === "dark" ||
     (theme === "system" &&
@@ -46,17 +39,19 @@ function App() {
         <div id="stars2"></div>
         <div id="stars3"></div>
 
-        <Router>
-          <NavBar />
-          <div className="content">
-            <Routes>
-              {/* Redirect any unmatched routes to Home */}
-              <Route path="*" element={<Navigate to="/" />} />
-              <Route path="/" element={<Home />} />
-              <Route path="/contact" element={<Contact />} />
-            </Routes>
-          </div>
-        </Router>
+        <NavBar />
+        <div className="content">
+          {/* Add padding and height for scrollable sections */}
+          <section id="home" style={{ padding: "50px 0", minHeight: "100vh" }}>
+            <Home />
+          </section>
+          <section
+            id="contact"
+            style={{ padding: "50px 0", minHeight: "100vh" }}
+          >
+            <Contact />
+          </section>
+        </div>
       </div>
     </ThemeContext.Provider>
   );
