@@ -6,7 +6,7 @@ import "../styles/Home.css";
 function Project() {
   return (
     <Container className="home-container">
-      <Card className="text-center">
+      <Card className="text-left">
         <Card.Body>
           <Card.Title>Project</Card.Title>
           <Card.Text>This page will have my Project info</Card.Text>

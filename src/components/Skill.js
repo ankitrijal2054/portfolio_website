@@ -6,7 +6,7 @@ import "../styles/Home.css";
 function Skill() {
   return (
     <Container className="home-container">
-      <Card className="text-center">
+      <Card className="text-left">
         <Card.Body>
           <Card.Title>Skill</Card.Title>
           <Card.Text>This page will have my Skill info</Card.Text>

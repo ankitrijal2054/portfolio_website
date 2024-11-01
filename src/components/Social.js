@@ -6,7 +6,7 @@ import "../styles/Home.css";
 function Social() {
   return (
     <Container className="home-container">
-      <Card className="text-center">
+      <Card className="text-left">
         <Card.Body>
           <Card.Title>Social</Card.Title>
           <Card.Text>This page will have my Social info</Card.Text>

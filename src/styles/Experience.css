@@ -1,0 +1,53 @@
+/* src/styles/Experience.css */
+
+.experience-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+.experience-card {
+  width: 100%;
+  max-width: 800px;
+  padding: 25px;
+}
+
+.experience-section {
+  margin-bottom: 20px;
+}
+
+.role-title {
+  font-size: 1.8vw;
+  font-weight: 700;
+  margin-top: 10px;
+  font-family: "Lato", sans-serif;
+}
+
+.company-details {
+  font-size: 1.2vw;
+  font-weight: 500;
+  color: #0264c1;
+  margin-bottom: 15px;
+  font-family: "Roboto", sans-serif;
+}
+
+.experience-details,
+.project-details {
+  list-style-type: disc;
+  padding-left: 20px;
+  font-size: 1.1vw;
+  line-height: 1.6;
+}
+
+.project-title {
+  font-size: 1.5vw;
+  font-weight: 600;
+  font-family: "Lato", sans-serif;
+  margin-top: 15px;
+}
+
+.project-details li {
+  margin-bottom: 8px;
+}
