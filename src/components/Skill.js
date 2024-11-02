@@ -1,15 +1,67 @@
 // src/components/Skill.js
 import React from "react";
 import { Container, Card } from "react-bootstrap";
+import { FaReact, FaPython, FaGithub, FaJava } from "react-icons/fa";
+import { TbBrandCSharp } from "react-icons/tb";
+import { BiLogoPostgresql } from "react-icons/bi";
 import "../styles/Home.css";
+import "../styles/Skill.css";
 
 function Skill() {
+  const skill = [
+    {
+      name: "ReactJs",
+      icon: <FaReact />,
+      link: "https://react.dev/",
+    },
+    {
+      name: "Python",
+      icon: <FaPython />,
+      link: "https://www.python.org/",
+    },
+    {
+      name: "C#",
+      icon: <TbBrandCSharp />,
+      link: "https://learn.microsoft.com/en-us/dotnet/csharp/",
+    },
+    {
+      name: "Java",
+      icon: <FaJava />,
+      link: "https://www.java.com/en/",
+    },
+    {
+      name: "GitHub",
+      icon: <FaGithub />,
+      link: "https://github.com/",
+    },
+    {
+      name: "PostgreSQL",
+      icon: <BiLogoPostgresql />,
+      link: "https://www.postgresql.org/",
+    },
+  ];
+
   return (
     <Container className="home-container">
       <Card className="text-left">
         <Card.Body>
           <Card.Title>Skill</Card.Title>
-          <Card.Text>This page will have my Skill info</Card.Text>
+          <div className="skill-links">
+            {skill.map((social, index) => (
+              <a
+                href={social.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="skill-tile"
+                key={index}
+              >
+                <div className="skill-tile-inner">
+                  <div className="skill-tile-front">{social.icon}</div>
+                  <div className="skill-tile-back">{social.name}</div>
+                </div>
+              </a>
+            ))}
+          </div>
         </Card.Body>
       </Card>
     </Container>

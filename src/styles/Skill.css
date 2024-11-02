@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto:wght@300;400;500;700&display=swap");
+
+.skill-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three items per row */
+  gap: 25px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.skill-tile {
+  width: 150px;
+  height: 150px;
+  perspective: 1000px;
+  text-decoration: none;
+}
+
+.skill-tile-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.skill-tile:hover .skill-tile-inner {
+  transform: rotateY(180deg);
+}
+
+.skill-tile-front,
+.skill-tile-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 4em; /* Make icon fill more of the tile */
+  backface-visibility: hidden;
+}
+
+.skill-tile-front {
+  background-color: #333;
+}
+
+.skill-tile-back {
+  background-color: #555;
+  transform: rotateY(180deg);
+  font-size: 1.5em; /* Adjust font size for the text on the back */
+}
+
+.skill-tile-front:hover {
+  opacity: 0.8;
+}
