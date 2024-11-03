@@ -1,8 +1,9 @@
+/* Import the required fonts */
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto:wght@300;400;500;700&display=swap");
 
 .skill-links {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Three items per row */
+  grid-template-columns: repeat(3, 1fr);
   gap: 25px;
   justify-content: center;
   margin-top: 20px;
@@ -36,19 +37,35 @@
   align-items: center;
   justify-content: center;
   border-radius: 8px;
-  color: #fff;
-  font-size: 4em; /* Make icon fill more of the tile */
+  font-size: 4em;
   backface-visibility: hidden;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.skill-tile-front {
+/* Dark theme styles */
+.dark-theme .skill-tile-front {
   background-color: #333;
+  color: #fff; /* Icon color in dark mode */
 }
 
-.skill-tile-back {
+.dark-theme .skill-tile-back {
   background-color: #555;
+  color: #fff;
   transform: rotateY(180deg);
-  font-size: 1.5em; /* Adjust font size for the text on the back */
+  font-size: 1.5em;
+}
+
+/* Light theme styles */
+.light-theme .skill-tile-front {
+  background-color: #e0e5ec;
+  color: #000; /* Icon color in light mode */
+}
+
+.light-theme .skill-tile-back {
+  background-color: #cfd8e3;
+  color: #000;
+  transform: rotateY(180deg);
+  font-size: 1.5em;
 }
 
 .skill-tile-front:hover {
