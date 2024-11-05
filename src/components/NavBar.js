@@ -51,8 +51,8 @@ function NavBar() {
               <img
                 src={logo}
                 alt="Portfolio Logo"
-                width="40"
-                height="40"
+                width="50"
+                height="50"
                 className="d-inline-block align-top"
               />
             </Navbar.Brand>
