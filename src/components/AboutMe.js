@@ -42,17 +42,16 @@ function AboutMe() {
           <Card className="text-center theme-card">
             <Card.Body>
               <Card.Text>
-                Hello! I'm Ankit Rijal, an experienced software developer with a
-                strong foundation in full-stack development, specializing in C#,
-                Python, and React JS. I have a track record of leading projects
-                to optimize performance and scalability, from seamless
-                SVN-to-Git migrations to automated database updates. My
-                commitment to high-quality, user-focused software is reflected
-                in my work, both in professional roles and personal projects.
-                Currently pursuing a Master’s in Artificial Intelligence, I'm
-                constantly exploring new technologies to elevate my skills and
-                deliver impactful solutions. Let's connect and build something
-                great together!
+                I am an experienced software developer with a strong foundation
+                in full-stack development, specializing in C#, Python, and React
+                JS. I have a track record of leading projects to optimize
+                performance and scalability, from seamless SVN-to-Git migrations
+                to automated database updates. My commitment to high-quality,
+                user-focused software is reflected in my work, both in
+                professional roles and personal projects. Currently pursuing a
+                Master’s in Artificial Intelligence, I'm constantly exploring
+                new technologies to elevate my skills and deliver impactful
+                solutions. Let's connect and build something great together!
               </Card.Text>
             </Card.Body>
           </Card>
