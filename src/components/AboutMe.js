@@ -5,7 +5,7 @@ import "../styles/AboutMe.css";
 function AboutMe() {
   const texts = [
     "Passionate Software Developer",
-    "Fitness enthusiast",
+    "Fitness Enthusiast",
     "Traveller",
   ];
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
@@ -22,7 +22,7 @@ function AboutMe() {
   };
 
   return (
-    <Container fluid className="home-container">
+    <Container fluid className="about-me-container">
       <Row className="about-me-row justify-content-center">
         <Col md={6}>
           <Card className="text-center theme-card">
@@ -30,11 +30,7 @@ function AboutMe() {
               <div className="animated-text-container">
                 <div className="animated-text-line">Hello,</div>
                 <div className="animated-text-line">I'm Ankit Rijal.</div>
-                <div
-                  className="animated-swiping-text"
-                  key={currentTextIndex} // Trigger re-render on text change
-                  style={{ animation: "swipeUp 0.5s ease-in-out" }}
-                >
+                <div className="animated-swiping-text" key={currentTextIndex}>
                   {texts[currentTextIndex]}
                 </div>
               </div>
@@ -68,10 +64,15 @@ function AboutMe() {
               variant="primary"
               href="../assets/Resume-Ankit_Rijal.pdf"
               download
+              className="btn-modern"
             >
               Download CV
             </Button>
-            <Button variant="secondary" onClick={scrollToContact}>
+            <Button
+              variant="secondary"
+              onClick={scrollToContact}
+              className="btn-modern"
+            >
               Contact Me
             </Button>
           </div>

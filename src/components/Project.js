@@ -7,10 +7,10 @@ import cardgameimg from "../assets/cardgame.png";
 
 function Project() {
   return (
-    <Container className="home-container">
-      <Card className="text-left">
+    <Container className="project-container">
+      <Card className="text-left theme-card">
         <Card.Body>
-          <Card.Title>Project</Card.Title>
+          <Card.Title className="theme-card-title">Project</Card.Title>
           <div className="project-tiles">
             <a
               href="https://weather-app-3jmk.onrender.com/"

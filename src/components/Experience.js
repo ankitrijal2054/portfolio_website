@@ -6,9 +6,9 @@ import "../styles/Experience.css"; // Link to the new Experience.css
 function Experience() {
   return (
     <Container className="experience-container">
-      <Card className="text-left experience-card">
+      <Card className="text-left theme-card">
         <Card.Body>
-          <Card.Title>Experience</Card.Title>
+          <Card.Title className="theme-card-title">Experience</Card.Title>
 
           <div className="experience-section">
             <h3 className="role-title">Software Developer</h3>

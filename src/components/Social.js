@@ -4,7 +4,7 @@ import { Container, Card } from "react-bootstrap";
 import { FaGithub, FaLinkedin, FaInstagramSquare } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import "../styles/Social.css";
-import "../styles/Home.css";
+import "../styles/Card.css";
 
 function Social() {
   const socials = [
@@ -31,10 +31,10 @@ function Social() {
   ];
 
   return (
-    <Container className="home-container">
-      <Card className="text-left">
+    <Container className="social-container">
+      <Card className="text-left theme-card">
         <Card.Body>
-          <Card.Title>Social</Card.Title>
+          <Card.Title className="theme-card-title">Social</Card.Title>
           <div className="social-links">
             {socials.map((social, index) => (
               <a

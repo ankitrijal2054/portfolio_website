@@ -4,7 +4,7 @@ import { Container, Card } from "react-bootstrap";
 import { FaReact, FaPython, FaGithub, FaJava } from "react-icons/fa";
 import { TbBrandCSharp } from "react-icons/tb";
 import { BiLogoPostgresql } from "react-icons/bi";
-import "../styles/Home.css";
+import "../styles/Card.css";
 import "../styles/Skill.css";
 
 function Skill() {
@@ -42,10 +42,10 @@ function Skill() {
   ];
 
   return (
-    <Container className="home-container">
-      <Card className="text-left">
+    <Container className="skill-container">
+      <Card className="text-left theme-card">
         <Card.Body>
-          <Card.Title>Skill</Card.Title>
+          <Card.Title className="theme-card-title">Skill</Card.Title>
           <div className="skill-links">
             {skill.map((social, index) => (
               <a

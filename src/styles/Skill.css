@@ -1,6 +1,14 @@
 /* Import the required fonts */
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto:wght@300;400;500;700&display=swap");
 
+.skill-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: auto;
+  padding: 0;
+}
+
 .skill-links {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

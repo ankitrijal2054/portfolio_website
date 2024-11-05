@@ -46,37 +46,22 @@ function App() {
         <NavBar />
         <div className="content">
           {/* Add padding and height for scrollable sections */}
-          <section
-            id="aboutme"
-            style={{ padding: "50px 0", minHeight: "100vh" }}
-          >
+          <section id="aboutme" style={{ padding: "50px 0" }}>
             <AboutMe />
           </section>
-          <section
-            id="experience"
-            style={{ padding: "50px 0", minHeight: "100vh" }}
-          >
+          <section id="experience" style={{ padding: "50px 0" }}>
             <Experience />
           </section>
-          <section id="skill" style={{ padding: "50px 0", minHeight: "100vh" }}>
+          <section id="skill" style={{ padding: "50px 0" }}>
             <Skill />
           </section>
-          <section
-            id="project"
-            style={{ padding: "50px 0", minHeight: "100vh" }}
-          >
+          <section id="project" style={{ padding: "50px 0" }}>
             <Project />
           </section>
-          <section
-            id="social"
-            style={{ padding: "50px 0", minHeight: "100vh" }}
-          >
+          <section id="social" style={{ padding: "50px 0" }}>
             <Social />
           </section>
-          <section
-            id="contact"
-            style={{ padding: "50px 0", minHeight: "100vh" }}
-          >
+          <section id="contact" style={{ padding: "50px 0" }}>
             <Contact />
           </section>
         </div>

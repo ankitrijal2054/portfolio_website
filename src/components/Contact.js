@@ -28,12 +28,12 @@ function Contact() {
   };
 
   return (
-    <Container className="home-container">
-      <Card className="text-left">
+    <Container className="contact-container">
+      <Card className="text-left theme-card">
         {" "}
         {/* Adjusted alignment class here */}
         <Card.Body>
-          <Card.Title className="card-title-left">Contact Me</Card.Title>{" "}
+          <Card.Title className="theme-card-title">Contact Me</Card.Title>{" "}
           {/* New class for left alignment */}
           <Form ref={form} onSubmit={sendEmail} className="contact-form">
             <Form.Group controlId="formName">

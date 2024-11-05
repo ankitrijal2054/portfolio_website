@@ -4,14 +4,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  padding: 20px;
-}
-
-.experience-card {
-  width: 100%;
-  max-width: 800px;
-  padding: 25px;
+  height: auto;
+  padding: 0;
 }
 
 .experience-section {

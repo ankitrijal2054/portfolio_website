@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Press+Start+2P&display=swap");
+
+.theme-card {
+  width: 100%;
+  max-width: 800px;
+  padding: 25px;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  color: var(--text-color, #333);
+}
+
+.dark-theme .theme-card {
+  --text-color: #eee;
+}
+
+.light-theme .theme-card {
+  --text-color: #333;
+}
+
+.theme-card-title {
+  font-size: 2.5vw;
+  margin-bottom: 20px;
+  font-family: "Audiowide", sans-serif;
+}
