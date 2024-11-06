@@ -61,7 +61,7 @@ function AboutMe() {
           <div className="button-group mt-3">
             <Button
               variant="primary"
-              href="../assets/Resume-Ankit_Rijal.pdf"
+              href="/portfolio_website/assets/Resume-Ankit_Rijal.pdf"
               download
               className="btn-modern"
             >

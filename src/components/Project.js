@@ -2,8 +2,8 @@
 import React from "react";
 import { Container, Card } from "react-bootstrap";
 import "../styles/Project.css";
-import weatherimg from "../assets/weather.png";
-import cardgameimg from "../assets/cardgame.png";
+import weatherimg from "../image/weather.png";
+import cardgameimg from "../image/cardgame.png";
 
 function Project() {
   return (

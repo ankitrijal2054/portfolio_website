@@ -4,7 +4,7 @@ import { Navbar, Container, Row, Col, Form, Dropdown } from "react-bootstrap";
 import { ThemeContext } from "../App";
 import { FaSun, FaMoon } from "react-icons/fa"; // Sun and Moon icons for theme toggle
 import { HiMenu } from "react-icons/hi";
-import logo from "../assets/logo.png";
+import logo from "../image/logo.png";
 import "../styles/NavBar.css";
 
 function NavBar() {
