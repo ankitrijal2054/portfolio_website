@@ -4,6 +4,7 @@ import { Container, Card } from "react-bootstrap";
 import "../styles/Project.css";
 import weatherimg from "../image/weather.png";
 import cardgameimg from "../image/cardgame.png";
+import sentimentimg from "../image/sentiment.png";
 
 function Project() {
   return (
@@ -12,6 +13,20 @@ function Project() {
         <Card.Body>
           <Card.Title className="theme-card-title">Project</Card.Title>
           <div className="project-tiles">
+            <a
+              href="https://sentiment-analysis-app-33hz.onrender.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-tile"
+            >
+              <div className="project-tile-inner">
+                <img
+                  src={sentimentimg}
+                  alt="Sentiment App"
+                  className="project-image"
+                />
+              </div>
+            </a>
             <a
               href="https://weather-app-3jmk.onrender.com/"
               target="_blank"
