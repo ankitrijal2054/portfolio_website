@@ -1,45 +1,49 @@
 // src/components/Skill.js
 import React from "react";
 import { Container, Card } from "react-bootstrap";
-import { FaReact, FaPython, FaGithub, FaJava } from "react-icons/fa";
+import { FaReact, FaPython, FaGithub, FaAws } from "react-icons/fa";
 import { TbBrandCSharp } from "react-icons/tb";
 import { BiLogoPostgresql } from "react-icons/bi";
+import {
+  SiHuggingface,
+  SiTensorflow,
+  SiPytorch,
+  SiNumpy,
+  SiScipy,
+  SiPandas,
+} from "react-icons/si";
 import "../styles/Card.css";
 import "../styles/Skill.css";
 
 function Skill() {
-  const skill = [
-    {
-      name: "ReactJs",
-      icon: <FaReact />,
-      link: "https://react.dev/",
-    },
-    {
-      name: "Python",
-      icon: <FaPython />,
-      link: "https://www.python.org/",
-    },
-    {
-      name: "C#",
-      icon: <TbBrandCSharp />,
-      link: "https://learn.microsoft.com/en-us/dotnet/csharp/",
-    },
-    {
-      name: "Java",
-      icon: <FaJava />,
-      link: "https://www.java.com/en/",
-    },
-    {
-      name: "GitHub",
-      icon: <FaGithub />,
-      link: "https://github.com/",
-    },
-    {
-      name: "PostgreSQL",
-      icon: <BiLogoPostgresql />,
-      link: "https://www.postgresql.org/",
-    },
+  const skillList = [
+    ["ReactJs", <FaReact />, "https://react.dev/"],
+    ["Python", <FaPython />, "https://www.python.org/"],
+    [
+      "C#",
+      <TbBrandCSharp />,
+      "https://learn.microsoft.com/en-us/dotnet/csharp/",
+    ],
+    ["AWS", <FaAws />, "https://aws.amazon.com/"],
+    ["GitHub", <FaGithub />, "https://github.com/"],
+    ["PostgreSQL", <BiLogoPostgresql />, "https://www.postgresql.org/"],
+    ["NumPy", <SiNumpy />, "https://numpy.org/"],
+    ["Pandas", <SiPandas />, "https://pandas.pydata.org/"],
+    ["SciPy", <SiScipy />, "https://scipy.org/"],
+    ["TensorFlow", <SiTensorflow />, "https://www.tensorflow.org/"],
+    ["PyTorch", <SiPytorch />, "https://pytorch.org/"],
+    [
+      "Transformers",
+      <SiHuggingface />,
+      "https://huggingface.co/models?library=transformers&sort=trending",
+    ],
   ];
+
+  const skill = skillList.map((skill) => ({
+    name: skill[0],
+    icon: skill[1],
+    link: skill[2],
+  }));
 
   return (
     <Container className="skill-container">

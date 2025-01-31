@@ -7,6 +7,7 @@ import Skill from "./components/Skill";
 import Project from "./components/Project";
 import Social from "./components/Social";
 import Contact from "./components/Contact";
+import ChatBot from "./components/Chat";
 import "./styles/App.css";
 import "./styles/Background.scss";
 
@@ -65,6 +66,7 @@ function App() {
             <Contact />
           </section>
         </div>
+        <ChatBot />
       </div>
     </ThemeContext.Provider>
   );
