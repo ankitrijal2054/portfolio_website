@@ -4,6 +4,7 @@ import "../styles/AboutMe.css";
 
 function AboutMe() {
   const texts = [
+    "Aspiring ML Engineer",
     "Passionate Software Developer",
     "Fitness Enthusiast",
     "Traveller",
@@ -42,16 +43,18 @@ function AboutMe() {
           <Card className="text-center theme-card">
             <Card.Body>
               <Card.Text>
-                I am an experienced software developer with a strong foundation
-                in full-stack development, specializing in C#, Python, and React
-                JS. I have a track record of leading projects to optimize
-                performance and scalability, from seamless SVN-to-Git migrations
-                to automated database updates. My commitment to high-quality,
-                user-focused software is reflected in my work, both in
-                professional roles and personal projects. Currently pursuing a
-                Master’s in Artificial Intelligence, I'm constantly exploring
-                new technologies to elevate my skills and deliver impactful
-                solutions. Let's connect and build something great together!
+                I am a software developer with a strong foundation in full-stack
+                development, specializing in C#, Python, and React.js. With
+                hands-on experience optimizing performance and
+                scalability—ranging from SVN-to-Git migrations to automated
+                database updates—I have developed a keen problem-solving
+                mindset. Currently pursuing a Master’s in Artificial
+                Intelligence, I am transitioning into the field of machine
+                learning, deepening my expertise in data-driven solutions and
+                AI-powered applications. I am eager to apply my software
+                development experience to real-world ML challenges and
+                collaborate on innovative projects. Let’s connect and explore
+                the future of AI together!
               </Card.Text>
             </Card.Body>
           </Card>

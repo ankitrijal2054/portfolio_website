@@ -66,7 +66,7 @@ function App() {
             <Contact />
           </section>
         </div>
-        <ChatBot />
+        {/*<ChatBot />*/}
       </div>
     </ThemeContext.Provider>
   );
