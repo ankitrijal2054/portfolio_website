@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/portfolio_website/static/css/main.ca93604c.css",
-    "main.js": "/portfolio_website/static/js/main.5b2f5ab2.js",
+    "main.css": "/portfolio_website/static/css/main.a24a5c21.css",
+    "main.js": "/portfolio_website/static/js/main.b2e653be.js",
     "static/media/weather.png": "/portfolio_website/static/media/weather.d61d5546c740abb0a3ec.png",
-    "static/media/cardgame.png": "/portfolio_website/static/media/cardgame.fc3c25a64e3905ec0c4d.png",
+    "static/media/chatbot.png": "/portfolio_website/static/media/chatbot.90f2b92f23b275a6524d.png",
     "static/media/logo.png": "/portfolio_website/static/media/logo.7550a4a6fb41d4f9b496.png",
+    "static/media/housing_price.png": "/portfolio_website/static/media/housing_price.6a87756c1a7ab9ff4123.png",
     "static/media/sentiment.png": "/portfolio_website/static/media/sentiment.60018c302f33e4bcb950.png",
     "index.html": "/portfolio_website/index.html",
-    "main.ca93604c.css.map": "/portfolio_website/static/css/main.ca93604c.css.map",
-    "main.5b2f5ab2.js.map": "/portfolio_website/static/js/main.5b2f5ab2.js.map"
+    "main.a24a5c21.css.map": "/portfolio_website/static/css/main.a24a5c21.css.map",
+    "main.b2e653be.js.map": "/portfolio_website/static/js/main.b2e653be.js.map"
   },
   "entrypoints": [
-    "static/css/main.ca93604c.css",
-    "static/js/main.5b2f5ab2.js"
+    "static/css/main.a24a5c21.css",
+    "static/js/main.b2e653be.js"
   ]
 }
