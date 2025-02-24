@@ -33,7 +33,7 @@ function Skill() {
     ["TensorFlow", <SiTensorflow />, "https://www.tensorflow.org/"],
     ["PyTorch", <SiPytorch />, "https://pytorch.org/"],
     [
-      "Transformers",
+      "Transformer",
       <SiHuggingface />,
       "https://huggingface.co/models?library=transformers&sort=trending",
     ],

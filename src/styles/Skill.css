@@ -36,6 +36,7 @@
   transform: rotateY(180deg);
 }
 
+/* Front and Back Tile Styles */
 .skill-tile-front,
 .skill-tile-back {
   position: absolute;
@@ -47,35 +48,61 @@
   border-radius: 8px;
   font-size: 4em;
   backface-visibility: hidden;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background 0.5s ease-in-out, color 0.5s ease-in-out,
+    box-shadow 0.5s;
 }
 
 /* Dark theme styles */
-.dark-theme .skill-tile-front {
-  background-color: #333;
-  color: #fff; /* Icon color in dark mode */
-}
-
+.dark-theme .skill-tile-front,
 .dark-theme .skill-tile-back {
-  background-color: #555;
+  background: linear-gradient(135deg, #2b2b2b, #3e3e3e);
   color: #fff;
-  transform: rotateY(180deg);
-  font-size: 1.5em;
+  box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
 }
 
 /* Light theme styles */
-.light-theme .skill-tile-front {
-  background-color: #e0e5ec;
-  color: #000; /* Icon color in light mode */
+.light-theme .skill-tile-front,
+.light-theme .skill-tile-back {
+  background: linear-gradient(135deg, #d1d5db, #f3f4f6);
+  color: #000;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.light-theme .skill-tile-back {
-  background-color: #cfd8e3;
-  color: #000;
+/* Metallic Hover Effect */
+.skill-tile:hover .skill-tile-front,
+.skill-tile:hover .skill-tile-back {
+  background: linear-gradient(
+    135deg,
+    #ff0000,
+    #ff7300,
+    #ffeb00,
+    #47ff00,
+    #00ffb3,
+    #387ffa,
+    #a34ff8,
+    #fc54ca
+  );
+  background-size: 400% 400%;
+  animation: metallic-glow 1.5s infinite linear;
+  color: #181717;
+  box-shadow: 0px 8px 16px rgba(255, 255, 255, 0.5);
+}
+
+/* Metallic animation */
+@keyframes metallic-glow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Flip effect */
+.skill-tile-back {
   transform: rotateY(180deg);
   font-size: 1.5em;
-}
-
-.skill-tile-front:hover {
-  opacity: 0.8;
 }
