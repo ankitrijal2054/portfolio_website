@@ -88,11 +88,17 @@ function NavBar() {
                 <Dropdown.Item onClick={() => scrollToSection("experience")}>
                   Experience
                 </Dropdown.Item>
+                <Dropdown.Item onClick={() => scrollToSection("education")}>
+                  Education
+                </Dropdown.Item>
                 <Dropdown.Item onClick={() => scrollToSection("skill")}>
                   Skill
                 </Dropdown.Item>
                 <Dropdown.Item onClick={() => scrollToSection("project")}>
                   Project
+                </Dropdown.Item>
+                <Dropdown.Item onClick={() => scrollToSection("certification")}>
+                  Certification
                 </Dropdown.Item>
                 <Dropdown.Item onClick={() => scrollToSection("social")}>
                   Social

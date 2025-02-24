@@ -10,6 +10,8 @@ import Contact from "./components/Contact";
 import ChatBot from "./components/Chat";
 import "./styles/App.css";
 import "./styles/Background.scss";
+import Education from "./components/Education";
+import Certification from "./components/Certification";
 
 export const ThemeContext = createContext();
 
@@ -53,11 +55,17 @@ function App() {
           <section id="experience" style={{ padding: "50px 0" }}>
             <Experience />
           </section>
+          <section id="education" style={{ padding: "50px 0" }}>
+            <Education />
+          </section>
           <section id="skill" style={{ padding: "50px 0" }}>
             <Skill />
           </section>
           <section id="project" style={{ padding: "50px 0" }}>
             <Project />
+          </section>
+          <section id="certification" style={{ padding: "50px 0" }}>
+            <Certification />
           </section>
           <section id="social" style={{ padding: "50px 0" }}>
             <Social />

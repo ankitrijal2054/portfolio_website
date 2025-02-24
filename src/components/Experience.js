@@ -17,26 +17,27 @@ function Experience() {
             </p>
             <ul className="experience-details">
               <li>
-                Led the development and maintenance of the KeyTrak application
-                suite (Desktop, Web, Mobile), utilizing C#, .Net, React,
-                TypeScript, and React Native.
+                Led and collaborated on the development and maintenance of
+                KeyTrak applications (Desktop, Web, Mobile), impacting over
+                5,000 automotive dealerships, real estate firms, and corporate
+                offices.
               </li>
               <li>
-                Enhanced application functionality through RESTful API design,
-                adhering to SOLID principles for optimized performance and
-                maintainability.
+                Spearheaded 20+ feature rollouts using Agile methodologies,
+                improving deployment efficiency by 30% through a robust CI/CD
+                pipeline.
               </li>
               <li>
-                Played a key role in Agile practices, ensuring smooth feature
-                rollouts and robust CI/CD pipelines for continuous deployment.
+                Developed and optimized 30+ RESTful APIs, implementing SOLID
+                principles for enhanced scalable, maintainable solutions.
               </li>
               <li>
-                Boosted database performance and system reliability, identifying
-                and resolving critical production issues to reduce downtime.
+                Ensured software reliability by achieving 95%+ unit test
+                coverage with Jest, significantly reducing production defects.
               </li>
               <li>
-                Improved testing efficiency by implementing Jest-based unit
-                tests, enhancing software reliability and user satisfaction.
+                Collaborated cross-functionally with teams of 10+ developers,
+                ensuring timely delivery of high-impact software solutions.
               </li>
             </ul>
           </div>
@@ -47,17 +48,18 @@ function Experience() {
               <li>
                 <strong>SVN to GitHub Repository Migration:</strong>{" "}
                 Successfully migrated an extensive SVN repository to GitHub,
-                improving team collaboration and ensuring data integrity.
+                improving developer collaboration by 20% and streamlining
+                version control.
               </li>
               <li>
                 <strong>Build Process Migration to GitHub Actions:</strong>{" "}
-                Transitioned build processes from Jenkins to GitHub Actions,
-                streamlining deployment and boosting pipeline efficiency.
+                Migrated 50+ build processes from Jenkins to GitHub Actions,
+                enhancing automation and reliability.
               </li>
               <li>
-                <strong>Database Update Automation:</strong> Developed a
-                PowerShell script to automate database updates, integrated with
-                the CI/CD pipeline to minimize manual intervention.
+                <strong>Database Update Automation:</strong> Developed a Created
+                a PowerShell script and console application to automate database
+                updates, reducing manual intervention by 90%.
               </li>
               <li>
                 <strong>Motion Detection Integration:</strong> Integrated motion

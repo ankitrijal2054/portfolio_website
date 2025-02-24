@@ -6,7 +6,6 @@ function AboutMe() {
   const texts = [
     "Aspiring ML Engineer",
     "Passionate Software Developer",
-    "Fitness Enthusiast",
     "Traveller",
   ];
   const [currentTextIndex, setCurrentTextIndex] = useState(0);

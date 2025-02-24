@@ -19,7 +19,7 @@ function Project() {
         "A chatbot with a custom knowledge base using LangChain and RAG.",
     },
     {
-      href: "https://sentiment-analysis-app-33hz.onrender.com",
+      href: "https://github.com/ankitrijal2054/Sentiment_Web_App",
       img: sentimentimg,
       alt: "Sentiment App",
       title: "Sentiment Analysis App",
