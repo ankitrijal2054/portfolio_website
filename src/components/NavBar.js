@@ -1,4 +1,3 @@
-// src/components/NavBar.js
 import React, { useContext, useEffect, useState } from "react";
 import { Navbar, Container, Row, Col, Form, Dropdown } from "react-bootstrap";
 import { ThemeContext } from "../App";
@@ -42,7 +41,7 @@ function NavBar() {
   return (
     <Navbar bg={navbarTheme.bg} variant={navbarTheme.variant} expand="lg">
       <Container>
-        <Row className="w-100 align-items-center">
+        <Row className="w-100 align-items-center justify-content-between">
           <Col xs="auto">
             <Navbar.Brand
               onClick={() => scrollToSection("aboutme")}
@@ -57,7 +56,19 @@ function NavBar() {
               />
             </Navbar.Brand>
           </Col>
-          <Col className="d-flex justify-content-center">
+          <Col className="d-flex justify-content-center align-items-center">
+            <FaSun className="me-2" />
+            <Form.Check
+              type="switch"
+              id="theme-switch"
+              label=""
+              checked={isDarkMode}
+              onChange={toggleTheme}
+              className="theme-toggle"
+            />
+            <FaMoon className="ms-2" />
+          </Col>
+          <Col xs="auto" className="d-flex justify-content-end">
             <Dropdown>
               <Dropdown.Toggle
                 variant="secondary"
@@ -91,18 +102,6 @@ function NavBar() {
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
-          </Col>
-          <Col xs="auto" className="d-flex align-items-center">
-            <FaSun className="me-2" />
-            <Form.Check
-              type="switch"
-              id="theme-switch"
-              label=""
-              checked={isDarkMode}
-              onChange={toggleTheme}
-              className="theme-toggle"
-            />
-            <FaMoon className="ms-2" />
           </Col>
         </Row>
       </Container>

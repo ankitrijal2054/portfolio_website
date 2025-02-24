@@ -14,7 +14,7 @@ import "./styles/Background.scss";
 export const ThemeContext = createContext();
 
 function App() {
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "system");
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
   useEffect(() => {
     const root = document.documentElement;
