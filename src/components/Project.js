@@ -6,6 +6,7 @@ import weatherimg from "../image/weather.png";
 import sentimentimg from "../image/sentiment.png";
 import chatbotimg from "../image/chatbot.png";
 import housingimg from "../image/housing_price.png";
+import imageassistantimg from "../image/image_assistant.png";
 
 function Project() {
   // Array of projects with details
@@ -19,11 +20,12 @@ function Project() {
         "A chatbot with a custom knowledge base using LangChain and RAG.",
     },
     {
-      href: "https://github.com/ankitrijal2054/Sentiment_Web_App",
-      img: sentimentimg,
-      alt: "Sentiment App",
-      title: "Sentiment Analysis App",
-      description: "An NLP-based app to analyze sentiment in text.",
+      href: "https://multi-model-ai-assistant.streamlit.app/",
+      img: imageassistantimg,
+      alt: "AI Image Assistant",
+      title: "AI Image Assistant",
+      description:
+        "An AI assistant that that allows users to upload an image and either ask questions about it or generate a caption.",
     },
     {
       href: "https://github.com/ankitrijal2054/House_Price_Prediction",
@@ -32,6 +34,13 @@ function Project() {
       title: "Housing Price Predictor",
       description:
         "A machine learning model predicting house prices based on features.",
+    },
+    {
+      href: "https://github.com/ankitrijal2054/Sentiment_Web_App",
+      img: sentimentimg,
+      alt: "Sentiment App",
+      title: "Sentiment Analysis App",
+      description: "An NLP-based app to analyze sentiment in text.",
     },
     {
       href: "https://weather-app-3jmk.onrender.com/",
