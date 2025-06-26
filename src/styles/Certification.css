@@ -11,10 +11,10 @@
 }
 
 .certification-card {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(102, 126, 234, 0.2);
+  border: 1px solid rgba(102, 126, 234, 0.15);
   border-radius: 20px;
   padding: 2rem;
   display: flex;
@@ -23,12 +23,12 @@
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
 .dark-theme .certification-card {
-  background: linear-gradient(135deg, rgba(45, 55, 72, 0.9), rgba(45, 55, 72, 0.7));
-  border: 1px solid rgba(167, 139, 250, 0.3);
+  background: rgba(45, 55, 72, 0.6);
+  border: 1px solid rgba(167, 139, 250, 0.2);
 }
 
 .certification-card::before {
@@ -38,22 +38,24 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.5), transparent);
+  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.4), transparent);
 }
 
 .dark-theme .certification-card::before {
-  background: linear-gradient(90deg, transparent, rgba(167, 139, 250, 0.5), transparent);
+  background: linear-gradient(90deg, transparent, rgba(167, 139, 250, 0.4), transparent);
 }
 
 .certification-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 60px rgba(102, 126, 234, 0.2);
-  border-color: rgba(102, 126, 234, 0.4);
+  box-shadow: 0 20px 60px rgba(102, 126, 234, 0.15);
+  border-color: rgba(102, 126, 234, 0.3);
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .dark-theme .certification-card:hover {
-  box-shadow: 0 20px 60px rgba(167, 139, 250, 0.3);
-  border-color: rgba(167, 139, 250, 0.4);
+  box-shadow: 0 20px 60px rgba(167, 139, 250, 0.2);
+  border-color: rgba(167, 139, 250, 0.3);
+  background: rgba(45, 55, 72, 0.8);
 }
 
 .certification-icon {

@@ -32,21 +32,30 @@
 }
 
 .timeline-content {
-  background: rgba(102, 126, 234, 0.05);
+  background: rgba(102, 126, 234, 0.04);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   padding: 1.5rem;
   border-radius: 16px;
   border-left: 4px solid #667eea;
+  border: 1px solid rgba(102, 126, 234, 0.1);
   transition: all 0.3s ease;
 }
 
 .dark-theme .timeline-content {
-  background: rgba(102, 126, 234, 0.1);
+  background: rgba(102, 126, 234, 0.06);
   border-left-color: #a78bfa;
+  border: 1px solid rgba(167, 139, 250, 0.15);
 }
 
 .timeline-content:hover {
   transform: translateX(8px);
   box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+  background: rgba(102, 126, 234, 0.08);
+}
+
+.dark-theme .timeline-content:hover {
+  background: rgba(102, 126, 234, 0.1);
 }
 
 .role-title {
@@ -124,28 +133,30 @@
 }
 
 .project-card {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   padding: 1.5rem;
   border-radius: 16px;
-  border: 1px solid rgba(102, 126, 234, 0.1);
+  border: 1px solid rgba(102, 126, 234, 0.08);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
 }
 
 .dark-theme .project-card {
-  background: rgba(45, 55, 72, 0.8);
-  border: 1px solid rgba(167, 139, 250, 0.2);
+  background: rgba(45, 55, 72, 0.6);
+  border: 1px solid rgba(167, 139, 250, 0.15);
 }
 
 .project-card:hover {
-  background: rgba(102, 126, 234, 0.05);
-  border-color: rgba(102, 126, 234, 0.3);
+  background: rgba(102, 126, 234, 0.04);
+  border-color: rgba(102, 126, 234, 0.2);
   box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
 }
 
 .dark-theme .project-card:hover {
-  background: rgba(167, 139, 250, 0.1);
-  border-color: rgba(167, 139, 250, 0.3);
+  background: rgba(167, 139, 250, 0.08);
+  border-color: rgba(167, 139, 250, 0.2);
 }
 
 .project-card-title {

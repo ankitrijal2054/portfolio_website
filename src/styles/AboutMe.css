@@ -11,22 +11,31 @@
 }
 
 .hero-card {
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
-  border: 2px solid rgba(102, 126, 234, 0.2);
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.08), rgba(118, 75, 162, 0.08));
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 2px solid rgba(102, 126, 234, 0.15);
   min-height: 400px;
   display: flex;
   align-items: center;
 }
 
 .dark-theme .hero-card {
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.15), rgba(118, 75, 162, 0.15));
-  border: 2px solid rgba(102, 126, 234, 0.3);
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.12), rgba(118, 75, 162, 0.12));
+  border: 2px solid rgba(102, 126, 234, 0.2);
 }
 
 .bio-card {
   min-height: 400px;
   display: flex;
   align-items: center;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.dark-theme .bio-card {
+  background: rgba(30, 30, 30, 0.6);
 }
 
 .animated-text-container {
@@ -66,9 +75,11 @@
   color: #667eea;
   text-align: center;
   padding: 0.5rem 1rem;
-  background: rgba(102, 126, 234, 0.1);
+  background: rgba(102, 126, 234, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 20px;
-  border: 1px solid rgba(102, 126, 234, 0.2);
+  border: 1px solid rgba(102, 126, 234, 0.15);
   min-height: 3rem;
   display: flex;
   align-items: center;
@@ -77,8 +88,8 @@
 
 .dark-theme .animated-swiping-text {
   color: #a78bfa;
-  background: rgba(167, 139, 250, 0.1);
-  border: 1px solid rgba(167, 139, 250, 0.2);
+  background: rgba(167, 139, 250, 0.08);
+  border: 1px solid rgba(167, 139, 250, 0.15);
 }
 
 .bio-text {
