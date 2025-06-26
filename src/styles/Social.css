@@ -16,15 +16,14 @@
   height: 160px;
   perspective: 1000px;
   text-decoration: none;
-  transition: all 0.2s ease;
 }
 
 .social-tile-inner {
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   transform-style: preserve-3d;
+  transition: transform 0.6s ease;
   border-radius: 20px;
 }
 
@@ -37,16 +36,18 @@
   position: absolute;
   width: 100%;
   height: 100%;
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 20px;
   backface-visibility: hidden;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
 }
 
+/* FRONT */
 .social-tile-front {
+  transform: rotateY(0deg);
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -61,24 +62,20 @@
   color: #a78bfa;
 }
 
+/* BACK */
 .social-tile-back {
+  transform: rotateY(180deg);
   background: var(--social-color, linear-gradient(135deg, #667eea, #764ba2));
   color: white;
   font-size: 1.1rem;
   font-weight: 600;
-  transform: rotateY(180deg);
   text-align: center;
   padding: 1rem;
 }
 
-.social-tile:hover .social-tile-front,
-.social-tile:hover .social-tile-back {
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-}
-
-.social-tile-front > div,
-.social-tile-back > span {
-  transition: all 0.2s ease;
+/* Make the back text face correctly */
+.social-tile-back span {
+  transform: rotateY(180deg);
 }
 
 .social-tile:hover .social-tile-front > div {
@@ -108,15 +105,15 @@
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 1.5rem;
   }
-  
+
   .social-tile {
     height: 140px;
   }
-  
+
   .social-tile-front {
     font-size: 2.5rem;
   }
-  
+
   .social-tile-back {
     font-size: 1rem;
   }
@@ -127,15 +124,15 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
-  
+
   .social-tile {
     height: 120px;
   }
-  
+
   .social-tile-front {
     font-size: 2rem;
   }
-  
+
   .social-tile-back {
     font-size: 0.9rem;
     padding: 0.75rem;
@@ -147,15 +144,15 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
-  
+
   .social-tile {
     height: 100px;
   }
-  
+
   .social-tile-front {
     font-size: 1.8rem;
   }
-  
+
   .social-tile-back {
     font-size: 0.85rem;
   }
