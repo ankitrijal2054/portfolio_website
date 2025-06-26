@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Card, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { Container, Card } from "react-bootstrap";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import "../styles/Project.css";
