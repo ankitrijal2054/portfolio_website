@@ -1,47 +1,207 @@
-/* src/styles/Experience.css */
-
 .experience-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: auto;
+  max-width: 1200px;
   padding: 0;
 }
 
-.experience-section {
-  margin-bottom: 20px;
+.timeline-item {
+  position: relative;
+  padding-left: 3rem;
+  margin-bottom: 2rem;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2);
+}
+
+.timeline-marker::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  width: 2px;
+  height: 100px;
+  background: linear-gradient(180deg, #667eea, transparent);
+  transform: translateX(-50%);
+}
+
+.timeline-content {
+  background: rgba(102, 126, 234, 0.05);
+  padding: 1.5rem;
+  border-radius: 16px;
+  border-left: 4px solid #667eea;
+  transition: all 0.3s ease;
+}
+
+.dark-theme .timeline-content {
+  background: rgba(102, 126, 234, 0.1);
+  border-left-color: #a78bfa;
+}
+
+.timeline-content:hover {
+  transform: translateX(8px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
 }
 
 .role-title {
-  font-size: 1.8vw;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
   font-weight: 700;
-  margin-top: 10px;
-  font-family: "Lato", sans-serif;
+  margin-bottom: 0.5rem;
+  color: #2d3748;
+  font-family: "Inter", sans-serif;
+}
+
+.dark-theme .role-title {
+  color: #e2e8f0;
 }
 
 .company-details {
-  font-size: 1.2vw;
+  font-size: clamp(1rem, 2vw, 1.2rem);
   font-weight: 500;
-  color: #0264c1;
-  margin-bottom: 15px;
-  font-family: "Roboto", sans-serif;
+  color: #667eea;
+  margin-bottom: 1rem;
+  font-family: "Inter", sans-serif;
 }
 
-.experience-details,
-.project-details {
-  list-style-type: disc;
-  padding-left: 20px;
-  font-size: 1.1vw;
-  line-height: 1.6;
+.dark-theme .company-details {
+  color: #a78bfa;
+}
+
+.experience-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.experience-details li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  line-height: 1.7;
+  color: #4a5568;
+}
+
+.dark-theme .experience-details li {
+  color: #cbd5e0;
+}
+
+.experience-details li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: bold;
+}
+
+.dark-theme .experience-details li::before {
+  color: #a78bfa;
 }
 
 .project-title {
-  font-size: 1.5vw;
+  font-size: clamp(1.3rem, 2.5vw, 1.6rem);
   font-weight: 600;
-  font-family: "Lato", sans-serif;
-  margin-top: 15px;
+  margin: 2rem 0 1.5rem 0;
+  color: #2d3748;
+  font-family: "Inter", sans-serif;
 }
 
-.project-details li {
-  margin-bottom: 8px;
+.dark-theme .project-title {
+  color: #e2e8f0;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 1px solid rgba(102, 126, 234, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.dark-theme .project-card {
+  background: rgba(45, 55, 72, 0.8);
+  border: 1px solid rgba(167, 139, 250, 0.2);
+}
+
+.project-card:hover {
+  background: rgba(102, 126, 234, 0.05);
+  border-color: rgba(102, 126, 234, 0.3);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+}
+
+.dark-theme .project-card:hover {
+  background: rgba(167, 139, 250, 0.1);
+  border-color: rgba(167, 139, 250, 0.3);
+}
+
+.project-card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #2d3748;
+  font-family: "Inter", sans-serif;
+}
+
+.dark-theme .project-card-title {
+  color: #e2e8f0;
+}
+
+.project-card-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #4a5568;
+  margin: 0;
+}
+
+.dark-theme .project-card-description {
+  color: #cbd5e0;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .timeline-item {
+    padding-left: 2rem;
+  }
+  
+  .timeline-marker {
+    width: 12px;
+    height: 12px;
+  }
+  
+  .timeline-content {
+    padding: 1rem;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .project-card {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .timeline-item {
+    padding-left: 1.5rem;
+  }
+  
+  .timeline-marker::before {
+    height: 60px;
+  }
 }

@@ -1,70 +1,213 @@
-@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap");
 
 .about-me-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: auto;
   padding: 0;
+  max-width: 1400px;
 }
 
 .about-me-row {
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.hero-card {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+  border: 2px solid rgba(102, 126, 234, 0.2);
+  min-height: 400px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 15px;
 }
 
-.button-group {
+.dark-theme .hero-card {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.15), rgba(118, 75, 162, 0.15));
+  border: 2px solid rgba(102, 126, 234, 0.3);
+}
+
+.bio-card {
+  min-height: 400px;
   display: flex;
-  gap: 25px;
-}
-
-.button-group .btn-modern {
-  padding: 12px 24px;
-  font-size: 1rem;
-  font-weight: 500;
-  border-radius: 8px;
-  transition: background 0.3s ease, transform 0.3s ease;
-  color: #fff;
-  background: linear-gradient(135deg, #ff7a18, #ff6b6b);
-  border: none;
-}
-
-.button-group .btn-modern:hover {
-  transform: scale(1.05);
-  background: linear-gradient(135deg, #ff6b6b, #ff7a18);
+  align-items: center;
 }
 
 .animated-text-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5px;
+  gap: 1rem;
+  padding: 1rem;
 }
 
 .animated-text-line {
-  font-size: 2rem;
-  font-family: "Press Start 2P", sans-serif;
-  color: #ff6b6b;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 800;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.animated-text-line.greeting {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.animated-text-line.name {
+  background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .animated-swiping-text {
-  font-size: 1rem;
-  font-family: "Press Start 2P", sans-serif;
-  overflow: hidden;
-  position: relative;
-  color: #28d6f1;
-  animation: swipeUp 0.5s forwards ease-in-out;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  font-weight: 600;
+  font-family: "JetBrains Mono", monospace;
+  color: #667eea;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 20px;
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  min-height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@keyframes swipeUp {
-  0% {
-    transform: translateY(100%);
-    opacity: 0;
+.dark-theme .animated-swiping-text {
+  color: #a78bfa;
+  background: rgba(167, 139, 250, 0.1);
+  border: 1px solid rgba(167, 139, 250, 0.2);
+}
+
+.bio-text {
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  line-height: 1.8;
+  color: #4a5568;
+  font-weight: 400;
+  text-align: left;
+}
+
+.dark-theme .bio-text {
+  color: #cbd5e0;
+}
+
+.button-group {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-modern {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  border: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 160px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary-modern {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+
+.btn-primary-modern:hover {
+  background: linear-gradient(135deg, #764ba2, #667eea);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+  color: white;
+}
+
+.btn-secondary-modern {
+  background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+  color: white;
+}
+
+.btn-secondary-modern:hover {
+  background: linear-gradient(135deg, #4ecdc4, #ff6b6b);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+  color: white;
+}
+
+.btn-modern span {
+  position: relative;
+  z-index: 2;
+}
+
+.btn-modern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-modern:hover::before {
+  left: 100%;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 992px) {
+  .about-me-row {
+    gap: 1.5rem;
   }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
+  
+  .hero-card,
+  .bio-card {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-me-row {
+    gap: 1rem;
+  }
+  
+  .animated-text-container {
+    gap: 0.75rem;
+    padding: 0.5rem;
+  }
+  
+  .button-group {
+    gap: 1rem;
+    margin-top: 1.5rem !important;
+  }
+  
+  .btn-modern {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+    min-width: 140px;
+  }
+}
+
+@media (max-width: 576px) {
+  .button-group {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn-modern {
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  .hero-card,
+  .bio-card {
+    min-height: 250px;
   }
 }
