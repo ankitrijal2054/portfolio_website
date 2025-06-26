@@ -39,7 +39,7 @@ function App() {
     // Simulate loading time
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, []);
@@ -60,7 +60,7 @@ function App() {
   const pageTransition = {
     type: "tween",
     ease: "anticipate",
-    duration: 0.8
+    duration: 0.5
   };
 
   if (isLoading) {
@@ -87,9 +87,9 @@ function App() {
             <motion.section 
               id="aboutme" 
               className="section-container"
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
             >
               <AboutMe />
             </motion.section>
@@ -97,10 +97,10 @@ function App() {
             <motion.section 
               id="experience" 
               className="section-container"
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.5 }}
             >
               <Experience />
             </motion.section>
@@ -108,10 +108,10 @@ function App() {
             <motion.section 
               id="education" 
               className="section-container"
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.5 }}
             >
               <Education />
             </motion.section>
@@ -119,10 +119,10 @@ function App() {
             <motion.section 
               id="skill" 
               className="section-container"
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.5 }}
             >
               <Skill />
             </motion.section>
@@ -130,10 +130,10 @@ function App() {
             <motion.section 
               id="project" 
               className="section-container"
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.5 }}
             >
               <Project />
             </motion.section>
@@ -141,10 +141,10 @@ function App() {
             <motion.section 
               id="certification" 
               className="section-container"
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.5 }}
             >
               <Certification />
             </motion.section>
@@ -152,10 +152,10 @@ function App() {
             <motion.section 
               id="social" 
               className="section-container"
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.5 }}
             >
               <Social />
             </motion.section>
@@ -163,10 +163,10 @@ function App() {
             <motion.section 
               id="contact" 
               className="section-container"
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.5 }}
             >
               <Contact />
             </motion.section>

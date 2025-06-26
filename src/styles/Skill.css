@@ -16,14 +16,14 @@
   height: 160px;
   perspective: 1000px;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .skill-tile-inner {
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   transform-style: preserve-3d;
   border-radius: 20px;
 }
@@ -42,7 +42,7 @@
   justify-content: center;
   border-radius: 20px;
   backface-visibility: hidden;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
@@ -78,7 +78,7 @@
 
 .skill-tile-front > div,
 .skill-tile-back > span {
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .skill-tile:hover .skill-tile-front > div {

@@ -6,7 +6,7 @@
   left: 0;
   right: 0;
   z-index: 1030;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .navbar-wrapper.scrolled {
@@ -22,7 +22,7 @@
   border: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding: 1rem 0;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .dark-theme .modern-navbar {
@@ -31,12 +31,12 @@
 }
 
 .brand-logo {
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .logo-image {
   border-radius: 50%;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -54,7 +54,7 @@
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 50px;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .dark-theme .theme-toggle-container {
@@ -64,7 +64,7 @@
 
 .theme-icon {
   font-size: 1.2rem;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   opacity: 0.6;
   color: inherit;
 }
@@ -87,7 +87,7 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   width: 3rem;
   height: 1.5rem;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .theme-toggle .form-check-input:checked {
@@ -105,7 +105,7 @@
   display: flex !important;
   align-items: center !important;
   gap: 0.5rem !important;
-  transition: all 0.3s ease !important;
+  transition: all 0.2s ease !important;
   box-shadow: none !important;
   color: inherit !important;
 }
@@ -128,7 +128,7 @@
 }
 
 .menu-icon {
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .modern-dropdown-menu {
@@ -156,7 +156,7 @@
   border-radius: 8px !important;
   padding: 0.75rem 1rem !important;
   margin: 0.25rem 0 !important;
-  transition: all 0.3s ease !important;
+  transition: all 0.2s ease !important;
   font-weight: 500 !important;
   font-size: 0.95rem !important;
 }

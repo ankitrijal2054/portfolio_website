@@ -39,7 +39,7 @@
   border-radius: 16px;
   border-left: 4px solid #667eea;
   border: 1px solid rgba(102, 126, 234, 0.1);
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .dark-theme .timeline-content {
@@ -139,7 +139,7 @@
   padding: 1.5rem;
   border-radius: 16px;
   border: 1px solid rgba(102, 126, 234, 0.08);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
 }
 
