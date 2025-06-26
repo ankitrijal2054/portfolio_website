@@ -10,32 +10,39 @@
   align-items: stretch;
 }
 
-.hero-card {
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.08), rgba(118, 75, 162, 0.08));
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 2px solid rgba(102, 126, 234, 0.15);
-  min-height: 400px;
-  display: flex;
-  align-items: center;
-}
-
-.dark-theme .hero-card {
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.12), rgba(118, 75, 162, 0.12));
-  border: 2px solid rgba(102, 126, 234, 0.2);
-}
-
+.hero-card,
 .bio-card {
   min-height: 400px;
   display: flex;
   align-items: center;
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.hero-card {
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.06),
+    rgba(118, 75, 162, 0.06)
+  );
+  border: 2px solid rgba(102, 126, 234, 0.12);
+}
+
+.dark-theme .hero-card {
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.1),
+    rgba(118, 75, 162, 0.1)
+  );
+  border: 2px solid rgba(102, 126, 234, 0.18);
+}
+
+.bio-card {
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .dark-theme .bio-card {
-  background: rgba(30, 30, 30, 0.6);
+  background: rgba(30, 30, 30, 0.5);
 }
 
 .animated-text-container {
@@ -58,14 +65,12 @@
   background: linear-gradient(135deg, #667eea, #764ba2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .animated-text-line.name {
   background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .animated-swiping-text {
@@ -73,14 +78,10 @@
   font-weight: 600;
   font-family: "JetBrains Mono", monospace;
   color: #667eea;
-  text-align: center;
-  padding: 0.5rem 1rem;
-  background: rgba(102, 126, 234, 0.08);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(102, 126, 234, 0.06);
   border-radius: 20px;
-  border: 1px solid rgba(102, 126, 234, 0.15);
-  min-height: 3rem;
+  border: 1px solid rgba(102, 126, 234, 0.12);
+  padding: 0.5rem 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,16 +89,14 @@
 
 .dark-theme .animated-swiping-text {
   color: #a78bfa;
-  background: rgba(167, 139, 250, 0.08);
-  border: 1px solid rgba(167, 139, 250, 0.15);
+  background: rgba(167, 139, 250, 0.06);
+  border-color: rgba(167, 139, 250, 0.12);
 }
 
 .bio-text {
   font-size: clamp(1rem, 2vw, 1.1rem);
   line-height: 1.8;
   color: #4a5568;
-  font-weight: 400;
-  text-align: left;
 }
 
 .dark-theme .bio-text {
@@ -106,26 +105,26 @@
 
 .button-group {
   display: flex;
-  gap: 1.5rem;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 1.5rem;
 }
 
 .btn-modern {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 1rem 2rem;
   font-size: 1.1rem;
   font-weight: 600;
   border-radius: 50px;
   border: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 160px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   position: relative;
   overflow: hidden;
   text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 160px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .btn-primary-modern {
@@ -136,8 +135,7 @@
 .btn-primary-modern:hover {
   background: linear-gradient(135deg, #764ba2, #667eea);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
-  color: white;
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
 }
 
 .btn-secondary-modern {
@@ -148,36 +146,35 @@
 .btn-secondary-modern:hover {
   background: linear-gradient(135deg, #4ecdc4, #ff6b6b);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
-  color: white;
-}
-
-.btn-modern span {
-  position: relative;
-  z-index: 2;
+  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.2);
 }
 
 .btn-modern::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.4s;
 }
 
 .btn-modern:hover::before {
   left: 100%;
 }
 
-/* Mobile responsiveness */
+/* Responsiveness */
 @media (max-width: 992px) {
   .about-me-row {
     gap: 1.5rem;
   }
-  
+
   .hero-card,
   .bio-card {
     min-height: 300px;
@@ -188,17 +185,17 @@
   .about-me-row {
     gap: 1rem;
   }
-  
+
   .animated-text-container {
     gap: 0.75rem;
     padding: 0.5rem;
   }
-  
+
   .button-group {
     gap: 1rem;
-    margin-top: 1.5rem !important;
+    margin-top: 1.5rem;
   }
-  
+
   .btn-modern {
     padding: 0.875rem 1.5rem;
     font-size: 1rem;
@@ -211,12 +208,12 @@
     flex-direction: column;
     align-items: center;
   }
-  
+
   .btn-modern {
     width: 100%;
     max-width: 280px;
   }
-  
+
   .hero-card,
   .bio-card {
     min-height: 250px;

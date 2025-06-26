@@ -4,22 +4,24 @@
 }
 
 .contact-card {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
   border: 1px solid rgba(102, 126, 234, 0.15);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
 }
 
 .dark-theme .contact-card {
-  background: rgba(30, 30, 30, 0.7);
-  border: 1px solid rgba(167, 139, 250, 0.2);
+  background: rgba(30, 30, 30, 0.6);
+  border-color: rgba(167, 139, 250, 0.2);
 }
 
 .contact-subtitle {
   font-size: 1.1rem;
   color: #6b7280;
-  margin-bottom: 2rem;
   font-weight: 400;
+  margin-bottom: 2rem;
 }
 
 .dark-theme .contact-subtitle {
@@ -66,8 +68,7 @@
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
   font-family: "Inter", sans-serif;
 }
 
@@ -80,7 +81,7 @@
 .form-control-modern:focus {
   outline: none;
   border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
   background: rgba(255, 255, 255, 0.8);
   transform: translateY(-1px);
 }
@@ -103,8 +104,8 @@
 .textarea-modern {
   resize: vertical;
   min-height: 120px;
-  font-family: "Inter", sans-serif;
   line-height: 1.6;
+  font-family: "Inter", sans-serif;
 }
 
 .submit-button-container {
@@ -115,27 +116,25 @@
 
 .submit-button-modern {
   background: linear-gradient(135deg, #667eea, #764ba2);
-  border: none;
-  border-radius: 50px;
+  color: white;
   padding: 1rem 2.5rem;
   font-size: 1.1rem;
   font-weight: 600;
-  color: white;
+  border: none;
+  border-radius: 50px;
+  min-width: 180px;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-  min-width: 180px;
   justify-content: center;
-  font-family: "Inter", sans-serif;
+  gap: 0.75rem;
 }
 
 .submit-button-modern:hover:not(:disabled) {
   background: linear-gradient(135deg, #764ba2, #667eea);
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-  color: white;
 }
 
 .submit-button-modern:disabled {
@@ -154,18 +153,25 @@
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-top: 2px solid white;
   border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .contact-modal .modal-content {
   border: none;
   border-radius: 20px;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
 }
 
-.modal-header-modern {
-  border-bottom: 1px solid rgba(102, 126, 234, 0.2);
+.modal-header-modern,
+.modal-footer-modern {
+  border-color: rgba(102, 126, 234, 0.2);
   padding: 1.5rem 2rem;
 }
 
@@ -175,17 +181,12 @@
   line-height: 1.6;
 }
 
-.modal-footer-modern {
-  border-top: 1px solid rgba(102, 126, 234, 0.2);
-  padding: 1.5rem 2rem;
-}
-
 .modal-button-modern {
+  border: none;
   border-radius: 10px;
   padding: 0.75rem 1.5rem;
   font-weight: 600;
-  border: none;
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 .modal-button-modern:hover {
@@ -198,22 +199,22 @@
     font-size: 1rem;
     margin-bottom: 1.5rem;
   }
-  
+
   .form-group-modern {
     margin-bottom: 1.5rem;
   }
-  
+
   .form-control-modern {
     padding: 0.875rem 1rem;
     font-size: 0.95rem;
   }
-  
+
   .submit-button-modern {
     padding: 0.875rem 2rem;
     font-size: 1rem;
     min-width: 160px;
   }
-  
+
   .modal-header-modern,
   .modal-body-modern,
   .modal-footer-modern {
@@ -225,12 +226,12 @@
   .form-control-modern {
     padding: 0.75rem 0.875rem;
   }
-  
+
   .submit-button-modern {
     width: 100%;
     max-width: 280px;
   }
-  
+
   .textarea-modern {
     min-height: 100px;
   }

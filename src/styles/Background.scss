@@ -1,34 +1,31 @@
-// src/styles/StarryBackground.scss
 @use "sass:math";
 @use "sass:string";
 
-// Dark theme starry background setup remains as-is
 @function multiple-box-shadow($n, $color) {
   $value: "#{math.random(2000)}px #{math.random(2000)}px #{$color}";
   @for $i from 2 through $n {
-    $value: "#{$value} , #{math.random(2000)}px #{math.random(2000)}px #{$color}";
+    $value: "#{$value}, #{math.random(2000)}px #{math.random(2000)}px #{$color}";
   }
   @return string.unquote($value);
 }
 
 html {
   height: 100%;
-  //overflow: hidden;
 }
 
-// Dark theme background
-$shadows-small-dark: multiple-box-shadow(700, #fff);
-$shadows-medium-dark: multiple-box-shadow(200, #fff);
-$shadows-big-dark: multiple-box-shadow(100, #fff);
+// Dark theme
+$shadows-small-dark: multiple-box-shadow(500, #fff); // reduced from 700
+$shadows-medium-dark: multiple-box-shadow(150, #fff); // reduced from 200
+$shadows-big-dark: multiple-box-shadow(50, #fff); // reduced from 100
 
 .dark-theme {
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
 }
 
-// Light theme background
-$shadows-small-light: multiple-box-shadow(700, #090a0f);
-$shadows-medium-light: multiple-box-shadow(200, #090a0f);
-$shadows-big-light: multiple-box-shadow(100, #090a0f);
+// Light theme
+$shadows-small-light: multiple-box-shadow(500, #090a0f);
+$shadows-medium-light: multiple-box-shadow(150, #090a0f);
+$shadows-big-light: multiple-box-shadow(50, #090a0f);
 
 .light-theme {
   background: radial-gradient(ellipse at bottom, #f0f4f8, #d9e2ec);
@@ -42,120 +39,53 @@ $shadows-big-light: multiple-box-shadow(100, #090a0f);
   left: 0;
   width: 100%;
   height: 100%;
-  //overflow: hidden;
 }
 
-.dark-theme #stars {
-  width: 1px;
-  height: 1px;
+@mixin star-layer($size, $shadows, $duration) {
+  width: $size;
+  height: $size;
   background: transparent;
-  box-shadow: $shadows-small-dark;
-  animation: animStar 50s linear infinite;
+  box-shadow: $shadows;
+  animation: animStar $duration linear infinite;
 
   &:after {
-    content: " ";
-    //position: absolute;
+    content: "";
+    position: absolute;
     top: 2000px;
-    width: 1px;
-    height: 1px;
+    width: $size;
+    height: $size;
     background: transparent;
-    box-shadow: $shadows-small-dark;
+    box-shadow: $shadows;
   }
 }
 
-.dark-theme #stars2 {
-  width: 2px;
-  height: 2px;
-  background: transparent;
-  box-shadow: $shadows-medium-dark;
-  animation: animStar 100s linear infinite;
-
-  &:after {
-    content: " ";
-    position: absolute;
-    top: 2000px;
-    width: 2px;
-    height: 2px;
-    background: transparent;
-    box-shadow: $shadows-medium-dark;
+.dark-theme {
+  #stars {
+    @include star-layer(1px, $shadows-small-dark, 40s);
+  }
+  #stars2 {
+    @include star-layer(2px, $shadows-medium-dark, 80s);
+  }
+  #stars3 {
+    @include star-layer(3px, $shadows-big-dark, 120s);
   }
 }
 
-.dark-theme #stars3 {
-  width: 3px;
-  height: 3px;
-  background: transparent;
-  box-shadow: $shadows-big-dark;
-  animation: animStar 150s linear infinite;
-
-  &:after {
-    content: " ";
-    position: absolute;
-    top: 2000px;
-    width: 3px;
-    height: 3px;
-    background: transparent;
-    box-shadow: $shadows-big-dark;
+.light-theme {
+  #stars {
+    @include star-layer(1px, $shadows-small-light, 40s);
   }
-}
-
-.light-theme #stars {
-  width: 1px;
-  height: 1px;
-  background: transparent;
-  box-shadow: $shadows-small-light;
-  animation: animStar 50s linear infinite;
-
-  &:after {
-    content: " ";
-    position: absolute;
-    top: 2000px;
-    width: 1px;
-    height: 1px;
-    background: transparent;
-    box-shadow: $shadows-small-light;
+  #stars2 {
+    @include star-layer(2px, $shadows-medium-light, 80s);
   }
-}
-
-.light-theme #stars2 {
-  width: 2px;
-  height: 2px;
-  background: transparent;
-  box-shadow: $shadows-medium-light;
-  animation: animStar 100s linear infinite;
-
-  &:after {
-    content: " ";
-    position: absolute;
-    top: 2000px;
-    width: 2px;
-    height: 2px;
-    background: transparent;
-    box-shadow: $shadows-medium-light;
-  }
-}
-
-.light-theme #stars3 {
-  width: 3px;
-  height: 3px;
-  background: transparent;
-  box-shadow: $shadows-big-light;
-  animation: animStar 150s linear infinite;
-
-  &:after {
-    content: " ";
-    position: absolute;
-    top: 2000px;
-    width: 3px;
-    height: 3px;
-    background: transparent;
-    box-shadow: $shadows-big-light;
+  #stars3 {
+    @include star-layer(3px, $shadows-big-light, 120s);
   }
 }
 
 @keyframes animStar {
   from {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
   to {
     transform: translateY(-2000px);
