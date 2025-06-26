@@ -13,20 +13,35 @@ function Certification() {
 
   const certifications = [
     {
+      title: "PRODUCTION MACHINE LEARNING SYSTEMS",
+      provider: "GOOGLE CLOUD",
+      link: "https://coursera.org/share/a99e399adbdd37619c3c8bca76e78628",
+    },
+    {
+      title: "FUNDAMENTALS OF AI AGENTS USING RAG AND LANGCHAIN",
+      provider: "IBM",
+      link: "https://coursera.org/share/0fff88ddf2f284b36e74e8d39d4d2e06",
+    },
+    {
+      title: "GENERATIVE AI ADVANCE FINE-TUNING FOR LLMs",
+      provider: "IBM",
+      link: "https://coursera.org/share/51a4557c1b141971fd226ad257798554",
+    },
+    {
       title: "GEN AI LANGUAGE MODELING WITH TRANSFORMERS",
       provider: "IBM",
-      link: "https://coursera.org/share/c30ef75fbc0b626bccacb5616cfb9f02"
+      link: "https://coursera.org/share/c30ef75fbc0b626bccacb5616cfb9f02",
     },
     {
       title: "ADVANCED DEEP LEARNING SPECIALIST",
       provider: "IBM",
-      link: "https://www.credly.com/badges/e52a1fe9-a116-4c8e-851b-e0ee92a1301e/public_url"
+      link: "https://www.credly.com/badges/e52a1fe9-a116-4c8e-851b-e0ee92a1301e/public_url",
     },
     {
       title: "MACHINE LEARNING WITH PYTHON",
       provider: "COURSERA",
-      link: "https://www.credly.com/badges/59cbe745-fc1c-4a53-89d2-00e389761d8a/public_url"
-    }
+      link: "https://www.credly.com/badges/59cbe745-fc1c-4a53-89d2-00e389761d8a/public_url",
+    },
   ];
 
   const containerVariants = {
@@ -76,10 +91,10 @@ function Certification() {
                   key={index}
                   className="certification-card"
                   variants={itemVariants}
-                  whileHover={{ 
+                  whileHover={{
                     y: -5,
                     scale: 1.02,
-                    transition: { duration: 0.3 }
+                    transition: { duration: 0.3 },
                   }}
                 >
                   <div className="certification-icon">

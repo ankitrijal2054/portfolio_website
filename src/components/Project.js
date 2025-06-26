@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import "../styles/Project.css";
 import weatherimg from "../image/weather.png";
-import sentimentimg from "../image/sentiment.png";
+import recommenderimg from "../image/recommender.png";
+import smartprepimg from "../image/smart_prep.png";
 import chatbotimg from "../image/chatbot.png";
 import housingimg from "../image/housing_price.png";
 import imageassistantimg from "../image/image_assistant.png";
@@ -17,12 +18,20 @@ function Project() {
 
   const projects = [
     {
-      href: "https://github.com/ankitrijal2054/AI_Chatbot",
-      img: chatbotimg,
-      alt: "AI Chatbot",
-      title: "AI Chatbot",
+      href: "https://github.com/ankitrijal2054/SmartPrep_AI",
+      img: smartprepimg,
+      alt: "Smart Prep AI",
+      title: "Smart Prep AI",
       description:
-        "A chatbot with a custom knowledge base using LangChain and RAG.",
+        "An adaptive quiz web app that uses llm to generate personalized questions, explanations, and summaries based on users’ study materials and performance.",
+    },
+    {
+      href: "https://github.com/ankitrijal2054/song-recommender",
+      img: recommenderimg,
+      alt: "Song Recommender App",
+      title: "Song Recommender App",
+      description:
+        "A personalized music recommendation web app that uses content-based filtering and Last.fm metadata to suggest songs tailored to user preferences.",
     },
     {
       href: "https://multi-model-ai-assistant.streamlit.app/",
@@ -33,19 +42,20 @@ function Project() {
         "An AI assistant that that allows users to upload an image and either ask questions about it or generate a caption.",
     },
     {
+      href: "https://github.com/ankitrijal2054/AI_Chatbot",
+      img: chatbotimg,
+      alt: "AI Chatbot",
+      title: "AI Chatbot",
+      description:
+        "A chatbot with a custom knowledge base using LangChain and RAG.",
+    },
+    {
       href: "https://github.com/ankitrijal2054/House_Price_Prediction",
       img: housingimg,
       alt: "Housing Price Prediction",
       title: "Housing Price Predictor",
       description:
         "A machine learning model predicting house prices based on features.",
-    },
-    {
-      href: "https://github.com/ankitrijal2054/Sentiment_Web_App",
-      img: sentimentimg,
-      alt: "Sentiment App",
-      title: "Sentiment Analysis App",
-      description: "An NLP-based app to analyze sentiment in text.",
     },
     {
       href: "https://weather-app-3jmk.onrender.com/",
@@ -98,53 +108,44 @@ function Project() {
                 Projects
               </Card.Title>
             </motion.div>
-            
+
             <div className="project-tiles">
               {projects.map((project, index) => (
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  whileHover={{ 
+                  whileHover={{
                     y: -10,
                     scale: 1.02,
-                    transition: { duration: 0.3 }
+                    transition: { duration: 0.3 },
                   }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <OverlayTrigger
-                    placement="top"
-                    overlay={
-                      <Tooltip id={`tooltip-${index}`} className="modern-tooltip">
-                        <strong>{project.title}</strong>
-                        <br />
-                        {project.description}
-                      </Tooltip>
-                    }
+                  <a
+                    href={project.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-tile"
                   >
-                    <a
-                      href={project.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="project-tile"
-                    >
-                      <div className="project-tile-inner">
-                        <div className="project-image-container">
-                          <img
-                            src={project.img}
-                            alt={project.alt}
-                            className="project-image"
-                            loading="lazy"
-                          />
-                          <div className="project-overlay">
-                            <div className="project-info">
-                              <h4 className="project-title">{project.title}</h4>
-                              <p className="project-description">{project.description}</p>
-                            </div>
+                    <div className="project-tile-inner">
+                      <div className="project-image-container">
+                        <img
+                          src={project.img}
+                          alt={project.alt}
+                          className="project-image"
+                          loading="lazy"
+                        />
+                        <div className="project-overlay">
+                          <div className="project-info">
+                            <h4 className="project-title">{project.title}</h4>
+                            <p className="project-description">
+                              {project.description}
+                            </p>
                           </div>
                         </div>
                       </div>
-                    </a>
-                  </OverlayTrigger>
+                    </div>
+                  </a>
                 </motion.div>
               ))}
             </div>
