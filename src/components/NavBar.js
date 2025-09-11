@@ -57,43 +57,9 @@ function NavBar() {
       <Navbar expand="lg" className="modern-navbar">
         <Container>
           <Row className="w-100 align-items-center justify-content-between">
+            
+            
             <Col xs="auto">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Navbar.Brand
-                  onClick={() => scrollToSection("aboutme")}
-                  style={{ cursor: "pointer" }}
-                  className="brand-logo"
-                >
-                  <img
-                    src={logo}
-                    alt="Portfolio Logo"
-                    width="50"
-                    height="50"
-                    className="d-inline-block align-top logo-image"
-                  />
-                </Navbar.Brand>
-              </motion.div>
-            </Col>
-            
-            <Col className="d-flex justify-content-center align-items-center">
-              <motion.div 
-                className="theme-toggle-container"
-                whileHover={{ scale: 1.05 }}
-              >
-                <button
-                  onClick={toggleTheme}
-                  className="theme-toggle-btn"
-                  aria-label="Toggle theme"
-                >
-                  {isDarkMode ? <RiMoonLine /> : <RiSunLine />}
-                </button>
-              </motion.div>
-            </Col>
-            
-            <Col xs="auto" className="d-flex justify-content-end">
               <div 
                 className="dropdown-wrapper"
                 onMouseEnter={() => setMenuOpen(true)}
@@ -145,6 +111,41 @@ function NavBar() {
                 </Dropdown.Menu>
               </Dropdown>
               </div>
+            </Col>
+            <Col xs="auto" className="d-flex justify-content-center align-items-center">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <div
+                  onClick={() => scrollToSection("aboutme")}
+                  style={{ cursor: "pointer" }}
+                  className="brand-logo"
+                >
+                  <img
+                    src={logo}
+                    alt="Portfolio Logo"
+                    width="50"
+                    height="50"
+                    className="logo-image"
+                  />
+                </div>
+              </motion.div>
+            </Col>
+            
+            <Col xs="auto" className="d-flex justify-content-end align-items-center">
+              <motion.div 
+                className="theme-toggle-container"
+                whileHover={{ scale: 1.05 }}
+              >
+                <button
+                  onClick={toggleTheme}
+                  className="theme-toggle-btn"
+                  aria-label="Toggle theme"
+                >
+                  {isDarkMode ? <RiMoonLine /> : <RiSunLine />}
+                </button>
+              </motion.div>
             </Col>
           </Row>
         </Container>
