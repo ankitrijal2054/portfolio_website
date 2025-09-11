@@ -63,7 +63,7 @@ function AboutMe() {
               <Card className="text-center theme-card hero-card">
                 <Card.Body>
                   <div className="animated-text-container">
-                    <motion.div 
+                    <motion.div
                       className="animated-text-line greeting"
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
@@ -71,7 +71,7 @@ function AboutMe() {
                     >
                       Hello,
                     </motion.div>
-                    <motion.div 
+                    <motion.div
                       className="animated-text-line name"
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
@@ -79,8 +79,8 @@ function AboutMe() {
                     >
                       I'm Ankit Rijal.
                     </motion.div>
-                    <motion.div 
-                      className="animated-swiping-text" 
+                    <motion.div
+                      className="animated-swiping-text"
                       key={currentTextIndex}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -105,18 +105,16 @@ function AboutMe() {
                     transition={{ duration: 1, delay: 1.2 }}
                   >
                     <Card.Text className="bio-text">
-                      I am a software developer with a strong foundation in full-stack
-                      development, specializing in C#, Python, and React.js. With
-                      hands-on experience optimizing performance and
-                      scalability—ranging from SVN-to-Git migrations to automated
-                      database updates—I have developed a keen problem-solving
-                      mindset. Currently pursuing a Master's in Artificial
-                      Intelligence, I am transitioning into the field of machine
-                      learning, deepening my expertise in data-driven solutions and
-                      AI-powered applications. I am eager to apply my software
-                      development experience to real-world ML challenges and
-                      collaborate on innovative projects. Let's connect and explore
-                      the future of AI together!
+                      I am a curious builder who started as a software developer
+                      and is now diving headfirst into the world of AI. With a
+                      background in creating reliable, user-friendly
+                      applications, I’ve recently been exploring how artificial
+                      intelligence can make technology smarter, faster, and more
+                      helpful. Whether it’s crafting chatbots, experimenting
+                      with image-based tools, or just solving everyday problems
+                      with code, I’m passionate about turning ideas into real,
+                      working things. Welcome to my digital playground. Let’s
+                      explore the future of tech together!
                     </Card.Text>
                   </motion.div>
                 </Card.Body>
@@ -125,10 +123,7 @@ function AboutMe() {
           </Col>
 
           <Col md={12} className="d-flex justify-content-center">
-            <motion.div 
-              className="button-group mt-4"
-              variants={itemVariants}
-            >
+            <motion.div className="button-group mt-4" variants={itemVariants}>
               <motion.div
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
@@ -142,7 +137,7 @@ function AboutMe() {
                   <span>Download CV</span>
                 </Button>
               </motion.div>
-              
+
               <motion.div
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
