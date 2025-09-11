@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Navbar, Container, Row, Col, Form, Dropdown } from "react-bootstrap";
+import { Navbar, Container, Row, Col, Dropdown } from "react-bootstrap";
 import { motion } from "framer-motion";
 import { ThemeContext } from "../App";
-import { FaSun, FaMoon } from "react-icons/fa";
-import { HiMenu } from "react-icons/hi";
+import { FaBars } from "react-icons/fa";
+import { RiSunLine, RiMoonLine } from "react-icons/ri";
 import logo from "../image/logo.png";
 import "../styles/NavBar.css";
 
@@ -15,6 +15,7 @@ function NavBar() {
         window.matchMedia("(prefers-color-scheme: dark)").matches)
   );
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,10 +47,6 @@ function NavBar() {
     document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
   };
 
-  const navbarTheme = isDarkMode
-    ? { bg: "dark", variant: "dark" }
-    : { bg: "light", variant: "light" };
-
   return (
     <motion.div
       className={`navbar-wrapper ${scrolled ? 'scrolled' : ''}`}
@@ -57,7 +54,7 @@ function NavBar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      <Navbar bg={navbarTheme.bg} variant={navbarTheme.variant} expand="lg" className="modern-navbar">
+      <Navbar expand="lg" className="modern-navbar">
         <Container>
           <Row className="w-100 align-items-center justify-content-between">
             <Col xs="auto">
@@ -86,39 +83,41 @@ function NavBar() {
                 className="theme-toggle-container"
                 whileHover={{ scale: 1.05 }}
               >
-                <FaSun className={`theme-icon ${!isDarkMode ? 'active' : ''}`} />
-                <Form.Check
-                  type="switch"
-                  id="theme-switch"
-                  label=""
-                  checked={isDarkMode}
-                  onChange={toggleTheme}
-                  className="theme-toggle"
-                />
-                <FaMoon className={`theme-icon ${isDarkMode ? 'active' : ''}`} />
+                <button
+                  onClick={toggleTheme}
+                  className="theme-toggle-btn"
+                  aria-label="Toggle theme"
+                >
+                  {isDarkMode ? <RiMoonLine /> : <RiSunLine />}
+                </button>
               </motion.div>
             </Col>
             
             <Col xs="auto" className="d-flex justify-content-end">
-              <Dropdown>
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Dropdown.Toggle
-                    variant="secondary"
-                    id="dropdown-basic"
-                    className={`modern-dropdown-toggle dropdown-toggle-${
-                      isDarkMode ? "dark" : "light"
-                    }`}
+              <div 
+                className="dropdown-wrapper"
+                onMouseEnter={() => setMenuOpen(true)}
+                onMouseLeave={() => setMenuOpen(false)}
+              >
+                <Dropdown show={menuOpen} onToggle={() => {}}>
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                   >
-                    <HiMenu className="menu-icon" size={24} />
-                  </Dropdown.Toggle>
-                </motion.div>
-                
-                <Dropdown.Menu
-                  className={`modern-dropdown-menu dropdown-menu-${isDarkMode ? "dark" : "light"}`}
-                >
+                    <Dropdown.Toggle
+                      variant="secondary"
+                      id="dropdown-basic"
+                      className={`modern-dropdown-toggle dropdown-toggle-${
+                        isDarkMode ? "dark" : "light"
+                      }`}
+                    >
+                      <FaBars className="menu-icon" size={24} />
+                    </Dropdown.Toggle>
+                  </motion.div>
+                  
+                  <Dropdown.Menu
+                    className={`modern-dropdown-menu dropdown-menu-${isDarkMode ? "dark" : "light"}`}
+                  >
                   {[
                     { id: "aboutme", label: "About Me" },
                     { id: "experience", label: "Experience" },
@@ -145,6 +144,7 @@ function NavBar() {
                   ))}
                 </Dropdown.Menu>
               </Dropdown>
+              </div>
             </Col>
           </Row>
         </Container>
