@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio_website/static/css/main.17ede503.css",
-    "main.js": "/portfolio_website/static/js/main.16d39cca.js",
+    "main.css": "/portfolio_website/static/css/main.f25de679.css",
+    "main.js": "/portfolio_website/static/js/main.b8812b33.js",
     "static/media/weather.png": "/portfolio_website/static/media/weather.d61d5546c740abb0a3ec.png",
     "static/media/chatbot.png": "/portfolio_website/static/media/chatbot.90f2b92f23b275a6524d.png",
     "static/media/image_assistant.png": "/portfolio_website/static/media/image_assistant.89a59990b20d71bcf2bb.png",
@@ -10,11 +10,11 @@
     "static/media/smart_prep.png": "/portfolio_website/static/media/smart_prep.1ec1706da4df6e4bd9e6.png",
     "static/media/housing_price.png": "/portfolio_website/static/media/housing_price.6a87756c1a7ab9ff4123.png",
     "index.html": "/portfolio_website/index.html",
-    "main.17ede503.css.map": "/portfolio_website/static/css/main.17ede503.css.map",
-    "main.16d39cca.js.map": "/portfolio_website/static/js/main.16d39cca.js.map"
+    "main.f25de679.css.map": "/portfolio_website/static/css/main.f25de679.css.map",
+    "main.b8812b33.js.map": "/portfolio_website/static/js/main.b8812b33.js.map"
   },
   "entrypoints": [
-    "static/css/main.17ede503.css",
-    "static/js/main.16d39cca.js"
+    "static/css/main.f25de679.css",
+    "static/js/main.b8812b33.js"
   ]
 }
