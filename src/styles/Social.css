@@ -18,6 +18,10 @@
   text-decoration: none;
 }
 
+.social-tile:focus{
+  outline: none;
+}
+
 .social-tile-inner {
   position: relative;
   width: 100%;

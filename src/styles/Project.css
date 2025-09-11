@@ -20,6 +20,10 @@
   will-change: transform, box-shadow;
 }
 
+.project-tile:focus {
+  outline: none;
+}
+
 .project-tile-inner {
   position: relative;
   width: 100%;

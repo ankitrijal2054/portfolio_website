@@ -18,6 +18,10 @@
   text-decoration: none;
 }
 
+.skill-tile:focus{
+  outline: none;
+}
+
 .skill-tile-inner {
   position: relative;
   width: 100%;
