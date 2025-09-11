@@ -59,7 +59,7 @@ function Education() {
                     Master's in Artificial Intelligence
                   </motion.h3>
                   <p className="college-details">
-                    University of the Cumberlands | August 2024 – August 2025
+                    University of the Cumberlands | 2025
                   </p>
                   <div className="education-status completed">Completed</div>
                 </div>
