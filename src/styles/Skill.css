@@ -78,10 +78,6 @@
   padding: 1rem;
 }
 
-.skill-tile-back span {
-  transform: rotateY(180deg); /* Flip text to be readable */
-}
-
 .skill-tile:hover .skill-tile-front > div {
   transform: scale(1.05);
 }

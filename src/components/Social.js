@@ -93,7 +93,6 @@ function Social() {
                   variants={itemVariants}
                   whileHover={{ 
                     scale: 1.1,
-                    rotateY: 180,
                     transition: { duration: 0.4 }
                   }}
                   whileTap={{ scale: 0.95 }}

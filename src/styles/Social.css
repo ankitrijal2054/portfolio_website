@@ -77,11 +77,6 @@
   padding: 1rem;
 }
 
-/* Fix flipped text */
-.social-tile-back span {
-  transform: rotateY(180deg);
-}
-
 /* Platform Colors */
 .social-tile:nth-child(1) {
   --social-color: linear-gradient(135deg, #333, #24292e);

@@ -104,7 +104,6 @@ function Skill() {
                   variants={itemVariants}
                   whileHover={{ 
                     scale: 1.05,
-                    rotateY: 180,
                     transition: { duration: 0.3 }
                   }}
                   whileTap={{ scale: 0.95 }}
