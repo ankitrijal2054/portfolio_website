@@ -116,8 +116,9 @@ function NavBar() {
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                className="brand-logo"
               >
-                <div
+                <Navbar.Brand
                   onClick={() => scrollToSection("aboutme")}
                   style={{ cursor: "pointer" }}
                   className="brand-logo"
@@ -129,7 +130,7 @@ function NavBar() {
                     height="50"
                     className="logo-image"
                   />
-                </div>
+                </Navbar.Brand>
               </motion.div>
             </Col>
             

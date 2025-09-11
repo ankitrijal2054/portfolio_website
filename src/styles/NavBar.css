@@ -41,6 +41,10 @@
   outline: none;
 }
 
+.brand-logo:focus {
+  outline: none;
+}
+
 .theme-toggle-container {
   display: flex;
   align-items: center;
