@@ -116,7 +116,7 @@
 .dropdown-wrapper .dropdown-menu {
   position: absolute !important;
   top: 100% !important;
-  right: 0 !important;
+  right: auto !important;
   left: auto !important;
   z-index: 1050 !important;
   margin: 0 !important;
@@ -147,13 +147,6 @@
   visibility: visible !important;
 }
 
-.dropdown-wrapper:hover .modern-dropdown-menu,
-.modern-dropdown-menu.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.dropdown-wrapper:hover .modern-dropdown-menu,
 .modern-dropdown-menu.show {
   opacity: 1;
   transform: translateY(0);

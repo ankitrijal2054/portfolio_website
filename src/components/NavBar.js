@@ -60,12 +60,8 @@ function NavBar() {
             
             
             <Col xs="auto">
-              <div 
-                className="dropdown-wrapper"
-                onMouseEnter={() => setMenuOpen(true)}
-                onMouseLeave={() => setMenuOpen(false)}
-              >
-                <Dropdown show={menuOpen} onToggle={() => {}}>
+              <div className="dropdown-wrapper">
+                <Dropdown show={menuOpen} onToggle={setMenuOpen}>
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -76,6 +72,7 @@ function NavBar() {
                       className={`modern-dropdown-toggle dropdown-toggle-${
                         isDarkMode ? "dark" : "light"
                       }`}
+                      onClick={() => setMenuOpen(!menuOpen)}
                     >
                       <FaBars className="menu-icon" size={24} />
                     </Dropdown.Toggle>
@@ -101,7 +98,10 @@ function NavBar() {
                       transition={{ delay: index * 0.1 }}
                     >
                       <Dropdown.Item 
-                        onClick={() => scrollToSection(item.id)}
+                        onClick={() => {
+                          scrollToSection(item.id);
+                          setMenuOpen(false);
+                        }}
                         className="modern-dropdown-item"
                       >
                         {item.label}
