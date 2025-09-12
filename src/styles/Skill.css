@@ -15,10 +15,10 @@
   width: 100%;
   height: 160px;
   perspective: 1000px;
-  text-decoration: none;
+  cursor: pointer;
 }
 
-.skill-tile:focus{
+.skill-tile:focus {
   outline: none;
 }
 
@@ -131,6 +131,100 @@
   background: linear-gradient(135deg, #ff9a00, #ffcd00);
 }
 
+/* Modal Styles */
+.skill-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+}
+
+.skill-modal {
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: min(400px, 90vw);
+  width: auto;
+  z-index: 1001;
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.dark-theme .skill-modal {
+  background: rgba(45, 55, 72, 0.95);
+  border: 1px solid rgba(167, 139, 250, 0.3);
+}
+
+.skill-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1.5rem 0.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme .skill-modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skill-modal-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+  color: #667eea;
+}
+
+.dark-theme .skill-modal-title {
+  color: #a78bfa;
+}
+
+.skill-modal-close {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #667eea;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.dark-theme .skill-modal-close {
+  color: #a78bfa;
+}
+
+.skill-modal-close:hover {
+  background: rgba(102, 126, 234, 0.1);
+}
+
+.dark-theme .skill-modal-close:hover {
+  background: rgba(167, 139, 250, 0.1);
+}
+
+.skill-modal-body {
+  padding: 1rem 1.5rem 1.5rem;
+  color: #333;
+}
+
+.dark-theme .skill-modal-body {
+  color: #e2e8f0;
+}
+
+.skill-modal-body p {
+  margin: 0;
+  line-height: 1.6;
+}
+
 /* Responsive */
 @media (max-width: 992px) {
   .skill-links {
@@ -168,6 +262,18 @@
   .skill-tile-back {
     font-size: 0.9rem;
     padding: 0.75rem;
+  }
+
+  .skill-modal-header {
+    padding: 1rem 1rem 0.5rem;
+  }
+
+  .skill-modal-body {
+    padding: 1rem;
+  }
+
+  .skill-modal-title {
+    font-size: 1.3rem;
   }
 }
 
