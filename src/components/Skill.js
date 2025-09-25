@@ -2,16 +2,22 @@ import React, { useState } from "react";
 import { Container, Card } from "react-bootstrap";
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { FaReact, FaPython, FaGithub, FaAws, FaTimes } from "react-icons/fa";
+import { FaReact, FaPython, FaGithub, FaAws, FaTimes, FaDocker, FaJenkins } from "react-icons/fa";
 import { TbBrandCSharp } from "react-icons/tb";
 import { BiLogoPostgresql } from "react-icons/bi";
 import {
   SiHuggingface,
   SiTensorflow,
-  SiPytorch,
+  SiJupyter,
   SiNumpy,
   SiScipy,
   SiPandas,
+  SiElectron,
+  SiLangchain,
+  SiGooglegemini,
+  SiOpenai,
+  SiGithubcopilot,
+  SiStreamlit,
 } from "react-icons/si";
 import "../styles/Card.css";
 import "../styles/Skill.css";
@@ -25,85 +31,112 @@ function Skill() {
   const [selectedSkill, setSelectedSkill] = useState(null);
 
   const skillList = [
-    [
-      "ReactJs",
-      <FaReact />,
-      "https://react.dev/",
-      "I have built interactive user interfaces and single-page applications using React, leveraging its component-based architecture for maintainable code.",
-    ],
-    [
-      "Python",
-      <FaPython />,
-      "https://www.python.org/",
-      "Used Python for data analysis, machine learning projects, and backend development with frameworks like Flask and Django.",
-    ],
-    [
-      "C#",
-      <TbBrandCSharp />,
-      "https://learn.microsoft.com/en-us/dotnet/csharp/",
-      "Developed desktop applications and games using C# with .NET framework.",
-    ],
-    [
-      "AWS",
-      <FaAws />,
-      "https://aws.amazon.com/",
-      "Deployed scalable web applications and managed cloud infrastructure using various AWS services like EC2, S3, and Lambda.",
-    ],
-    [
-      "GitHub",
-      <FaGithub />,
-      "https://github.com/",
-      "Managed version control, collaborated on open-source projects, and automated workflows using GitHub Actions.",
-    ],
-    [
-      "PostgreSQL",
-      <BiLogoPostgresql />,
-      "https://www.postgresql.org/",
-      "Designed and optimized relational databases for web applications, ensuring data integrity and efficient queries.",
-    ],
-    [
-      "NumPy",
-      <SiNumpy />,
-      "https://numpy.org/",
-      "Performed numerical computations and data manipulation in Python for scientific computing.",
-    ],
-    [
-      "Pandas",
-      <SiPandas />,
-      "https://pandas.pydata.org/",
-      "Analyzed and processed large datasets using Pandas for data cleaning, transformation, and visualization.",
-    ],
-    [
-      "SciPy",
-      <SiScipy />,
-      "https://scipy.org/",
-      "Utilized SciPy for advanced mathematical functions and algorithms in scientific computing.",
-    ],
-    [
-      "TensorFlow",
-      <SiTensorflow />,
-      "https://www.tensorflow.org/",
-      "Built and trained machine learning models using TensorFlow for tasks like image recognition and natural language processing.",
-    ],
-    [
-      "PyTorch",
-      <SiPytorch />,
-      "https://pytorch.org/",
-      "Developed deep learning models with PyTorch, focusing on neural networks and AI applications.",
-    ],
-    [
-      "Transformer",
-      <SiHuggingface />,
-      "https://huggingface.co/models?library=transformers&sort=trending",
-      "Worked with transformer models from Hugging Face for NLP tasks such as text generation and sentiment analysis.",
-    ],
+  [
+    "Python",
+    <FaPython />,
+    "Core language for my AI and software projects — from building LLM-powered apps (FastAPI, Flask, Streamlit) to data pipelines, model training, and backend services.",
+  ],
+  [
+    "C#",
+    <TbBrandCSharp />,
+    "Developed enterprise-grade applications at Reynolds & Reynolds using C# and .NET, including 30+ RESTful APIs and full-stack systems used by 5,000+ users.",
+  ],    
+  [
+    "ReactJs",
+    <FaReact />,
+    "Built dynamic UIs and SPAs for projects like SmartPrep AI and Guide2Smart AI, and used extensively at Reynolds & Reynolds to deliver cross-platform enterprise apps.",
+  ],
+  [
+    "PostgreSQL",
+    <BiLogoPostgresql />,
+    "Designed and optimized relational databases to support scalable apps, ensuring efficient queries and secure data handling at Reynolds & Reynolds for enterprise systems.",
+  ],
+  [
+    "ElectronJs",
+    <SiElectron />,
+    "Delivered cross-platform desktop apps (e.g., KeyTrak system) by combining Electron.js with C#/.NET and React.js for enterprise clients.",
+  ],
+  [
+    "AWS",
+    <FaAws />,
+    "Deployed and managed personal apps on AWS (EC2, S3, Amplify) — including Dockerized ML models and monitoring workflows.",
+  ],
+  [
+    "GitHub",
+    <FaGithub />,
+    "Led SVN-to-Git migration at Reynolds & Reynolds and automated CI/CD with GitHub Actions. Also used across all personal projects for version control and collaboration.",
+  ],
+  [
+    "Jenkins",
+    <FaJenkins />,
+    "Created and maintained CI/CD pipelines, and migrated 50+ Jenkins pipelines to GitHub Actions, reducing deployment time by 30%.",
+  ],
+  [
+    "Docker",
+    <FaDocker />,
+    "Containerized ML models and full-stack apps for consistent deployment; used in MLOps pipelines with AWS EC2 and FastAPI.",
+  ],
+  [
+    "Streamlit",
+    <SiStreamlit />,
+    "Built and deployed AI prototypes like AI Image Assistant on Streamlit Cloud for interactive data science and vision-language apps.",
+  ],
+  [
+    "LangChain",
+    <SiLangchain />,
+    "Used in RAG-based chatbots with ChromaDB and Hugging Face to enable document-aware, persistent LLM responses.",
+  ],
+  [
+    "OpenAI API",
+    <SiOpenai />,
+    "Integrated OpenAI models into NLP workflows for text generation, summarization, and study-assistant features.",
+  ],
+  [
+    "Google Gemini API",
+    <SiGooglegemini />,
+    "Developed apps like SmartPrep AI and AI Image Assistant using Gemini 1.5 Flash for text generation and vision-language tasks.",
+  ],
+  [
+    "Transformer",
+    <SiHuggingface />,
+    "Implemented Hugging Face Transformers in RAG pipelines and chatbots for embeddings, inference optimization, and fine-tuning.",
+  ],
+  [
+    "Github Copilot",
+    <SiGithubcopilot />,
+    "Leveraged for AI-powered coding assistance — from debugging issues to speeding up prototyping and improving productivity in various projects.",
+  ],
+  [
+    "NumPy",
+    <SiNumpy />,
+    "Used extensively for scientific computing, feature engineering, and preprocessing in ML projects.",
+  ],
+  [
+    "Pandas",
+    <SiPandas />,
+    "Applied to clean, transform, and analyze datasets for ML pipelines and predictive modeling.",
+  ],
+  [
+    "SciPy",
+    <SiScipy />,
+    "Leveraged for advanced math functions and algorithms supporting ML model experimentation.",
+  ],
+  [
+    "TensorFlow",
+    <SiTensorflow />,
+    "Trained and deployed deep learning models (vision, NLP) in ML coursework and projects like predictive modeling.",
+  ],
+  [
+    "Jupyter Notebook",
+    <SiJupyter />,
+    "Used extensively for prototyping machine learning models, data preprocessing, and visualizing results in an interactive workflow.",
+  ],
   ];
 
   const skills = skillList.map((skill) => ({
     name: skill[0],
     icon: skill[1],
-    link: skill[2],
-    description: skill[3],
+    description: skill[2],
   }));
 
   const handleSkillClick = (skill, event) => {
