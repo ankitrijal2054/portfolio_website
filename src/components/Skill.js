@@ -211,20 +211,20 @@ function Skill() {
 
       <AnimatePresence>
         {selectedSkill && (
-          <>
-            <motion.div
-              className="skill-modal-overlay"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={closeModal}
-            />
+          <motion.div
+            className="skill-modal-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={closeModal}
+          >
             <motion.div
               className="skill-modal"
               variants={modalVariants}
               initial="hidden"
               animate="visible"
               exit="exit"
+              onClick={(e) => e.stopPropagation()}
             >
               <div className="skill-modal-header">
                 <h3 className="skill-modal-title">{selectedSkill.name}</h3>
@@ -236,7 +236,7 @@ function Skill() {
                 <p>{selectedSkill.description}</p>
               </div>
             </motion.div>
-          </>
+          </motion.div>
         )}
       </AnimatePresence>
     </Container>
