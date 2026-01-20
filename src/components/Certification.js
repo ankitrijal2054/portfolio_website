@@ -106,7 +106,7 @@ function Certification() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="certification-title"
-                      whileHover={{ color: "#007bff" }}
+                      whileHover={{ color: "#667eea" }}
                     >
                       {cert.title}
                       <FiExternalLink className="external-link-icon" />

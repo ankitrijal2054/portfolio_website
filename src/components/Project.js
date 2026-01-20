@@ -3,12 +3,15 @@ import { Container, Card } from "react-bootstrap";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import "../styles/Project.css";
-import weatherimg from "../image/weather.png";
-import recommenderimg from "../image/recommender.png";
-import smartprepimg from "../image/smart_prep.png";
+import clipforgeimg from "../image/clipforge.png";
+import collabcanvasimg from "../image/collabcanvas.png";
 import chatbotimg from "../image/chatbot.png";
 import housingimg from "../image/housing_price.png";
 import imageassistantimg from "../image/image_assistant.png";
+import unilangimg from "../image/unilang.png";
+import lawmintimg from "../image/lawmint.png";
+import studybuddyimg from "../image/study_buddy.png";
+import aimathtutorimg from "../image/ai_math_tutor.png";
 
 function Project() {
   const { ref, inView } = useInView({
@@ -18,20 +21,28 @@ function Project() {
 
   const projects = [
     {
-      href: "https://github.com/ankitrijal2054/SmartPrep_AI",
-      img: smartprepimg,
-      alt: "Smart Prep AI",
-      title: "Smart Prep AI",
+      href: "https://study-buddy-28043.web.app/login",
+      img: studybuddyimg,
+      alt: "Study Buddy",
+      title: "Study Buddy",
       description:
-        "An adaptive quiz web app that uses llm to generate personalized questions, explanations, and summaries based on users’ study materials and performance.",
+        "A persistent AI learning companion that keeps students engaged through conversational learning, adaptive quizzes, personalized recommendations, and intelligent nudges."
     },
     {
-      href: "https://github.com/ankitrijal2054/song-recommender",
-      img: recommenderimg,
-      alt: "Song Recommender App",
-      title: "Song Recommender App",
+      href: "https://ai-math-tutor-b09db.web.app/",
+      img: aimathtutorimg,
+      alt: "AI Math Tutor",
+      title: "AI Math Tutor",
       description:
-        "A personalized music recommendation web app that uses content-based filtering and Last.fm metadata to suggest songs tailored to user preferences.",
+        "AI Math Tutor is a web-based conversational AI tutoring platform that teaches mathematics through the Socratic method through step-by-step reasoning using leading questions, hints, and validation, building genuine understanding and critical thinking skills."
+    },
+    {
+      href: "https://lawmint-c5a21.web.app/",
+      img: lawmintimg,
+      alt: "Lawmint",
+      title: "Lawmint",
+      description:
+        "AI-Powered Demand Letters for Modern Law Firms. Draft, refine, and collaborate on demand letters securely and effortlessly. Transform how your firm creates legal documents with intelligent automation.",
     },
     {
       href: "https://multi-model-ai-assistant.streamlit.app/",
@@ -40,6 +51,30 @@ function Project() {
       title: "AI Image Assistant",
       description:
         "An AI assistant that that allows users to upload an image and either ask questions about it or generate a caption.",
+    },
+    {
+      href: "https://collabcanvas-1fd25.web.app/",
+      img: collabcanvasimg,
+      alt: "CollabCanvas",
+      title: "CollabCanvas",
+      description:
+        "A real-time AI-powered collaborative design canvas built with React, TypeScript, Firebase, and GPT-4 Turbo. Multiple users can draw, create, and edit objects simultaneously with live cursor tracking and presence awareness (<100 ms latency).",
+    },
+    {
+      href: "https://drive.google.com/file/d/1wfykY2cKTEqkn2HE5oE3GwSgdObf8xBw/view",
+      img: unilangimg,
+      alt: "Unilang",
+      title: "Unilang",
+      description:
+        "Real-time messaging app with AI-powered translation, smart replies, tone adjustment, and slang detection for culturally aware communication across languages.",
+    },
+    {
+      href: "https://drive.google.com/file/d/1-A4oRd3rHFjfV6bA83ixF3hfGDsazxK4/view?usp=drive_link",
+      img: clipforgeimg,
+      alt: "ClipForge",
+      title: "ClipForge",
+      description:
+        "ClipForge is a modern, cross-platform desktop video editor built with Electron, React, and TypeScript. It provides an intuitive interface for video trimming, preview, and export with professional-grade performance.",
     },
     {
       href: "https://github.com/ankitrijal2054/AI_Chatbot",
@@ -56,14 +91,6 @@ function Project() {
       title: "Housing Price Predictor",
       description:
         "A machine learning model predicting house prices based on features.",
-    },
-    {
-      href: "https://weather-app-3jmk.onrender.com/",
-      img: weatherimg,
-      alt: "Weather App",
-      title: "Weather App",
-      description:
-        "A real-time weather forecasting app using OpenWeatherMap API.",
     },
   ];
 

@@ -56,6 +56,23 @@ function Education() {
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.2 }}
                   >
+                    Fellowship in Applied AI
+                  </motion.h3>
+                  <p className="college-details">
+                    Gauntlet AI | 2025
+                  </p>
+                  <div className="education-status completed">Completed</div>
+                </div>
+              </motion.div>
+
+              <motion.div className="education-section timeline-item" variants={itemVariants}>
+                <div className="timeline-marker education-marker"></div>
+                <div className="timeline-content">
+                  <motion.h3 
+                    className="degree-title"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.2 }}
+                  >
                     Master's in Artificial Intelligence
                   </motion.h3>
                   <p className="college-details">

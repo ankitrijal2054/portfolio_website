@@ -78,7 +78,7 @@
 .certification-title {
   font-size: 1.2rem;
   font-weight: 600;
-  color: #2d3748;
+  color: #2d3748 !important;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -89,21 +89,31 @@
   line-height: 1.4;
 }
 
+.certification-title:visited {
+  color: #2d3748 !important;
+}
+
 .certification-title:focus {
   outline: none;
 }
 
 .dark-theme .certification-title {
-  color: #e2e8f0;
+  color: #e2e8f0 !important;
 }
 
-.certification-title:hover {
-  color: #667eea;
+.dark-theme .certification-title:visited {
+  color: #e2e8f0 !important;
+}
+
+.certification-title:hover,
+.certification-title:visited:hover {
+  color: #667eea !important;
   text-decoration: none;
 }
 
-.dark-theme .certification-title:hover {
-  color: #a78bfa;
+.dark-theme .certification-title:hover,
+.dark-theme .certification-title:visited:hover {
+  color: #a78bfa !important;
 }
 
 .external-link-icon {

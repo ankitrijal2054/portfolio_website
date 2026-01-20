@@ -6,7 +6,7 @@ import "../styles/AboutMe.css";
 
 function AboutMe() {
   const texts = [
-    "Aspiring ML Engineer",
+    "Aspiring AI Engineer",
     "Passionate Software Developer",
     "Traveller",
   ];
