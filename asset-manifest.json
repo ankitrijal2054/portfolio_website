@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/portfolio_website/static/css/main.6479ac05.css",
+    "main.css": "/portfolio_website/static/css/main.8ad4186e.css",
     "main.js": "/portfolio_website/static/js/main.54a454da.js",
     "static/media/collabcanvas.png": "/portfolio_website/static/media/collabcanvas.2c8ced27e2c0b07137e7.png",
     "static/media/ai_math_tutor.png": "/portfolio_website/static/media/ai_math_tutor.5fbd671eb5e8a14a42b1.png",
@@ -13,11 +13,11 @@
     "static/media/clipforge.png": "/portfolio_website/static/media/clipforge.9e590cb6d475d86d6354.png",
     "static/media/housing_price.png": "/portfolio_website/static/media/housing_price.6a87756c1a7ab9ff4123.png",
     "index.html": "/portfolio_website/index.html",
-    "main.6479ac05.css.map": "/portfolio_website/static/css/main.6479ac05.css.map",
+    "main.8ad4186e.css.map": "/portfolio_website/static/css/main.8ad4186e.css.map",
     "main.54a454da.js.map": "/portfolio_website/static/js/main.54a454da.js.map"
   },
   "entrypoints": [
-    "static/css/main.6479ac05.css",
+    "static/css/main.8ad4186e.css",
     "static/js/main.54a454da.js"
   ]
 }
