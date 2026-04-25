@@ -1,11 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
 
 .theme-card {
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 24px;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.06)),
+    radial-gradient(circle at top right, rgba(34, 211, 238, 0.08), transparent 18rem);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(34, 211, 238, 0.18);
+  border-radius: 28px;
+  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.12);
   padding: 2.5rem;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
   position: relative;
@@ -23,23 +26,25 @@
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(102, 126, 234, 0.4),
+    rgba(34, 211, 238, 0.45),
     transparent
   );
 }
 
 .dark-theme .theme-card {
-  background: rgba(30, 30, 30, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    linear-gradient(135deg, rgba(15, 23, 42, 0.26), rgba(15, 23, 42, 0.1)),
+    radial-gradient(circle at top right, rgba(124, 58, 237, 0.1), transparent 18rem);
+  border: 1px solid rgba(34, 211, 238, 0.2);
   color: #e9ecef;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.32);
 }
 
 .dark-theme .theme-card::before {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(167, 139, 250, 0.4),
+    rgba(34, 211, 238, 0.42),
     transparent
   );
 }
@@ -50,20 +55,18 @@
 
 .modern-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
-  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 28px 80px rgba(8, 145, 178, 0.16);
 }
 
 .dark-theme .modern-card:hover {
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
-  background: rgba(30, 30, 30, 0.75);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.38);
 }
 
 .section-title {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   margin-bottom: 2rem;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #0891b2, #7c3aed);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -78,7 +81,7 @@
   left: 0;
   width: 60px;
   height: 4px;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #0891b2, #7c3aed);
   border-radius: 2px;
 }
 

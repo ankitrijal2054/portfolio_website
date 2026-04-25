@@ -4,17 +4,22 @@
 }
 
 .contact-card {
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(102, 126, 234, 0.15);
-  border-radius: 20px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.06)),
+    radial-gradient(circle at top right, rgba(34, 211, 238, 0.08), transparent 18rem);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(34, 211, 238, 0.18);
+  border-radius: 26px;
   padding: 2rem;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.12);
 }
 
 .dark-theme .contact-card {
-  background: rgba(30, 30, 30, 0.6);
-  border-color: rgba(167, 139, 250, 0.2);
+  background:
+    linear-gradient(135deg, rgba(15, 23, 42, 0.26), rgba(15, 23, 42, 0.1)),
+    radial-gradient(circle at top right, rgba(124, 58, 237, 0.1), transparent 18rem);
+  border-color: rgba(34, 211, 238, 0.2);
 }
 
 .contact-subtitle {
@@ -26,6 +31,33 @@
 
 .dark-theme .contact-subtitle {
   color: #9ca3af;
+}
+
+.contact-command-panel {
+  padding: 1.25rem;
+  border: 1px solid rgba(34, 211, 238, 0.16);
+  border-radius: 20px;
+  background:
+    linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.88)),
+    repeating-linear-gradient(180deg, rgba(34, 211, 238, 0.05) 0 1px, transparent 1px 32px);
+  color: #dbeafe;
+}
+
+.contact-command-line {
+  margin-bottom: 0.75rem;
+  color: #e0f2fe;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 800;
+}
+
+.contact-command-line span {
+  color: #34d399;
+}
+
+.contact-command-panel p {
+  margin: 0;
+  color: #cbd5e1;
+  line-height: 1.7;
 }
 
 .contact-form {
@@ -64,8 +96,8 @@
   width: 100%;
   padding: 1rem 1.25rem;
   font-size: 1rem;
-  border: 2px solid rgba(102, 126, 234, 0.15);
-  border-radius: 12px;
+  border: 2px solid rgba(34, 211, 238, 0.14);
+  border-radius: 16px;
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
   transition: border 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
@@ -74,21 +106,21 @@
 
 .dark-theme .form-control-modern {
   background: rgba(45, 55, 72, 0.6);
-  border-color: rgba(167, 139, 250, 0.2);
+  border-color: rgba(34, 211, 238, 0.18);
   color: #e2e8f0;
 }
 
 .form-control-modern:focus {
   outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+  border-color: #0891b2;
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.16);
   background: rgba(255, 255, 255, 0.8);
   transform: translateY(-1px);
 }
 
 .dark-theme .form-control-modern:focus {
-  border-color: #a78bfa;
-  box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.15);
+  border-color: #67e8f9;
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.16);
   background: rgba(45, 55, 72, 0.8);
 }
 
@@ -115,7 +147,7 @@
 }
 
 .submit-button-modern {
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #0891b2, #7c3aed);
   color: white;
   padding: 1rem 2.5rem;
   font-size: 1.1rem;
@@ -124,7 +156,7 @@
   border-radius: 50px;
   min-width: 180px;
   transition: transform 0.2s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 4px 15px rgba(8, 145, 178, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -132,9 +164,9 @@
 }
 
 .submit-button-modern:hover:not(:disabled) {
-  background: linear-gradient(135deg, #764ba2, #667eea);
+  background: linear-gradient(135deg, #0e7490, #6d28d9);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 8px 25px rgba(8, 145, 178, 0.4);
 }
 
 .submit-button-modern:disabled {

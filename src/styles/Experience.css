@@ -15,9 +15,9 @@
   top: 0.5rem;
   width: 16px;
   height: 16px;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #0891b2, #7c3aed);
   border-radius: 50%;
-  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2);
+  box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.18);
 }
 
 .timeline-marker::before {
@@ -27,35 +27,35 @@
   top: 100%;
   width: 2px;
   height: 100px;
-  background: linear-gradient(180deg, #667eea, transparent);
+  background: linear-gradient(180deg, #0891b2, transparent);
   transform: translateX(-50%);
 }
 
 .timeline-content {
-  background: rgba(102, 126, 234, 0.04);
+  background: rgba(34, 211, 238, 0.04);
   backdrop-filter: blur(10px);
   padding: 1.5rem;
   border-radius: 16px;
-  border-left: 4px solid #667eea;
-  border: 1px solid rgba(102, 126, 234, 0.1);
+  border-left: 4px solid #0891b2;
+  border: 1px solid rgba(34, 211, 238, 0.12);
   transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
   will-change: transform, box-shadow;
 }
 
 .dark-theme .timeline-content {
-  background: rgba(102, 126, 234, 0.06);
-  border-left-color: #a78bfa;
-  border: 1px solid rgba(167, 139, 250, 0.15);
+  background: rgba(34, 211, 238, 0.06);
+  border-left-color: #67e8f9;
+  border: 1px solid rgba(34, 211, 238, 0.16);
 }
 
 .timeline-content:hover {
   transform: translateX(8px);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
-  background: rgba(102, 126, 234, 0.08);
+  box-shadow: 0 8px 25px rgba(8, 145, 178, 0.15);
+  background: rgba(34, 211, 238, 0.08);
 }
 
 .dark-theme .timeline-content:hover {
-  background: rgba(102, 126, 234, 0.1);
+  background: rgba(34, 211, 238, 0.1);
 }
 
 .role-title,
@@ -77,12 +77,12 @@
   font-size: clamp(1rem, 2vw, 1.2rem);
   font-weight: 500;
   font-family: "Inter", sans-serif;
-  color: #667eea;
+  color: #0891b2;
   margin-bottom: 1rem;
 }
 
 .dark-theme .company-details {
-  color: #a78bfa;
+  color: #67e8f9;
 }
 
 .dark-theme .project-card-description {
@@ -108,7 +108,7 @@
   content: "▸";
   position: absolute;
   left: 0;
-  color: #667eea;
+  color: #0891b2;
   font-weight: bold;
 }
 
@@ -117,7 +117,7 @@
 }
 
 .dark-theme .experience-details li::before {
-  color: #a78bfa;
+  color: #67e8f9;
 }
 
 .project-title {
@@ -144,26 +144,25 @@
   backdrop-filter: blur(10px);
   padding: 1.5rem;
   border-radius: 16px;
-  border: 1px solid rgba(102, 126, 234, 0.08);
+  border: 1px solid rgba(34, 211, 238, 0.12);
   transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
   will-change: transform, box-shadow;
-  cursor: pointer;
 }
 
 .project-card:hover {
-  background: rgba(102, 126, 234, 0.04);
-  border-color: rgba(102, 126, 234, 0.2);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+  background: rgba(34, 211, 238, 0.05);
+  border-color: rgba(34, 211, 238, 0.24);
+  box-shadow: 0 8px 25px rgba(8, 145, 178, 0.15);
 }
 
 .dark-theme .project-card {
   background: rgba(45, 55, 72, 0.6);
-  border: 1px solid rgba(167, 139, 250, 0.15);
+  border: 1px solid rgba(34, 211, 238, 0.16);
 }
 
 .dark-theme .project-card:hover {
-  background: rgba(167, 139, 250, 0.08);
-  border-color: rgba(167, 139, 250, 0.2);
+  background: rgba(34, 211, 238, 0.08);
+  border-color: rgba(34, 211, 238, 0.24);
 }
 
 /* Responsive Design */

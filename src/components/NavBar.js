@@ -73,7 +73,6 @@ function NavBar() {
                         isDarkMode ? "dark" : "light"
                       }`}
                       onClick={() => setMenuOpen(!menuOpen)}
-                      noCaret
                     >
                       <FaBars className="menu-icon" size={24} />
                     </Dropdown.Toggle>

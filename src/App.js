@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext } from "react";
+import React, { Suspense, useState, useEffect, createContext } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import NavBar from "./components/NavBar";
 import AboutMe from "./components/AboutMe";
@@ -7,7 +7,6 @@ import Skill from "./components/Skill";
 import Project from "./components/Project";
 import Social from "./components/Social";
 import Contact from "./components/Contact";
-import ChatBot from "./components/Chat";
 import ScrollToTop from "./components/ScrollToTop";
 import LoadingScreen from "./components/LoadingScreen";
 import "./styles/App.css";
@@ -16,6 +15,7 @@ import Education from "./components/Education";
 import Certification from "./components/Certification";
 
 export const ThemeContext = createContext();
+const AiWaveBackground = React.lazy(() => import("./components/AiWaveBackground"));
 
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
@@ -63,6 +63,27 @@ function App() {
     duration: 0.5
   };
 
+  const sectionVariants = {
+    hidden: {
+      opacity: 0,
+      y: 36,
+      scale: 0.985,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+    },
+  };
+
+  const getSectionMotion = () => ({
+    variants: sectionVariants,
+    initial: "hidden",
+    whileInView: "visible",
+    viewport: { once: true, amount: 0.18, margin: "0px 0px -8% 0px" },
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+  });
+
   if (isLoading) {
     return <LoadingScreen />;
   }
@@ -81,15 +102,16 @@ function App() {
           <div id="stars"></div>
           <div id="stars2"></div>
           <div id="stars3"></div>
+          <Suspense fallback={null}>
+            <AiWaveBackground />
+          </Suspense>
 
           <NavBar />
           <div className="content">
             <motion.section 
               id="aboutme" 
               className="section-container"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
+              {...getSectionMotion(0)}
             >
               <AboutMe />
             </motion.section>
@@ -97,10 +119,7 @@ function App() {
             <motion.section 
               id="experience" 
               className="section-container"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5 }}
+              {...getSectionMotion(1)}
             >
               <Experience />
             </motion.section>
@@ -108,10 +127,7 @@ function App() {
             <motion.section 
               id="education" 
               className="section-container"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5 }}
+              {...getSectionMotion(2)}
             >
               <Education />
             </motion.section>
@@ -119,10 +135,7 @@ function App() {
             <motion.section 
               id="skill" 
               className="section-container"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5 }}
+              {...getSectionMotion(3)}
             >
               <Skill />
             </motion.section>
@@ -130,10 +143,7 @@ function App() {
             <motion.section 
               id="project" 
               className="section-container"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5 }}
+              {...getSectionMotion(4)}
             >
               <Project />
             </motion.section>
@@ -141,10 +151,7 @@ function App() {
             <motion.section 
               id="certification" 
               className="section-container"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5 }}
+              {...getSectionMotion(5)}
             >
               <Certification />
             </motion.section>
@@ -152,10 +159,7 @@ function App() {
             <motion.section 
               id="social" 
               className="section-container"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5 }}
+              {...getSectionMotion(6)}
             >
               <Social />
             </motion.section>
@@ -163,17 +167,13 @@ function App() {
             <motion.section 
               id="contact" 
               className="section-container"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5 }}
+              {...getSectionMotion(7)}
             >
               <Contact />
             </motion.section>
           </div>
           
           <ScrollToTop />
-          {/*<ChatBot />*/}
         </motion.div>
       </AnimatePresence>
     </ThemeContext.Provider>

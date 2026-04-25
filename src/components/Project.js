@@ -25,6 +25,9 @@ function Project() {
       img: studybuddyimg,
       alt: "Study Buddy",
       title: "Study Buddy",
+      category: "AI Learning",
+      status: "Live",
+      tags: ["React", "AI", "Adaptive Quizzes"],
       description:
         "A persistent AI learning companion that keeps students engaged through conversational learning, adaptive quizzes, personalized recommendations, and intelligent nudges."
     },
@@ -33,6 +36,9 @@ function Project() {
       img: aimathtutorimg,
       alt: "AI Math Tutor",
       title: "AI Math Tutor",
+      category: "AI Tutor",
+      status: "Live",
+      tags: ["Socratic AI", "Math", "Tutoring"],
       description:
         "AI Math Tutor is a web-based conversational AI tutoring platform that teaches mathematics through the Socratic method through step-by-step reasoning using leading questions, hints, and validation, building genuine understanding and critical thinking skills."
     },
@@ -41,6 +47,9 @@ function Project() {
       img: lawmintimg,
       alt: "Lawmint",
       title: "Lawmint",
+      category: "Legal AI",
+      status: "Live",
+      tags: ["Automation", "Documents", "Collaboration"],
       description:
         "AI-Powered Demand Letters for Modern Law Firms. Draft, refine, and collaborate on demand letters securely and effortlessly. Transform how your firm creates legal documents with intelligent automation.",
     },
@@ -49,6 +58,9 @@ function Project() {
       img: imageassistantimg,
       alt: "AI Image Assistant",
       title: "AI Image Assistant",
+      category: "Vision AI",
+      status: "Live",
+      tags: ["Streamlit", "Vision", "Captions"],
       description:
         "An AI assistant that that allows users to upload an image and either ask questions about it or generate a caption.",
     },
@@ -57,6 +69,9 @@ function Project() {
       img: collabcanvasimg,
       alt: "CollabCanvas",
       title: "CollabCanvas",
+      category: "Realtime App",
+      status: "Live",
+      tags: ["React", "Firebase", "GPT-4"],
       description:
         "A real-time AI-powered collaborative design canvas built with React, TypeScript, Firebase, and GPT-4 Turbo. Multiple users can draw, create, and edit objects simultaneously with live cursor tracking and presence awareness (<100 ms latency).",
     },
@@ -65,6 +80,9 @@ function Project() {
       img: unilangimg,
       alt: "Unilang",
       title: "Unilang",
+      category: "Communication",
+      status: "Demo",
+      tags: ["Translation", "AI Replies", "Messaging"],
       description:
         "Real-time messaging app with AI-powered translation, smart replies, tone adjustment, and slang detection for culturally aware communication across languages.",
     },
@@ -73,6 +91,9 @@ function Project() {
       img: clipforgeimg,
       alt: "ClipForge",
       title: "ClipForge",
+      category: "Desktop App",
+      status: "Demo",
+      tags: ["Electron", "React", "Video"],
       description:
         "ClipForge is a modern, cross-platform desktop video editor built with Electron, React, and TypeScript. It provides an intuitive interface for video trimming, preview, and export with professional-grade performance.",
     },
@@ -81,6 +102,9 @@ function Project() {
       img: chatbotimg,
       alt: "AI Chatbot",
       title: "AI Chatbot",
+      category: "RAG",
+      status: "Code",
+      tags: ["LangChain", "RAG", "Knowledge Base"],
       description:
         "A chatbot with a custom knowledge base using LangChain and RAG.",
     },
@@ -89,6 +113,9 @@ function Project() {
       img: housingimg,
       alt: "Housing Price Prediction",
       title: "Housing Price Predictor",
+      category: "Machine Learning",
+      status: "Code",
+      tags: ["ML", "Prediction", "Data"],
       description:
         "A machine learning model predicting house prices based on features.",
     },
@@ -153,6 +180,7 @@ function Project() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="project-tile"
+                    aria-label={`View ${project.title} project`}
                   >
                     <div className="project-tile-inner">
                       <div className="project-image-container">
@@ -162,14 +190,21 @@ function Project() {
                           className="project-image"
                           loading="lazy"
                         />
-                        <div className="project-overlay">
-                          <div className="project-info">
-                            <h4 className="project-title">{project.title}</h4>
-                            <p className="project-description">
-                              {project.description}
-                            </p>
-                          </div>
+                        <span className="project-category">{project.category}</span>
+                      </div>
+                      <div className="project-info">
+                        <div className="project-title-row">
+                          <h4 className="project-card-name">{project.title}</h4>
+                          <span className="project-status">{project.status}</span>
                         </div>
+                        <p className="project-description">
+                          {project.description}
+                        </p>
+                        <ul className="project-tags" aria-label={`${project.title} technologies`}>
+                          {project.tags.map((tag) => (
+                            <li key={tag}>{tag}</li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
                   </a>
