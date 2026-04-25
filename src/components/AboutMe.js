@@ -10,9 +10,9 @@ import {
 import "../styles/AboutMe.css";
 
 const roles = [
-  "Aspiring AI Engineer",
-  "Passionate Software Developer",
-  "Traveller",
+  "AI Engineer",
+  "Software Developer",
+  "Machine Learning",
 ];
 
 function AboutMe() {
@@ -72,7 +72,7 @@ function AboutMe() {
           </div>
 
           <p className="hero-eyebrow">Hello, I am</p>
-          <h1 className="hero-name">Ankit Rijal.</h1>
+          <h1 className="hero-name">Ankit Rijal</h1>
           <motion.p
             className="hero-role"
             key={currentTextIndex}

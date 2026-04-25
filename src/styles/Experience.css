@@ -140,23 +140,23 @@
 }
 
 .project-card {
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: none;
   padding: 1.5rem;
   border-radius: 16px;
-  border: 1px solid rgba(34, 211, 238, 0.12);
+  border: 1px solid rgba(34, 211, 238, 0.16);
   transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
   will-change: transform, box-shadow;
 }
 
 .project-card:hover {
-  background: rgba(34, 211, 238, 0.05);
+  background: rgba(34, 211, 238, 0.06);
   border-color: rgba(34, 211, 238, 0.24);
   box-shadow: 0 8px 25px rgba(8, 145, 178, 0.15);
 }
 
 .dark-theme .project-card {
-  background: rgba(45, 55, 72, 0.6);
+  background: rgba(15, 23, 42, 0.08);
   border: 1px solid rgba(34, 211, 238, 0.16);
 }
 

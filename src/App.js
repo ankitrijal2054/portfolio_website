@@ -7,6 +7,7 @@ import Skill from "./components/Skill";
 import Project from "./components/Project";
 import Social from "./components/Social";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import LoadingScreen from "./components/LoadingScreen";
 import "./styles/App.css";
@@ -171,6 +172,7 @@ function App() {
             >
               <Contact />
             </motion.section>
+            <Footer />
           </div>
           
           <ScrollToTop />

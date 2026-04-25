@@ -257,10 +257,22 @@
   min-height: 560px;
   height: 100%;
   padding: clamp(2rem, 5vw, 4rem);
-  border-radius: 32px;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.dark-theme .hero-intro-panel {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .hero-intro-panel-full {
@@ -293,10 +305,13 @@
   transition: transform 0.7s ease;
 }
 
-.hero-intro-panel:hover::after,
 .ai-terminal-panel:hover::after,
 .hero-bento-card:hover::after {
   transform: translateX(120%);
+}
+
+.hero-intro-panel::after {
+  display: none;
 }
 
 .hero-status-pill {
@@ -334,8 +349,10 @@
 
 .hero-name {
   margin: 0;
+  display: inline-block;
+  padding-bottom: 0.12em;
   font-size: clamp(3rem, 8vw, 6.5rem);
-  line-height: 0.9;
+  line-height: 1.02;
   font-weight: 900;
   letter-spacing: -0.08em;
   background: linear-gradient(135deg, #0f172a, #0891b2 45%, #7c3aed 88%);

@@ -55,11 +55,9 @@ function NavBar() {
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
       <Navbar expand="lg" className="modern-navbar">
-        <Container>
-          <Row className="w-100 align-items-center justify-content-between">
-            
-            
-            <Col xs="auto">
+        <Container className="navbar-container">
+          <Row className="nav-shell w-100 align-items-center justify-content-between">
+            <Col xs="auto" className="nav-control-slot">
               <div className="dropdown-wrapper">
                 <Dropdown show={menuOpen} onToggle={setMenuOpen}>
                   <motion.div
@@ -73,8 +71,10 @@ function NavBar() {
                         isDarkMode ? "dark" : "light"
                       }`}
                       onClick={() => setMenuOpen(!menuOpen)}
+                      aria-label="Open section navigation"
                     >
-                      <FaBars className="menu-icon" size={24} />
+                      <FaBars className="menu-icon" size={18} aria-hidden="true" />
+                      <span className="menu-label">Explore</span>
                     </Dropdown.Toggle>
                   </motion.div>
                   
@@ -113,28 +113,26 @@ function NavBar() {
               </div>
             </Col>
             <Col xs="auto" className="d-flex justify-content-center align-items-center">
-              <motion.div
+              <motion.button
+                type="button"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="brand-logo"
+                className="brand-logo-button"
+                onClick={() => scrollToSection("aboutme")}
+                aria-label="Scroll to introduction"
               >
-                <Navbar.Brand
-                  onClick={() => scrollToSection("aboutme")}
-                  style={{ cursor: "pointer" }}
-                  className="brand-logo"
-                >
-                  <img
-                    src={logo}
-                    alt="Portfolio Logo"
-                    width="50"
-                    height="50"
-                    className="logo-image"
-                  />
-                </Navbar.Brand>
-              </motion.div>
+                <img
+                  src={logo}
+                  alt=""
+                  width="44"
+                  height="44"
+                  className="logo-image"
+                  aria-hidden="true"
+                />
+              </motion.button>
             </Col>
             
-            <Col xs="auto" className="d-flex justify-content-end align-items-center">
+            <Col xs="auto" className="nav-control-slot d-flex justify-content-end align-items-center">
               <motion.div 
                 className="theme-toggle-container"
                 whileHover={{ scale: 1.05 }}
@@ -144,7 +142,11 @@ function NavBar() {
                   className="theme-toggle-btn"
                   aria-label="Toggle theme"
                 >
-                  {isDarkMode ? <RiMoonLine /> : <RiSunLine />}
+                  {isDarkMode ? (
+                    <RiMoonLine aria-hidden="true" />
+                  ) : (
+                    <RiSunLine aria-hidden="true" />
+                  )}
                 </button>
               </motion.div>
             </Col>
