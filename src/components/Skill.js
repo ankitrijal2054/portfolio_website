@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Container, Card } from "react-bootstrap";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { FiCode } from "react-icons/fi";
 import { FaReact, FaPython, FaGithub, FaAws, FaDocker, FaJenkins } from "react-icons/fa";
 import { TbBrandCSharp } from "react-icons/tb";
 import { BiLogoPostgresql } from "react-icons/bi";
@@ -16,8 +17,16 @@ import {
   SiLangchain,
   SiGooglegemini,
   SiOpenai,
-  SiGithubcopilot,
   SiStreamlit,
+  SiTypescript,
+  SiFastapi,
+  SiPydantic,
+  SiFirebase,
+  SiVercel,
+  SiGooglecloud,
+  SiSupabase,
+  SiCapacitor,
+  SiNextdotjs,
 } from "react-icons/si";
 import "../styles/Card.css";
 import "../styles/Skill.css";
@@ -33,8 +42,14 @@ function Skill() {
   [
     "Python",
     <FaPython />,
-    "Core language for my AI and software projects — from building LLM-powered apps (FastAPI, Flask, Streamlit) to data pipelines, model training, and backend services.",
+    "Core language for AI agent development, LLM-powered apps, data workflows, model experimentation, and backend services.",
     "AI & Data",
+  ],
+  [
+    "FastAPI",
+    <SiFastapi />,
+    "Used to build Python API services for AI products, model-backed workflows, and reliable backend interfaces.",
+    "Backend",
   ],
   [
     "C#",
@@ -43,15 +58,27 @@ function Skill() {
     "Backend",
   ],    
   [
-    "ReactJs",
+    "React / React Native",
     <FaReact />,
-    "Built dynamic UIs and SPAs for projects like SmartPrep AI and Guide2Smart AI, and used extensively at Reynolds & Reynolds to deliver cross-platform enterprise apps.",
+    "Built dynamic web and mobile experiences across AI products, enterprise applications, collaborative tools, and real-time messaging.",
+    "Frontend",
+  ],
+  [
+    "Next.js",
+    <SiNextdotjs />,
+    "Used for modern frontend development in current AI product work, pairing a Next.js interface with Python-backed services.",
+    "Frontend",
+  ],
+  [
+    "TypeScript",
+    <SiTypescript />,
+    "Applied typed JavaScript across modern React, Firebase, and Electron projects to improve maintainability and reduce runtime bugs.",
     "Frontend",
   ],
   [
     "PostgreSQL",
     <BiLogoPostgresql />,
-    "Designed and optimized relational databases to support scalable apps, ensuring efficient queries and secure data handling at Reynolds & Reynolds for enterprise systems.",
+    "Designed and optimized relational data models for scalable applications, efficient queries, and secure data handling.",
     "Backend",
   ],
   [
@@ -61,9 +88,33 @@ function Skill() {
     "Frontend",
   ],
   [
+    "Capacitor.js",
+    <SiCapacitor />,
+    "Used to package web application experiences into mobile apps while sharing frontend code across platforms.",
+    "Frontend",
+  ],
+  [
     "AWS",
     <FaAws />,
-    "Deployed and managed personal apps on AWS (EC2, S3, Amplify) — including Dockerized ML models and monitoring workflows.",
+    "Worked with AWS services including EC2, S3, Lambda, Amplify, and CloudWatch for deployment, serverless workflows, and monitoring.",
+    "Cloud & Delivery",
+  ],
+  [
+    "Firebase",
+    <SiFirebase />,
+    "Used Firebase and Firestore for real-time collaboration, authentication, hosting, and rapid deployment of AI-enabled products.",
+    "Cloud & Delivery",
+  ],
+  [
+    "Vercel",
+    <SiVercel />,
+    "Used Vercel for fast frontend deployment workflows and modern product iteration across React-based applications.",
+    "Cloud & Delivery",
+  ],
+  [
+    "GCP",
+    <SiGooglecloud />,
+    "Familiar with Google Cloud production ML concepts and cloud deployment patterns for AI-focused systems.",
     "Cloud & Delivery",
   ],
   [
@@ -85,6 +136,18 @@ function Skill() {
     "Cloud & Delivery",
   ],
   [
+    "Supabase",
+    <SiSupabase />,
+    "Used for database-backed product development, authentication-friendly workflows, and fast backend iteration.",
+    "Backend",
+  ],
+  [
+    "Cursor + Claude Code",
+    <FiCode />,
+    "Used as part of an AI-assisted development workflow for faster implementation, debugging, refactoring, and agentic coding.",
+    "AI-Assisted Development",
+  ],
+  [
     "Streamlit",
     <SiStreamlit />,
     "Built and deployed AI prototypes like AI Image Assistant on Streamlit Cloud for interactive data science and vision-language apps.",
@@ -94,6 +157,18 @@ function Skill() {
     "LangChain",
     <SiLangchain />,
     "Used in RAG-based chatbots with ChromaDB and Hugging Face to enable document-aware, persistent LLM responses.",
+    "AI & Data",
+  ],
+  [
+    "LangGraph",
+    <SiLangchain />,
+    "Applied graph-based agent workflow patterns for more reliable multi-step LLM orchestration and stateful AI systems.",
+    "AI & Data",
+  ],
+  [
+    "Pydantic AI",
+    <SiPydantic />,
+    "Built structured AI agent workflows with validation, deterministic orchestration, quality gates, and error-driven self-correction.",
     "AI & Data",
   ],
   [
@@ -113,12 +188,6 @@ function Skill() {
     <SiHuggingface />,
     "Implemented Hugging Face Transformers in RAG pipelines and chatbots for embeddings, inference optimization, and fine-tuning.",
     "AI & Data",
-  ],
-  [
-    "Github Copilot",
-    <SiGithubcopilot />,
-    "Leveraged for AI-powered coding assistance — from debugging issues to speeding up prototyping and improving productivity in various projects.",
-    "Cloud & Delivery",
   ],
   [
     "NumPy",
