@@ -74,7 +74,6 @@ function NavBar() {
                       aria-label="Open section navigation"
                     >
                       <FaBars className="menu-icon" size={18} aria-hidden="true" />
-                      <span className="menu-label">Explore</span>
                     </Dropdown.Toggle>
                   </motion.div>
                   
