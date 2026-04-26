@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { createPortal } from "react-dom";
 import { Container, Card } from "react-bootstrap";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -32,7 +33,7 @@ import "../styles/Card.css";
 import "../styles/Skill.css";
 
 function Skill() {
-  const [activeSkillIndex, setActiveSkillIndex] = useState(0);
+  const [hoveredSkill, setHoveredSkill] = useState(null);
   const { ref, inView } = useInView({
     threshold: 0.2,
     triggerOnce: true,
@@ -227,7 +228,6 @@ function Skill() {
     description: skill[2],
     category: skill[3],
   }));
-  const activeSkill = skills[activeSkillIndex];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -252,6 +252,31 @@ function Skill() {
     },
   };
 
+  const showSkillBubble = (skill, event) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    const bubbleWidth = Math.min(360, window.innerWidth - 32);
+    const margin = 16;
+    const centerX = rect.left + rect.width / 2;
+    const x = Math.min(
+      Math.max(centerX, margin + bubbleWidth / 2),
+      window.innerWidth - margin - bubbleWidth / 2
+    );
+    const roomAbove = rect.top;
+    const roomBelow = window.innerHeight - rect.bottom;
+    const placement = roomAbove > roomBelow && roomAbove > 180 ? "top" : "bottom";
+    const availableHeight =
+      placement === "top" ? roomAbove - margin * 2 : roomBelow - margin * 2;
+
+    setHoveredSkill({
+      ...skill,
+      x,
+      y: placement === "top" ? rect.top - 12 : rect.bottom + 12,
+      placement,
+      maxHeight: Math.max(180, availableHeight),
+      width: bubbleWidth,
+    });
+  };
+
   return (
     <Container className="skill-container" ref={ref}>
       <motion.div
@@ -271,48 +296,49 @@ function Skill() {
               </Card.Title>
             </motion.div>
 
-            <motion.div
-              className="skill-detail-panel"
-              variants={itemVariants}
-              aria-live="polite"
-            >
-              <div className="skill-detail-icon" aria-hidden="true">
-                {activeSkill.icon}
-              </div>
-              <div>
-                <span>{activeSkill.category}</span>
-                <h3>{activeSkill.name}</h3>
-                <p>{activeSkill.description}</p>
-              </div>
-            </motion.div>
-
             <div className="skill-cloud" aria-label="Skill cloud">
-              {skills.map((skill, index) => (
+              {skills.map((skill) => (
                 <motion.button
                   key={skill.name}
                   type="button"
-                  className={`skill-cloud-item ${
-                    activeSkillIndex === index ? "active" : ""
-                  }`}
+                  className="skill-cloud-item"
                   variants={itemVariants}
                   aria-label={`${skill.name}: ${skill.description}`}
-                  aria-pressed={activeSkillIndex === index}
-                  onClick={() => setActiveSkillIndex(index)}
-                  onFocus={() => setActiveSkillIndex(index)}
-                  onMouseEnter={() => setActiveSkillIndex(index)}
+                  onMouseEnter={(event) => showSkillBubble(skill, event)}
+                  onFocus={(event) => showSkillBubble(skill, event)}
+                  onMouseLeave={() => setHoveredSkill(null)}
+                  onBlur={() => setHoveredSkill(null)}
                   whileHover={{ y: -6, scale: 1.03 }}
                   whileFocus={{ y: -6, scale: 1.03 }}
                 >
-                  <span className="skill-cloud-icon" aria-hidden="true">
-                    {skill.icon}
+                  <span className="skill-cloud-surface" aria-hidden="true">
+                    <span className="skill-cloud-icon">{skill.icon}</span>
+                    <span className="skill-cloud-name">{skill.name}</span>
                   </span>
-                  <span className="skill-cloud-name">{skill.name}</span>
                 </motion.button>
               ))}
             </div>
           </Card.Body>
         </Card>
       </motion.div>
+      {hoveredSkill &&
+        createPortal(
+          <div
+            className={`skill-detail-bubble skill-detail-bubble-${hoveredSkill.placement}`}
+            style={{
+              left: hoveredSkill.x,
+              top: hoveredSkill.y,
+              width: hoveredSkill.width,
+              maxHeight: hoveredSkill.maxHeight,
+            }}
+            role="tooltip"
+          >
+            <span>{hoveredSkill.category}</span>
+            <strong>{hoveredSkill.name}</strong>
+            <small>{hoveredSkill.description}</small>
+          </div>,
+          document.body
+        )}
     </Container>
   );
 }
