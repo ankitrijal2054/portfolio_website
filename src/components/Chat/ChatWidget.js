@@ -79,7 +79,7 @@ function ChatWidget() {
           />
         )}
       </AnimatePresence>
-      <ScrollHandler chat={chat} onClose={handleClose} />
+      <ScrollHandler chat={chat} />
     </>
   );
 }

@@ -95,9 +95,9 @@ export const tools = {
 
   get_resume_url: tool({
     description:
-      "Return the URL to download Ankit's resume PDF. Use when the visitor asks for the resume or CV.",
+      "Render a download-resume button in the chat. Use when the visitor asks for the resume or CV. The frontend handles the actual file path — you do NOT need to mention any URL or path in your prose.",
     inputSchema: z.object({}),
-    execute: async () => ({ url: resumeUrl, filename: "Resume-Ankit_Rijal.pdf" }),
+    execute: async () => ({ ok: true }),
   }),
 
   // Client-side tool. No execute() — the frontend handles it by scrolling

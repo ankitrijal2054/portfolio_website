@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 // When one arrives in the "input-available" state (model has emitted full
 // arguments but no execute() exists on the server), this scrolls the page,
 // closes the chat, and confirms the result back to the model so it can move on.
-function ScrollHandler({ chat, onClose }) {
+function ScrollHandler({ chat }) {
   const { messages, addToolResult } = chat;
   const handledRef = useRef(new Set());
 
@@ -26,9 +26,6 @@ function ScrollHandler({ chat, onClose }) {
       if (target) {
         target.scrollIntoView({ behavior: "smooth", block: "start" });
       }
-      // Give the panel a beat so the morph back to the bubble doesn't fight
-      // the scroll animation.
-      window.setTimeout(() => onClose?.(), 350);
 
       addToolResult?.({
         tool: "scroll_to_section",
@@ -36,7 +33,7 @@ function ScrollHandler({ chat, onClose }) {
         output: { ok: true, section },
       });
     }
-  }, [messages, addToolResult, onClose]);
+  }, [messages, addToolResult]);
 
   return null;
 }

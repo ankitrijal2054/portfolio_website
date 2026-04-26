@@ -844,6 +844,25 @@
 
 .dark-theme .chat-scroll-pill-dot { background: #a78bfa; }
 
+.chat-scroll-pill-done {
+  background: rgba(52, 211, 153, 0.16);
+  color: #059669;
+}
+
+.dark-theme .chat-scroll-pill-done { color: #34d399; }
+
+.chat-scroll-pill-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: #34d399;
+  color: #fff;
+  font-size: 10px;
+}
+
 /* ===== Chips ============================================================ */
 
 .chat-chips {

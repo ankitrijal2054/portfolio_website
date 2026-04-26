@@ -2,7 +2,7 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { motion } from "framer-motion";
-import { HiSparkles } from "react-icons/hi2";
+import { HiSparkles, HiCheck } from "react-icons/hi2";
 import ProjectsView from "./toolViews/ProjectsView";
 import ExperienceView from "./toolViews/ExperienceView";
 import SkillsView from "./toolViews/SkillsView";
@@ -50,10 +50,20 @@ function renderToolPart(part, key) {
   if (toolName === "scroll_to_section") {
     const section = part.input?.section;
     const label = SECTION_LABELS[section] ?? section ?? "section";
+    const done = part.state === "output-available";
     return (
-      <div className="chat-scroll-pill" key={key}>
-        <span className="chat-scroll-pill-dot" />
-        Scrolling to {label}…
+      <div
+        className={`chat-scroll-pill${done ? " chat-scroll-pill-done" : ""}`}
+        key={key}
+      >
+        {done ? (
+          <span className="chat-scroll-pill-check" aria-hidden="true">
+            <HiCheck />
+          </span>
+        ) : (
+          <span className="chat-scroll-pill-dot" aria-hidden="true" />
+        )}
+        {done ? `Scrolled to ${label}` : `Scrolling to ${label}…`}
       </div>
     );
   }
