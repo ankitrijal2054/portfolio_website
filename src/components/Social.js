@@ -6,6 +6,14 @@ import { FaGithub, FaLinkedin, FaInstagramSquare } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import "../styles/Social.css";
 import "../styles/Card.css";
+import { socialsData } from "../data/portfolio";
+
+const SOCIAL_ICONS = {
+  FaGithub: <FaGithub />,
+  FaLinkedin: <FaLinkedin />,
+  FaXTwitter: <FaXTwitter />,
+  FaInstagramSquare: <FaInstagramSquare />,
+};
 
 function Social() {
   const { ref, inView } = useInView({
@@ -13,32 +21,10 @@ function Social() {
     triggerOnce: true,
   });
 
-  const socials = [
-    {
-      name: "GitHub",
-      icon: <FaGithub />,
-      link: "https://github.com/ankitrijal2054",
-      color: "#333",
-    },
-    {
-      name: "LinkedIn",
-      icon: <FaLinkedin />,
-      link: "https://www.linkedin.com/in/ankitrjl2054/",
-      color: "#0077b5",
-    },
-    {
-      name: "X/Twitter",
-      icon: <FaXTwitter />,
-      link: "https://x.com/ankit_rijal2054",
-      color: "#1da1f2",
-    },
-    {
-      name: "Instagram",
-      icon: <FaInstagramSquare />,
-      link: "https://www.instagram.com/ankit_rjl",
-      color: "#e4405f",
-    },
-  ];
+  const socials = socialsData.map((social) => ({
+    ...social,
+    icon: SOCIAL_ICONS[social.iconKey] ?? null,
+  }));
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -81,7 +67,7 @@ function Social() {
                 Social
               </Card.Title>
             </motion.div>
-            
+
             <div className="social-links">
               {socials.map((social, index) => (
                 <motion.a
@@ -92,7 +78,7 @@ function Social() {
                   className="social-tile"
                   aria-label={`Open Ankit Rijal on ${social.name}`}
                   variants={itemVariants}
-                  whileHover={{ 
+                  whileHover={{
                     y: -6,
                     transition: { duration: 0.25 }
                   }}

@@ -8,12 +8,12 @@ import {
   FiZap,
 } from "react-icons/fi";
 import "../styles/AboutMe.css";
-
-const roles = [
-  "AI Engineer",
-  "Software Developer",
-  "Machine Learning",
-];
+import {
+  aboutMeRoles as roles,
+  aboutMeBio,
+  aboutMeStatusTagline,
+  resumeUrl,
+} from "../data/portfolio";
 
 function AboutMe() {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
@@ -33,7 +33,7 @@ function AboutMe() {
     document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
   };
 
-  const resumeHref = `${process.env.PUBLIC_URL}/assets/Resume-Ankit_Rijal.pdf`;
+  const resumeHref = resumeUrl;
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -68,7 +68,7 @@ function AboutMe() {
         <motion.section className="hero-intro-panel hero-intro-panel-full" variants={itemVariants}>
           <div className="hero-status-pill">
             <FiZap aria-hidden="true" />
-            Building AI-first software experiences
+            {aboutMeStatusTagline}
           </div>
 
           <p className="hero-eyebrow">Hello, I am</p>
@@ -83,12 +83,7 @@ function AboutMe() {
             {roles[currentTextIndex]}
           </motion.p>
 
-          <p className="hero-bio">
-            I am a curious builder who started as a software developer and is
-            now diving headfirst into the world of AI. I build reliable,
-            user-friendly applications and explore how intelligent systems can
-            make technology smarter, faster, and more helpful.
-          </p>
+          <p className="hero-bio">{aboutMeBio}</p>
 
           <div className="button-group">
             <motion.div whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.96 }}>

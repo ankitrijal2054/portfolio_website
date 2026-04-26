@@ -3,65 +3,7 @@ import { Container, Card } from "react-bootstrap";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import "../styles/Experience.css";
-
-const experiences = [
-  {
-    role: "AI Software Engineer",
-    company: "Flourish Schools, Remote",
-    dates: "Feb 2026 - Current",
-    status: "Current",
-    bullets: [
-      "Developed an AI agent using the Pydantic deep agents framework to generate symbolic math modules with deterministic orchestration, quality gates, crash-safe persistence, and error-driven self-correction.",
-      "Reduced math module build timelines from months to days by automating the generation, validation, and correction workflow for AI-powered education content.",
-      "Implemented AI grading to automate scoring and feedback, reducing teachers' manual grading time while keeping student feedback fast and consistent.",
-    ],
-    projects: [
-      {
-        title: "Symbolic Math Module Generator",
-        description:
-          "AI agent workflow for generating structured math modules with persistence, quality gates, and self-correction loops.",
-      },
-      {
-        title: "AI Grading System",
-        description:
-          "Automated grading and feedback flow designed to help teachers evaluate student work faster and more consistently.",
-      },
-    ],
-  },
-  {
-    role: "Software Developer",
-    company: "The Reynolds and Reynolds Company, College Station, TX",
-    dates: "Jan 2022 - Jul 2024",
-    bullets: [
-      "Developed full-stack KeyTrak applications across desktop, web, and mobile using C#/.NET, React.js, and Electron.js, serving 5,000+ enterprise customers.",
-      "Designed 30+ RESTful APIs using ASP.NET Core with SOLID principles, improving system performance, modularity, and long-term maintainability.",
-      "Migrated 50+ CI/CD pipelines from Jenkins to GitHub Actions, reducing deployment time by 30%.",
-      "Led version control migration from SVN to Git across Agile teams, enabling modern collaboration workflows.",
-    ],
-    projects: [
-      {
-        title: "SVN to GitHub Repository Migration",
-        description:
-          "Migrated an extensive SVN repository to GitHub, improving developer collaboration and modernizing version control workflows.",
-      },
-      {
-        title: "Build Process Migration to GitHub Actions",
-        description:
-          "Moved 50+ build processes from Jenkins to GitHub Actions, improving automation, reliability, and deployment speed.",
-      },
-      {
-        title: "Database Update Automation",
-        description:
-          "Built PowerShell and console tooling to automate database updates, reducing manual intervention by 90%.",
-      },
-      {
-        title: "Motion Detection Integration",
-        description:
-          "Integrated motion detection into KeyTrak Guardian using Accord.Net to support enhanced security workflows.",
-      },
-    ],
-  },
-];
+import { experienceData as experiences } from "../data/portfolio";
 
 function Experience() {
   const { ref, inView } = useInView({

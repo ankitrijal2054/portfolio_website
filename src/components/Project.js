@@ -12,6 +12,19 @@ import unilangimg from "../image/unilang.png";
 import lawmintimg from "../image/lawmint.png";
 import studybuddyimg from "../image/study_buddy.png";
 import aimathtutorimg from "../image/ai_math_tutor.png";
+import { projectsData } from "../data/portfolio";
+
+const PROJECT_IMAGES = {
+  studybuddy: studybuddyimg,
+  aimathtutor: aimathtutorimg,
+  lawmint: lawmintimg,
+  imageassistant: imageassistantimg,
+  collabcanvas: collabcanvasimg,
+  unilang: unilangimg,
+  clipforge: clipforgeimg,
+  chatbot: chatbotimg,
+  housing: housingimg,
+};
 
 function Project() {
   const { ref, inView } = useInView({
@@ -19,107 +32,10 @@ function Project() {
     triggerOnce: true,
   });
 
-  const projects = [
-    {
-      href: "https://study-buddy-28043.web.app/login",
-      img: studybuddyimg,
-      alt: "Study Buddy",
-      title: "Study Buddy",
-      category: "AI Learning",
-      status: "Live",
-      tags: ["React", "AI", "Adaptive Quizzes"],
-      description:
-        "A persistent AI learning companion that keeps students engaged through conversational learning, adaptive quizzes, personalized recommendations, and intelligent nudges."
-    },
-    {
-      href: "https://ai-math-tutor-b09db.web.app/",
-      img: aimathtutorimg,
-      alt: "AI Math Tutor",
-      title: "AI Math Tutor",
-      category: "AI Tutor",
-      status: "Live",
-      tags: ["Socratic AI", "Math", "Tutoring"],
-      description:
-        "AI Math Tutor is a web-based conversational AI tutoring platform that teaches mathematics through the Socratic method through step-by-step reasoning using leading questions, hints, and validation, building genuine understanding and critical thinking skills."
-    },
-    {
-      href: "https://lawmint-c5a21.web.app/",
-      img: lawmintimg,
-      alt: "Lawmint",
-      title: "Lawmint",
-      category: "Legal AI",
-      status: "Live",
-      tags: ["Automation", "Documents", "Collaboration"],
-      description:
-        "AI-Powered Demand Letters for Modern Law Firms. Draft, refine, and collaborate on demand letters securely and effortlessly. Transform how your firm creates legal documents with intelligent automation.",
-    },
-    {
-      href: "https://multi-model-ai-assistant.streamlit.app/",
-      img: imageassistantimg,
-      alt: "AI Image Assistant",
-      title: "AI Image Assistant",
-      category: "Vision AI",
-      status: "Live",
-      tags: ["Streamlit", "Vision", "Captions"],
-      description:
-        "An AI assistant that that allows users to upload an image and either ask questions about it or generate a caption.",
-    },
-    {
-      href: "https://collabcanvas-1fd25.web.app/",
-      img: collabcanvasimg,
-      alt: "CollabCanvas",
-      title: "CollabCanvas",
-      category: "Realtime App",
-      status: "Live",
-      tags: ["React", "Firebase", "GPT-4"],
-      description:
-        "A real-time AI-powered collaborative design canvas built with React, TypeScript, Firebase, and GPT-4 Turbo. Multiple users can draw, create, and edit objects simultaneously with live cursor tracking and presence awareness (<100 ms latency).",
-    },
-    {
-      href: "https://drive.google.com/file/d/1wfykY2cKTEqkn2HE5oE3GwSgdObf8xBw/view",
-      img: unilangimg,
-      alt: "Unilang",
-      title: "Unilang",
-      category: "Communication",
-      status: "Demo",
-      tags: ["Translation", "AI Replies", "Messaging"],
-      description:
-        "Real-time messaging app with AI-powered translation, smart replies, tone adjustment, and slang detection for culturally aware communication across languages.",
-    },
-    {
-      href: "https://drive.google.com/file/d/1-A4oRd3rHFjfV6bA83ixF3hfGDsazxK4/view?usp=drive_link",
-      img: clipforgeimg,
-      alt: "ClipForge",
-      title: "ClipForge",
-      category: "Desktop App",
-      status: "Demo",
-      tags: ["Electron", "React", "Video"],
-      description:
-        "ClipForge is a modern, cross-platform desktop video editor built with Electron, React, and TypeScript. It provides an intuitive interface for video trimming, preview, and export with professional-grade performance.",
-    },
-    {
-      href: "https://github.com/ankitrijal2054/AI_Chatbot",
-      img: chatbotimg,
-      alt: "AI Chatbot",
-      title: "AI Chatbot",
-      category: "RAG",
-      status: "Code",
-      tags: ["LangChain", "RAG", "Knowledge Base"],
-      description:
-        "A chatbot with a custom knowledge base using LangChain and RAG.",
-    },
-    {
-      href: "https://github.com/ankitrijal2054/House_Price_Prediction",
-      img: housingimg,
-      alt: "Housing Price Prediction",
-      title: "Housing Price Predictor",
-      category: "Machine Learning",
-      status: "Code",
-      tags: ["ML", "Prediction", "Data"],
-      description:
-        "A machine learning model predicting house prices based on features.",
-    },
-  ];
+  const projects = projectsData.map((project) => ({
+    ...project,
+    img: PROJECT_IMAGES[project.imageKey],
+  }));
 
   const containerVariants = {
     hidden: { opacity: 0 },

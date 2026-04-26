@@ -14,6 +14,7 @@ import "./styles/App.css";
 import "./styles/Background.scss";
 import Education from "./components/Education";
 import Certification from "./components/Certification";
+import ChatWidget from "./components/Chat/ChatWidget";
 
 export const ThemeContext = createContext();
 const AiWaveBackground = React.lazy(() => import("./components/AiWaveBackground"));
@@ -176,6 +177,7 @@ function App() {
           </div>
           
           <ScrollToTop />
+          <ChatWidget />
         </motion.div>
       </AnimatePresence>
     </ThemeContext.Provider>
