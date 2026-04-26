@@ -26,7 +26,6 @@ function ChatBubble({ onClick, shouldPulse }) {
       <span className="chat-bubble-icon" aria-hidden="true">
         <HiSparkles />
       </span>
-      <span className="chat-bubble-online" aria-hidden="true" />
     </motion.button>
   );
 }

@@ -48,10 +48,11 @@ export default async function handler(req) {
   }
 
   try {
+    const modelMessages = await convertToModelMessages(messages);
     const result = streamText({
       model: getModel(),
       system: getSystemPrompt(),
-      messages: convertToModelMessages(messages),
+      messages: modelMessages,
       tools,
       stopWhen: stepCountIs(5),
       // Anthropic-only prompt cache hint. Other providers ignore providerOptions

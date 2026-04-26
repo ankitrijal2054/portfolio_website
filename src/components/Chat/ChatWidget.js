@@ -35,6 +35,22 @@ function ChatWidget() {
     return () => window.removeEventListener("keydown", onKey);
   }, [isOpen]);
 
+  // Click outside the panel closes it. Mousedown beats click for snappier feel.
+  useEffect(() => {
+    if (!isOpen) return undefined;
+    const onPointerDown = (e) => {
+      if (!e.target.closest(".chat-panel")) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", onPointerDown);
+    document.addEventListener("touchstart", onPointerDown);
+    return () => {
+      document.removeEventListener("mousedown", onPointerDown);
+      document.removeEventListener("touchstart", onPointerDown);
+    };
+  }, [isOpen]);
+
   const handleOpen = () => {
     setIsOpen(true);
     if (shouldPulse) {
