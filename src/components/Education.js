@@ -3,6 +3,7 @@ import { Container, Card } from "react-bootstrap";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import "../styles/Education.css";
+import { educationData } from "../data/portfolio";
 
 function Education() {
   const { ref, inView } = useInView({
@@ -48,54 +49,28 @@ function Education() {
             </motion.div>
 
             <div className="education-timeline">
-              <motion.div className="education-section timeline-item" variants={itemVariants}>
-                <div className="timeline-marker education-marker"></div>
-                <div className="timeline-content">
-                  <motion.h3 
-                    className="degree-title"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    Fellowship in Applied AI
-                  </motion.h3>
-                  <p className="college-details">
-                    Gauntlet AI | 2025
-                  </p>
-                  <div className="education-status completed">Completed</div>
-                </div>
-              </motion.div>
-
-              <motion.div className="education-section timeline-item" variants={itemVariants}>
-                <div className="timeline-marker education-marker"></div>
-                <div className="timeline-content">
-                  <motion.h3 
-                    className="degree-title"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    Master's in Artificial Intelligence
-                  </motion.h3>
-                  <p className="college-details">
-                    University of the Cumberlands | 2025
-                  </p>
-                  <div className="education-status completed">Completed</div>
-                </div>
-              </motion.div>
-
-              <motion.div className="education-section timeline-item" variants={itemVariants}>
-                <div className="timeline-marker education-marker"></div>
-                <div className="timeline-content">
-                  <motion.h3 
-                    className="degree-title"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    Bachelor's in Computer Science
-                  </motion.h3>
-                  <p className="college-details">East Central University | 2021</p>
-                  <div className="education-status completed">Completed</div>
-                </div>
-              </motion.div>
+              {educationData.map((entry) => (
+                <motion.div
+                  key={`${entry.degree}-${entry.school}`}
+                  className="education-section timeline-item"
+                  variants={itemVariants}
+                >
+                  <div className="timeline-marker education-marker"></div>
+                  <div className="timeline-content">
+                    <motion.h3
+                      className="degree-title"
+                      whileHover={{ scale: 1.02 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {entry.degree}
+                    </motion.h3>
+                    <p className="college-details">
+                      {entry.school} | {entry.year}
+                    </p>
+                    <div className="education-status completed">{entry.status}</div>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </Card.Body>
         </Card>
