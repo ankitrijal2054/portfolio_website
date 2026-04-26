@@ -6,7 +6,7 @@ import { getSystemPrompt } from "./_lib/system-prompt.js";
 
 export const config = { maxDuration: 30 };
 
-export default async function handler(req) {
+async function handler(req) {
   if (req.method !== "POST") {
     return new Response("Method not allowed", { status: 405 });
   }
@@ -74,3 +74,9 @@ export default async function handler(req) {
     );
   }
 }
+
+// Service-worker-style export — tells the Vercel Node runtime to invoke this
+// as a Web-standard fetch handler (req is a Request, return is a Response).
+// Without this wrapper, Vercel falls back to Node-style (IncomingMessage, ServerResponse)
+// and `req.headers.get(...)` blows up because headers is a plain object.
+export default { fetch: handler };

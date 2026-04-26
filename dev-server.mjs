@@ -7,7 +7,9 @@
 
 import { createServer } from "node:http";
 import { config as loadEnv } from "dotenv";
-import chatHandler from "./api/chat.js";
+import chatModule from "./api/chat.js";
+
+const chatHandler = chatModule.fetch;
 
 loadEnv({ path: ".env.local" });
 
