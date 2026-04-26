@@ -15,6 +15,7 @@ import "./styles/Background.scss";
 import Education from "./components/Education";
 import Certification from "./components/Certification";
 import ChatWidget from "./components/Chat/ChatWidget";
+import { Analytics } from "@vercel/analytics/react";
 
 export const ThemeContext = createContext();
 const AiWaveBackground = React.lazy(() => import("./components/AiWaveBackground"));
@@ -178,6 +179,7 @@ function App() {
           
           <ScrollToTop />
           <ChatWidget />
+          <Analytics />
         </motion.div>
       </AnimatePresence>
     </ThemeContext.Provider>
