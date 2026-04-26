@@ -87,7 +87,7 @@ function Contact() {
                 Contact Me
               </Card.Title>
               <p className="contact-subtitle">
-                Let's connect and explore opportunities together
+                Let's connect and explore opportunities together.
               </p>
             </motion.div>
             
@@ -95,7 +95,7 @@ function Contact() {
               <motion.div variants={itemVariants}>
                 <Form.Group controlId="formName" className="form-group-modern">
                   <Form.Label className="form-label-modern">
-                    <FiUser className="form-icon" />
+                    <FiUser className="form-icon" aria-hidden="true" />
                     Name
                   </Form.Label>
                   <Form.Control
@@ -111,7 +111,7 @@ function Contact() {
               <motion.div variants={itemVariants}>
                 <Form.Group controlId="formEmail" className="form-group-modern">
                   <Form.Label className="form-label-modern">
-                    <FiMail className="form-icon" />
+                    <FiMail className="form-icon" aria-hidden="true" />
                     Email
                   </Form.Label>
                   <Form.Control
@@ -127,7 +127,7 @@ function Contact() {
               <motion.div variants={itemVariants}>
                 <Form.Group controlId="formMessage" className="form-group-modern">
                   <Form.Label className="form-label-modern">
-                    <FiMessageSquare className="form-icon" />
+                    <FiMessageSquare className="form-icon" aria-hidden="true" />
                     Message
                   </Form.Label>
                   <Form.Control
@@ -154,6 +154,7 @@ function Contact() {
                     type="submit" 
                     className="submit-button-modern"
                     disabled={isLoading}
+                    aria-busy={isLoading}
                   >
                     {isLoading ? (
                       <motion.div
@@ -163,7 +164,7 @@ function Contact() {
                       />
                     ) : (
                       <>
-                        <FiSend className="button-icon" />
+                        <FiSend className="button-icon" aria-hidden="true" />
                         Send Message
                       </>
                     )}

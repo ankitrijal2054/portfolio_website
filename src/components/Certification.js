@@ -97,7 +97,7 @@ function Certification() {
                     transition: { duration: 0.3 },
                   }}
                 >
-                  <div className="certification-icon">
+                  <div className="certification-icon" aria-hidden="true">
                     <FiAward size={24} />
                   </div>
                   <div className="certification-content">
@@ -106,10 +106,10 @@ function Certification() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="certification-title"
-                      whileHover={{ color: "#667eea" }}
+                      whileHover={{ color: "#0891b2" }}
                     >
                       {cert.title}
-                      <FiExternalLink className="external-link-icon" />
+                      <FiExternalLink className="external-link-icon" aria-hidden="true" />
                     </motion.a>
                     <p className="certification-provider">{cert.provider}</p>
                   </div>

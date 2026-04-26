@@ -1,15 +1,21 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Container, Button } from "react-bootstrap";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import {
+  FiDownload,
+  FiMail,
+  FiZap,
+} from "react-icons/fi";
 import "../styles/AboutMe.css";
 
+const roles = [
+  "AI Engineer",
+  "Software Developer",
+  "Machine Learning",
+];
+
 function AboutMe() {
-  const texts = [
-    "Aspiring AI Engineer",
-    "Passionate Software Developer",
-    "Traveller",
-  ];
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const { ref, inView } = useInView({
     threshold: 0.3,
@@ -18,14 +24,16 @@ function AboutMe() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
+      setCurrentTextIndex((prevIndex) => (prevIndex + 1) % roles.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, [texts.length]);
+  }, []);
 
   const scrollToContact = () => {
     document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
   };
+
+  const resumeHref = `${process.env.PUBLIC_URL}/assets/Resume-Ankit_Rijal.pdf`;
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -51,108 +59,62 @@ function AboutMe() {
   };
 
   return (
-    <Container fluid className="about-me-container" ref={ref}>
+    <Container fluid className="about-me-container modern-hero-container" ref={ref}>
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
       >
-        <Row className="about-me-row justify-content-center">
-          <Col lg={6} md={12}>
-            <motion.div variants={itemVariants}>
-              <Card className="text-center theme-card hero-card">
-                <Card.Body>
-                  <div className="animated-text-container">
-                    <motion.div
-                      className="animated-text-line greeting"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.8, delay: 0.5 }}
-                    >
-                      Hello,
-                    </motion.div>
-                    <motion.div
-                      className="animated-text-line name"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.8, delay: 0.8 }}
-                    >
-                      I'm Ankit Rijal.
-                    </motion.div>
-                    <motion.div
-                      className="animated-swiping-text"
-                      key={currentTextIndex}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -20 }}
-                      transition={{ duration: 0.5 }}
-                    >
-                      {texts[currentTextIndex]}
-                    </motion.div>
-                  </div>
-                </Card.Body>
-              </Card>
-            </motion.div>
-          </Col>
+        <motion.section className="hero-intro-panel hero-intro-panel-full" variants={itemVariants}>
+          <div className="hero-status-pill">
+            <FiZap aria-hidden="true" />
+            Building AI-first software experiences
+          </div>
 
-          <Col lg={6} md={12}>
-            <motion.div variants={itemVariants}>
-              <Card className="text-center theme-card bio-card">
-                <Card.Body>
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 1, delay: 1.2 }}
-                  >
-                    <Card.Text className="bio-text">
-                      I am a curious builder who started as a software developer
-                      and is now diving headfirst into the world of AI. With a
-                      background in creating reliable, user-friendly
-                      applications, I’ve recently been exploring how artificial
-                      intelligence can make technology smarter, faster, and more
-                      helpful. Whether it’s crafting chatbots, experimenting
-                      with image-based tools, or just solving everyday problems
-                      with code, I’m passionate about turning ideas into real,
-                      working things. Welcome to my digital playground. Let’s
-                      explore the future of tech together!
-                    </Card.Text>
-                  </motion.div>
-                </Card.Body>
-              </Card>
-            </motion.div>
-          </Col>
+          <p className="hero-eyebrow">Hello, I am</p>
+          <h1 className="hero-name">Ankit Rijal</h1>
+          <motion.p
+            className="hero-role"
+            key={currentTextIndex}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.35 }}
+          >
+            {roles[currentTextIndex]}
+          </motion.p>
 
-          <Col md={12} className="d-flex justify-content-center">
-            <motion.div className="button-group mt-4" variants={itemVariants}>
-              <motion.div
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
+          <p className="hero-bio">
+            I am a curious builder who started as a software developer and is
+            now diving headfirst into the world of AI. I build reliable,
+            user-friendly applications and explore how intelligent systems can
+            make technology smarter, faster, and more helpful.
+          </p>
+
+          <div className="button-group">
+            <motion.div whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.96 }}>
+              <Button
+                variant="primary"
+                href={resumeHref}
+                download
+                className="btn-modern btn-primary-modern"
               >
-                <Button
-                  variant="primary"
-                  href="/portfolio_website/assets/Resume-Ankit_Rijal.pdf"
-                  download
-                  className="btn-modern btn-primary-modern"
-                >
-                  <span>Download CV</span>
-                </Button>
-              </motion.div>
-
-              <motion.div
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Button
-                  variant="secondary"
-                  onClick={scrollToContact}
-                  className="btn-modern btn-secondary-modern"
-                >
-                  <span>Contact Me</span>
-                </Button>
-              </motion.div>
+                <FiDownload aria-hidden="true" />
+                <span>Download CV</span>
+              </Button>
             </motion.div>
-          </Col>
-        </Row>
+
+            <motion.div whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.96 }}>
+              <Button
+                variant="secondary"
+                onClick={scrollToContact}
+                className="btn-modern btn-secondary-modern"
+              >
+                <FiMail aria-hidden="true" />
+                <span>Contact Me</span>
+              </Button>
+            </motion.div>
+          </div>
+        </motion.section>
       </motion.div>
     </Container>
   );

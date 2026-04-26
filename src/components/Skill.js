@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { createPortal } from "react-dom";
 import { Container, Card } from "react-bootstrap";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { FaReact, FaPython, FaGithub, FaAws, FaTimes, FaDocker, FaJenkins } from "react-icons/fa";
+import { FiCode } from "react-icons/fi";
+import { FaReact, FaPython, FaGithub, FaAws, FaDocker, FaJenkins } from "react-icons/fa";
 import { TbBrandCSharp } from "react-icons/tb";
 import { BiLogoPostgresql } from "react-icons/bi";
 import {
@@ -16,120 +18,207 @@ import {
   SiLangchain,
   SiGooglegemini,
   SiOpenai,
-  SiGithubcopilot,
   SiStreamlit,
+  SiTypescript,
+  SiFastapi,
+  SiPydantic,
+  SiFirebase,
+  SiVercel,
+  SiGooglecloud,
+  SiSupabase,
+  SiCapacitor,
+  SiNextdotjs,
 } from "react-icons/si";
 import "../styles/Card.css";
 import "../styles/Skill.css";
 
 function Skill() {
+  const [hoveredSkill, setHoveredSkill] = useState(null);
   const { ref, inView } = useInView({
     threshold: 0.2,
     triggerOnce: true,
   });
 
-  const [selectedSkill, setSelectedSkill] = useState(null);
-
   const skillList = [
   [
     "Python",
     <FaPython />,
-    "Core language for my AI and software projects — from building LLM-powered apps (FastAPI, Flask, Streamlit) to data pipelines, model training, and backend services.",
+    "Core language for AI agent development, LLM-powered apps, data workflows, model experimentation, and backend services.",
+    "AI & Data",
+  ],
+  [
+    "FastAPI",
+    <SiFastapi />,
+    "Used to build Python API services for AI products, model-backed workflows, and reliable backend interfaces.",
+    "Backend",
   ],
   [
     "C#",
     <TbBrandCSharp />,
     "Developed enterprise-grade applications at Reynolds & Reynolds using C# and .NET, including 30+ RESTful APIs and full-stack systems used by 5,000+ users.",
+    "Backend",
   ],    
   [
-    "ReactJs",
+    "React / React Native",
     <FaReact />,
-    "Built dynamic UIs and SPAs for projects like SmartPrep AI and Guide2Smart AI, and used extensively at Reynolds & Reynolds to deliver cross-platform enterprise apps.",
+    "Built dynamic web and mobile experiences across AI products, enterprise applications, collaborative tools, and real-time messaging.",
+    "Frontend",
+  ],
+  [
+    "Next.js",
+    <SiNextdotjs />,
+    "Used for modern frontend development in current AI product work, pairing a Next.js interface with Python-backed services.",
+    "Frontend",
+  ],
+  [
+    "TypeScript",
+    <SiTypescript />,
+    "Applied typed JavaScript across modern React, Firebase, and Electron projects to improve maintainability and reduce runtime bugs.",
+    "Frontend",
   ],
   [
     "PostgreSQL",
     <BiLogoPostgresql />,
-    "Designed and optimized relational databases to support scalable apps, ensuring efficient queries and secure data handling at Reynolds & Reynolds for enterprise systems.",
+    "Designed and optimized relational data models for scalable applications, efficient queries, and secure data handling.",
+    "Backend",
   ],
   [
     "ElectronJs",
     <SiElectron />,
     "Delivered cross-platform desktop apps (e.g., KeyTrak system) by combining Electron.js with C#/.NET and React.js for enterprise clients.",
+    "Frontend",
+  ],
+  [
+    "Capacitor.js",
+    <SiCapacitor />,
+    "Used to package web application experiences into mobile apps while sharing frontend code across platforms.",
+    "Frontend",
   ],
   [
     "AWS",
     <FaAws />,
-    "Deployed and managed personal apps on AWS (EC2, S3, Amplify) — including Dockerized ML models and monitoring workflows.",
+    "Worked with AWS services including EC2, S3, Lambda, Amplify, and CloudWatch for deployment, serverless workflows, and monitoring.",
+    "Cloud & Delivery",
+  ],
+  [
+    "Firebase",
+    <SiFirebase />,
+    "Used Firebase and Firestore for real-time collaboration, authentication, hosting, and rapid deployment of AI-enabled products.",
+    "Cloud & Delivery",
+  ],
+  [
+    "Vercel",
+    <SiVercel />,
+    "Used Vercel for fast frontend deployment workflows and modern product iteration across React-based applications.",
+    "Cloud & Delivery",
+  ],
+  [
+    "GCP",
+    <SiGooglecloud />,
+    "Familiar with Google Cloud production ML concepts and cloud deployment patterns for AI-focused systems.",
+    "Cloud & Delivery",
   ],
   [
     "GitHub",
     <FaGithub />,
     "Led SVN-to-Git migration at Reynolds & Reynolds and automated CI/CD with GitHub Actions. Also used across all personal projects for version control and collaboration.",
+    "Cloud & Delivery",
   ],
   [
     "Jenkins",
     <FaJenkins />,
     "Created and maintained CI/CD pipelines, and migrated 50+ Jenkins pipelines to GitHub Actions, reducing deployment time by 30%.",
+    "Cloud & Delivery",
   ],
   [
     "Docker",
     <FaDocker />,
     "Containerized ML models and full-stack apps for consistent deployment; used in MLOps pipelines with AWS EC2 and FastAPI.",
+    "Cloud & Delivery",
+  ],
+  [
+    "Supabase",
+    <SiSupabase />,
+    "Used for database-backed product development, authentication-friendly workflows, and fast backend iteration.",
+    "Backend",
+  ],
+  [
+    "Cursor + Claude Code",
+    <FiCode />,
+    "Used as part of an AI-assisted development workflow for faster implementation, debugging, refactoring, and agentic coding.",
+    "AI-Assisted Development",
   ],
   [
     "Streamlit",
     <SiStreamlit />,
     "Built and deployed AI prototypes like AI Image Assistant on Streamlit Cloud for interactive data science and vision-language apps.",
+    "AI & Data",
   ],
   [
     "LangChain",
     <SiLangchain />,
     "Used in RAG-based chatbots with ChromaDB and Hugging Face to enable document-aware, persistent LLM responses.",
+    "AI & Data",
+  ],
+  [
+    "LangGraph",
+    <SiLangchain />,
+    "Applied graph-based agent workflow patterns for more reliable multi-step LLM orchestration and stateful AI systems.",
+    "AI & Data",
+  ],
+  [
+    "Pydantic AI",
+    <SiPydantic />,
+    "Built structured AI agent workflows with validation, deterministic orchestration, quality gates, and error-driven self-correction.",
+    "AI & Data",
   ],
   [
     "OpenAI API",
     <SiOpenai />,
     "Integrated OpenAI models into NLP workflows for text generation, summarization, and study-assistant features.",
+    "AI & Data",
   ],
   [
     "Google Gemini API",
     <SiGooglegemini />,
     "Developed apps like SmartPrep AI and AI Image Assistant using Gemini 1.5 Flash for text generation and vision-language tasks.",
+    "AI & Data",
   ],
   [
     "Transformer",
     <SiHuggingface />,
     "Implemented Hugging Face Transformers in RAG pipelines and chatbots for embeddings, inference optimization, and fine-tuning.",
-  ],
-  [
-    "Github Copilot",
-    <SiGithubcopilot />,
-    "Leveraged for AI-powered coding assistance — from debugging issues to speeding up prototyping and improving productivity in various projects.",
+    "AI & Data",
   ],
   [
     "NumPy",
     <SiNumpy />,
     "Used extensively for scientific computing, feature engineering, and preprocessing in ML projects.",
+    "AI & Data",
   ],
   [
     "Pandas",
     <SiPandas />,
     "Applied to clean, transform, and analyze datasets for ML pipelines and predictive modeling.",
+    "AI & Data",
   ],
   [
     "SciPy",
     <SiScipy />,
     "Leveraged for advanced math functions and algorithms supporting ML model experimentation.",
+    "AI & Data",
   ],
   [
     "TensorFlow",
     <SiTensorflow />,
     "Trained and deployed deep learning models (vision, NLP) in ML coursework and projects like predictive modeling.",
+    "AI & Data",
   ],
   [
     "Jupyter Notebook",
     <SiJupyter />,
     "Used extensively for prototyping machine learning models, data preprocessing, and visualizing results in an interactive workflow.",
+    "AI & Data",
   ],
   ];
 
@@ -137,15 +226,8 @@ function Skill() {
     name: skill[0],
     icon: skill[1],
     description: skill[2],
+    category: skill[3],
   }));
-
-  const handleSkillClick = (skill, event) => {
-    setSelectedSkill(skill);
-  };
-
-  const closeModal = () => {
-    setSelectedSkill(null);
-  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -170,24 +252,29 @@ function Skill() {
     },
   };
 
-  const modalVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.3,
-        ease: "easeOut",
-      },
-    },
-    exit: {
-      opacity: 0,
-      scale: 0.8,
-      transition: {
-        duration: 0.3,
-        ease: "easeIn",
-      },
-    },
+  const showSkillBubble = (skill, event) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    const bubbleWidth = Math.min(360, window.innerWidth - 32);
+    const margin = 16;
+    const centerX = rect.left + rect.width / 2;
+    const x = Math.min(
+      Math.max(centerX, margin + bubbleWidth / 2),
+      window.innerWidth - margin - bubbleWidth / 2
+    );
+    const roomAbove = rect.top;
+    const roomBelow = window.innerHeight - rect.bottom;
+    const placement = roomAbove > roomBelow && roomAbove > 180 ? "top" : "bottom";
+    const availableHeight =
+      placement === "top" ? roomAbove - margin * 2 : roomBelow - margin * 2;
+
+    setHoveredSkill({
+      ...skill,
+      x,
+      y: placement === "top" ? rect.top - 12 : rect.bottom + 12,
+      placement,
+      maxHeight: Math.max(180, availableHeight),
+      width: bubbleWidth,
+    });
   };
 
   return (
@@ -209,69 +296,49 @@ function Skill() {
               </Card.Title>
             </motion.div>
 
-            <div className="skill-links">
-              {skills.map((skill, index) => (
-                <motion.div
-                  key={index}
-                  className="skill-tile"
+            <div className="skill-cloud" aria-label="Skill cloud">
+              {skills.map((skill) => (
+                <motion.button
+                  key={skill.name}
+                  type="button"
+                  className="skill-cloud-item"
                   variants={itemVariants}
-                  whileHover={{
-                    scale: 1.05,
-                    transition: { duration: 0.3 },
-                  }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={(event) => handleSkillClick(skill, event)}
+                  aria-label={`${skill.name}: ${skill.description}`}
+                  onMouseEnter={(event) => showSkillBubble(skill, event)}
+                  onFocus={(event) => showSkillBubble(skill, event)}
+                  onMouseLeave={() => setHoveredSkill(null)}
+                  onBlur={() => setHoveredSkill(null)}
+                  whileHover={{ y: -6, scale: 1.03 }}
+                  whileFocus={{ y: -6, scale: 1.03 }}
                 >
-                  <div className="skill-tile-inner">
-                    <div className="skill-tile-front">
-                      <motion.div
-                        whileHover={{ rotate: 360 }}
-                        transition={{ duration: 0.6 }}
-                      >
-                        {skill.icon}
-                      </motion.div>
-                    </div>
-                    <div className="skill-tile-back">
-                      <span>{skill.name}</span>
-                    </div>
-                  </div>
-                </motion.div>
+                  <span className="skill-cloud-surface" aria-hidden="true">
+                    <span className="skill-cloud-icon">{skill.icon}</span>
+                    <span className="skill-cloud-name">{skill.name}</span>
+                  </span>
+                </motion.button>
               ))}
             </div>
           </Card.Body>
         </Card>
       </motion.div>
-
-      <AnimatePresence>
-        {selectedSkill && (
-          <motion.div
-            className="skill-modal-overlay"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={closeModal}
+      {hoveredSkill &&
+        createPortal(
+          <div
+            className={`skill-detail-bubble skill-detail-bubble-${hoveredSkill.placement}`}
+            style={{
+              left: hoveredSkill.x,
+              top: hoveredSkill.y,
+              width: hoveredSkill.width,
+              maxHeight: hoveredSkill.maxHeight,
+            }}
+            role="tooltip"
           >
-            <motion.div
-              className="skill-modal"
-              variants={modalVariants}
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="skill-modal-header">
-                <h3 className="skill-modal-title">{selectedSkill.name}</h3>
-                <button className="skill-modal-close" onClick={closeModal}>
-                  <FaTimes />
-                </button>
-              </div>
-              <div className="skill-modal-body">
-                <p>{selectedSkill.description}</p>
-              </div>
-            </motion.div>
-          </motion.div>
+            <span>{hoveredSkill.category}</span>
+            <strong>{hoveredSkill.name}</strong>
+            <small>{hoveredSkill.description}</small>
+          </div>,
+          document.body
         )}
-      </AnimatePresence>
     </Container>
   );
 }

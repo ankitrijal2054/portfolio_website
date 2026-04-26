@@ -90,29 +90,19 @@ function Social() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-tile"
+                  aria-label={`Open Ankit Rijal on ${social.name}`}
                   variants={itemVariants}
                   whileHover={{ 
-                    scale: 1.1,
-                    transition: { duration: 0.4 }
+                    y: -6,
+                    transition: { duration: 0.25 }
                   }}
                   whileTap={{ scale: 0.95 }}
                   style={{ "--social-color": social.color }}
                 >
-                  <div className="social-tile-inner">
-                    <div className="social-tile-front">
-                      <motion.div
-                        whileHover={{ 
-                          rotate: [0, -10, 10, -10, 0],
-                          transition: { duration: 0.5 }
-                        }}
-                      >
-                        {social.icon}
-                      </motion.div>
-                    </div>
-                    <div className="social-tile-back">
-                      <span>{social.name}</span>
-                    </div>
-                  </div>
+                  <span className="social-tile-icon" aria-hidden="true">
+                    {social.icon}
+                  </span>
+                  <span className="social-tile-name">{social.name}</span>
                 </motion.a>
               ))}
             </div>

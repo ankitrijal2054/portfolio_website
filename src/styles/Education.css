@@ -14,7 +14,7 @@
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(180deg, #667eea, #764ba2);
+  background: linear-gradient(180deg, #0891b2, #7c3aed);
   opacity: 0.3;
 }
 
@@ -34,28 +34,28 @@
   top: 1rem;
   width: 20px;
   height: 20px;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #0891b2, #7c3aed);
   border-radius: 50%;
-  box-shadow: 0 0 0 6px rgba(102, 126, 234, 0.2);
+  box-shadow: 0 0 0 6px rgba(34, 211, 238, 0.18);
 }
 
 .dark-theme .education-marker {
-  box-shadow: 0 0 0 6px rgba(167, 139, 250, 0.2);
+  box-shadow: 0 0 0 6px rgba(34, 211, 238, 0.16);
 }
 
 .timeline-content {
-  background: rgba(102, 126, 234, 0.04);
+  background: rgba(34, 211, 238, 0.04);
   backdrop-filter: blur(10px);
   padding: 2rem;
   border-radius: 20px;
-  border: 1px solid rgba(102, 126, 234, 0.08);
+  border: 1px solid rgba(34, 211, 238, 0.12);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   will-change: transform, box-shadow;
 }
 
 .dark-theme .timeline-content {
-  background: rgba(102, 126, 234, 0.06);
-  border-color: rgba(167, 139, 250, 0.15);
+  background: rgba(34, 211, 238, 0.06);
+  border-color: rgba(34, 211, 238, 0.16);
 }
 
 .timeline-content::before {
@@ -68,26 +68,26 @@
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(102, 126, 234, 0.4),
+    rgba(34, 211, 238, 0.42),
     transparent
   );
 }
 
 .timeline-content:hover {
   transform: translateY(-4px) translateX(8px);
-  box-shadow: 0 12px 40px rgba(102, 126, 234, 0.15);
-  background: rgba(102, 126, 234, 0.06);
+  box-shadow: 0 12px 40px rgba(8, 145, 178, 0.15);
+  background: rgba(34, 211, 238, 0.06);
 }
 
 .dark-theme .timeline-content:hover {
-  box-shadow: 0 12px 40px rgba(167, 139, 250, 0.2);
-  background: rgba(102, 126, 234, 0.08);
+  box-shadow: 0 12px 40px rgba(8, 145, 178, 0.2);
+  background: rgba(34, 211, 238, 0.08);
 }
 
 .degree-title {
   font-size: clamp(1.4rem, 3vw, 1.8rem);
   font-weight: 700;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #0891b2, #7c3aed);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -125,7 +125,7 @@
 }
 
 .education-status.completed {
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #0891b2, #7c3aed);
   color: white;
 }
 
@@ -154,7 +154,7 @@
     left: 0.25rem;
     width: 16px;
     height: 16px;
-    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2);
+    box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.18);
   }
 
   .timeline-content {
