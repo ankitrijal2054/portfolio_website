@@ -7,15 +7,15 @@ export const ownerName = "Ankit Rijal";
 export const ownerEmail = "ankitrijal2054@gmail.com";
 
 export const aboutMeRoles = [
-  "AI Engineer",
-  "Software Developer",
-  "Machine Learning",
+  "AI Software Engineer",
+  "Agentic AI Developer",
+  "Full-Stack Engineer",
 ];
 
-export const aboutMeStatusTagline = "Building AI-first software experiences";
+export const aboutMeStatusTagline = "Building agentic AI in production";
 
 export const aboutMeBio =
-  "I am a curious builder who started as a software developer and is now diving headfirst into the world of AI. I build reliable, user-friendly applications and explore how intelligent systems can make technology smarter, faster, and more helpful.";
+  "I am an AI Software Engineer with 3+ years of experience building production-grade applications and LLM-powered systems. I build agentic AI in production, from autonomous content-generation agents and multi-agent orchestration to RAG pipelines, backed by a strong full-stack foundation shipping web, iOS, and Android apps end to end on AWS and Vercel. I work AI-native with Claude Code, Cursor, and multi-agent workflows to move fast while holding a high bar for security and reliability.";
 
 export const resumeUrl = "/assets/Resume-Ankit_Rijal.pdf";
 
@@ -38,20 +38,32 @@ export const experienceData = [
     dates: "Feb 2026 - Current",
     status: "Current",
     bullets: [
-      "Developed an AI agent using the Pydantic deep agents framework to generate symbolic math modules with deterministic orchestration, quality gates, crash-safe persistence, and error-driven self-correction.",
-      "Reduced math module build timelines from months to days by automating the generation, validation, and correction workflow for AI-powered education content.",
-      "Implemented AI grading to automate scoring and feedback, reducing teachers' manual grading time while keeping student feedback fast and consistent.",
+      "Developed an AI agent using the Pydantic deep agents framework that generates symbolic math modules with deterministic orchestration, quality gates, crash-safe persistence, and error-driven self-correction, reducing build time from months to days.",
+      "Built an end-to-end AI grading pipeline with OCR-first ingestion of handwritten student work, automating scoring and feedback and sharply reducing teachers' manual grading time.",
+      "Architected and launched a full-stack parent platform covering the complete admissions-to-enrollment funnel, shipping native iOS and Android apps from the same codebase through App Store and Play Store submission.",
+      "Built the platform's integration layer: a bidirectional HubSpot CRM sync engine, Stripe payments with a webhook-driven ledger, a two-way Slack relay for staff messaging, and real-time multilingual messaging powered by an async LLM translation pipeline.",
+      "Leveraged an AI-assisted engineering workflow with multi-agent code generation, AI-driven code audits, and automated verification to ship production features at high velocity without compromising security or reliability.",
     ],
     projects: [
       {
         title: "Symbolic Math Module Generator",
         description:
-          "AI agent workflow for generating structured math modules with persistence, quality gates, and self-correction loops.",
+          "AI agent workflow for generating structured math modules with persistence, quality gates, and self-correction loops that cut build time from months to days.",
       },
       {
-        title: "AI Grading System",
+        title: "AI Grading Pipeline",
         description:
-          "Automated grading and feedback flow designed to help teachers evaluate student work faster and more consistently.",
+          "End-to-end grading system with OCR-first ingestion of handwritten work, automating scoring and feedback to save teachers hours of manual grading.",
+      },
+      {
+        title: "Parent Admissions Platform",
+        description:
+          "Full-stack platform covering the admissions-to-enrollment funnel, with native iOS and Android apps shipped from a shared codebase to the App Store and Play Store.",
+      },
+      {
+        title: "Integrations & Payments Layer",
+        description:
+          "Bidirectional HubSpot CRM sync, Stripe payments with a webhook-driven ledger, a two-way Slack relay, and async LLM-powered multilingual messaging.",
       },
     ],
   },
@@ -109,14 +121,22 @@ export const skillsData = [
   { name: "GitHub", iconKey: "FaGithub", category: "Cloud & Delivery", description: "Led SVN-to-Git migration at Reynolds & Reynolds and automated CI/CD with GitHub Actions. Also used across all personal projects for version control and collaboration." },
   { name: "Jenkins", iconKey: "FaJenkins", category: "Cloud & Delivery", description: "Created and maintained CI/CD pipelines, and migrated 50+ Jenkins pipelines to GitHub Actions, reducing deployment time by 30%." },
   { name: "Docker", iconKey: "FaDocker", category: "Cloud & Delivery", description: "Containerized ML models and full-stack apps for consistent deployment; used in MLOps pipelines with AWS EC2 and FastAPI." },
+  { name: "Terraform", iconKey: "SiTerraform", category: "Cloud & Delivery", description: "Used infrastructure-as-code to provision and manage cloud resources reproducibly across environments." },
   { name: "Supabase", iconKey: "SiSupabase", category: "Backend", description: "Used for database-backed product development, authentication-friendly workflows, and fast backend iteration." },
+  { name: "Redis", iconKey: "SiRedis", category: "Backend", description: "Used for caching, background job queues, and low-latency data access in production backend services." },
+  { name: "Stripe", iconKey: "SiStripe", category: "APIs & Integrations", description: "Built Stripe payments with a webhook-driven ledger to power billing across the parent enrollment platform." },
+  { name: "HubSpot CRM", iconKey: "SiHubspot", category: "APIs & Integrations", description: "Engineered a bidirectional HubSpot CRM sync engine to keep platform and CRM records consistent in real time." },
+  { name: "Slack API", iconKey: "SiSlack", category: "APIs & Integrations", description: "Built a two-way Slack relay for staff messaging, bridging platform events and human conversations." },
   { name: "Cursor + Claude Code", iconKey: "FiCode", category: "AI-Assisted Development", description: "Used as part of an AI-assisted development workflow for faster implementation, debugging, refactoring, and agentic coding." },
+  { name: "MCP + Agent Skills", iconKey: "FiCode", category: "AI-Assisted Development", description: "Built and used Model Context Protocol servers, agent skills, and multi-agent workflows for spec-driven, AI-native development." },
   { name: "Streamlit", iconKey: "SiStreamlit", category: "AI & Data", description: "Built and deployed AI prototypes like AI Image Assistant on Streamlit Cloud for interactive data science and vision-language apps." },
   { name: "LangChain", iconKey: "SiLangchain", category: "AI & Data", description: "Used in RAG-based chatbots with ChromaDB and Hugging Face to enable document-aware, persistent LLM responses." },
   { name: "LangGraph", iconKey: "SiLangchain", category: "AI & Data", description: "Applied graph-based agent workflow patterns for more reliable multi-step LLM orchestration and stateful AI systems." },
   { name: "Pydantic AI", iconKey: "SiPydantic", category: "AI & Data", description: "Built structured AI agent workflows with validation, deterministic orchestration, quality gates, and error-driven self-correction." },
   { name: "OpenAI API", iconKey: "SiOpenai", category: "AI & Data", description: "Integrated OpenAI models into NLP workflows for text generation, summarization, and study-assistant features." },
+  { name: "Anthropic Claude API", iconKey: "SiAnthropic", category: "AI & Data", description: "Integrated Claude models into production agentic systems for content generation, orchestration, and reasoning-heavy workflows." },
   { name: "Google Gemini API", iconKey: "SiGooglegemini", category: "AI & Data", description: "Developed apps like SmartPrep AI and AI Image Assistant using Gemini 1.5 Flash for text generation and vision-language tasks." },
+  { name: "Amazon Bedrock", iconKey: "FaAws", category: "AI & Data", description: "Used Amazon Bedrock to access and orchestrate foundation models within AWS-hosted AI workflows." },
   { name: "Transformer", iconKey: "SiHuggingface", category: "AI & Data", description: "Implemented Hugging Face Transformers in RAG pipelines and chatbots for embeddings, inference optimization, and fine-tuning." },
   { name: "NumPy", iconKey: "SiNumpy", category: "AI & Data", description: "Used extensively for scientific computing, feature engineering, and preprocessing in ML projects." },
   { name: "Pandas", iconKey: "SiPandas", category: "AI & Data", description: "Applied to clean, transform, and analyze datasets for ML pipelines and predictive modeling." },

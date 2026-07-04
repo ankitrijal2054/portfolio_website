@@ -28,6 +28,12 @@ import {
   SiSupabase,
   SiCapacitor,
   SiNextdotjs,
+  SiAnthropic,
+  SiStripe,
+  SiHubspot,
+  SiSlack,
+  SiRedis,
+  SiTerraform,
 } from "react-icons/si";
 import "../styles/Card.css";
 import "../styles/Skill.css";
@@ -63,6 +69,12 @@ const SKILL_ICONS = {
   SiSupabase: <SiSupabase />,
   SiCapacitor: <SiCapacitor />,
   SiNextdotjs: <SiNextdotjs />,
+  SiAnthropic: <SiAnthropic />,
+  SiStripe: <SiStripe />,
+  SiHubspot: <SiHubspot />,
+  SiSlack: <SiSlack />,
+  SiRedis: <SiRedis />,
+  SiTerraform: <SiTerraform />,
 };
 
 function Skill() {
